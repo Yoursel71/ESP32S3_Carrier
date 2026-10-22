@@ -1,0 +1,304 @@
+(footprint "microSD_Catalex_Socket"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "Catalex microSD module (~42x24mm), 1x6 header on the short edge")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at 6 -3.5 0)
+		(layer "F.SilkS")
+		(uuid "cb82e2b3-f388-44f0-a9f9-5c312738453d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "microSD_Catalex_Socket"
+		(at 20 15 0)
+		(layer "F.Fab")
+		(uuid "6c5a96a7-4001-495e-9ff7-1ff576af9ae9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e929f611-b0bc-45cc-845c-c5fe18621dd4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Catalex microSD module (~42x24mm), 1x6 header on the short edge"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4d508ddc-b207-4a3b-a267-9d92815899bf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4ec027c9-3b96-4042-a20d-971abb310dac")
+	)
+	(fp_text user "GND"
+		(at 1.5 0 0)
+		(layer "F.SilkS")
+		(uuid "71605a68-3850-46a1-8a4c-c1a8deafa9bc")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at 0 2.54)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4bdebf77-1a3e-4d2e-b549-7954b55ef5af")
+	)
+	(fp_text user "VCC"
+		(at 1.5 2.54 0)
+		(layer "F.SilkS")
+		(uuid "560c5075-732c-4571-8c0e-a45cbd959f06")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at 0 5.08)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "cc00ec23-d3b9-48a3-aa7f-c8741e03c1d9")
+	)
+	(fp_text user "MISO"
+		(at 1.5 5.08 0)
+		(layer "F.SilkS")
+		(uuid "351fe9c1-bb52-468d-9bab-adf0537457a4")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at 0 7.62)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b8a85a71-eca5-43ac-9893-9dd12cc083de")
+	)
+	(fp_text user "MOSI"
+		(at 1.5 7.62 0)
+		(layer "F.SilkS")
+		(uuid "05c60968-8b3e-460e-961b-ba75528aea62")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "5" thru_hole circle
+		(at 0 10.16)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "4580a6be-aab7-4dba-8ce1-640062116161")
+	)
+	(fp_text user "SCK"
+		(at 1.5 10.16 0)
+		(layer "F.SilkS")
+		(uuid "7a449809-934e-4f14-a9ae-3e1729105c5b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "6" thru_hole circle
+		(at 0 12.7)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "40fc7624-91e4-4e24-8206-729c541a3a85")
+	)
+	(fp_text user "CS"
+		(at 1.5 12.7 0)
+		(layer "F.SilkS")
+		(uuid "d2849b66-9508-4e7e-a2a7-241a2106cd80")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(fp_rect
+		(start -1.7 -5.65)
+		(end 40.3 18.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "45a968bf-92a1-4f47-9fd5-e73045633919")
+	)
+	(fp_line
+		(start -1.7 -5.65)
+		(end -1.7 18.35)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "497e7a6b-67e5-4029-b943-04e24f2e7ece")
+	)
+	(fp_rect
+		(start -2.2 -6.15)
+		(end 40.8 18.85)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "7c275238-4f85-4624-908f-019b446b3bac")
+	)
+	(fp_text user "Catalex microSD"
+		(at 19.3 6.35 0)
+		(layer "F.Fab")
+		(uuid "356d318c-6490-455e-b975-24fae70631c8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -1.7 -5.65)
+		(end 38.6 -5.65)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "4d165da0-eb8e-4e49-be15-538ccf975862")
+	)
+	(fp_line
+		(start -1.7 18.35)
+		(end 38.6 18.35)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "493c91bc-b89e-4310-a3e9-68bc37fab85a")
+	)
+	(fp_rect
+		(start 26 0.35)
+		(end 40.3 12.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "c0a381d7-8955-45ff-81c4-077ad62a9a66")
+	)
+	(fp_text user "card slot ->"
+		(at 31 6.35 0)
+		(layer "F.Fab")
+		(uuid "a6d84c2e-825f-4ee1-a600-3fba118efc52")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "microSD (Catalex)"
+		(at 20 3 0)
+		(layer "F.SilkS")
+		(uuid "8e77d945-822b-4386-a0a4-c85425ba6798")
+		(effects
+			(font
+				(size 1.1 1.1)
+				(thickness 0.165)
+			)
+		)
+	)
+	(fp_text user "card slot at edge ->"
+		(at 20 9.5 0)
+		(layer "F.SilkS")
+		(uuid "b675f26c-cd50-4c36-b038-f1851f8bc311")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x06_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 20 16.6 0)
+		(layer "F.Fab")
+		(uuid "cbc83eab-d293-4142-b89c-6a7469b94ea1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

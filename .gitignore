@@ -1,4 +1,4 @@
-# KiCad gecici dosyalari
+# KiCad temporary files
 *-backups/
 *.kicad_prl
 fp-info-cache
@@ -6,16 +6,13 @@ fp-info-cache
 ~*.lck
 _autosave-*
 
-# Uretim betiklerinin ara dosyalari
+# Intermediate files of the build scripts
 scripts/__pycache__/
-scripts/_pdf/
 scripts/_gerber/
 scripts/en/
-scripts/_b.*
-scripts/_bisect.py
-scripts/_drc0.rpt
-scripts/_drc.json
-scripts/_yerlesim.png
-scripts/_freerouting.log
 scripts/freerouting.json
-scripts/_uret.log
+scripts/_freerouting.log
+scripts/_build.log
+scripts/_drc0.rpt
+scripts/_place.png
+scripts/_board_explorer_fragment.html

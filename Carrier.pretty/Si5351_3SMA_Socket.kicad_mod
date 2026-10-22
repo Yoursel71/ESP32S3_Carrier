@@ -1,0 +1,315 @@
+(footprint "Si5351_3SMA_Socket"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "Si5351 clock generator module (~32x25mm + 3 SMA), 1x4 I2C header (VCC,GND,SCL,SDA)")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at -9.69 -19 0)
+		(layer "F.SilkS")
+		(uuid "f4d435ef-ad5e-4a4c-9fd2-021ee037ba97")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Si5351_3SMA_Socket"
+		(at 3.81 -6 0)
+		(layer "F.Fab")
+		(uuid "4b84428c-9e7a-473a-9183-3ac0d5fa16ad")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b4205ddf-20e2-48f4-90d5-8608cd063ee5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Si5351 clock generator module (~32x25mm + 3 SMA), 1x4 I2C header (VCC,GND,SCL,SDA)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9e36c3f1-15a0-41c7-b585-974ce9beca73")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6e61f4b1-20c8-430f-a3c2-594253256d37")
+	)
+	(fp_text user "VCC"
+		(at 0 -3.2 90)
+		(layer "F.SilkS")
+		(uuid "a953e5b3-b70f-497b-8457-482cc7fd1f63")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3e02564e-7a35-4a98-ae2d-871c02c43b0c")
+	)
+	(fp_text user "GND"
+		(at 2.54 -3.2 90)
+		(layer "F.SilkS")
+		(uuid "07dc828b-7531-4b0c-9228-70e375539d82")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at 5.08 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "17f496d9-7416-45e4-803c-397e702135ee")
+	)
+	(fp_text user "SCL"
+		(at 5.08 -3.2 90)
+		(layer "F.SilkS")
+		(uuid "8775ac8e-b762-4567-a1d5-7e17a76aae1b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at 7.62 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "c2c65351-f1c7-4022-8e7e-3712a20cce0a")
+	)
+	(fp_text user "SDA"
+		(at 7.62 -3.2 90)
+		(layer "F.SilkS")
+		(uuid "11d2f013-7677-453f-b56d-ae1e87c86181")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start -12.19 -23)
+		(end 19.81 2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "fd6e51fc-967c-4897-a509-5c2f84056c9c")
+	)
+	(fp_line
+		(start -12.19 2)
+		(end 19.81 2)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "697b74af-32a8-4f3c-a0ae-2dae314e7855")
+	)
+	(fp_rect
+		(start -12.69 -31.5)
+		(end 20.31 2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "32f163ba-b2c5-4499-a4ab-9f19d0803a14")
+	)
+	(fp_text user "Si5351"
+		(at 3.81 -10.5 0)
+		(layer "F.Fab")
+		(uuid "88640338-9279-45f6-8e48-c8c64a0da7ca")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -12.19 -21)
+		(end -12.19 2)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "daef9b33-0038-405d-9f27-ec9a9db016d1")
+	)
+	(fp_line
+		(start 19.81 -21)
+		(end 19.81 2)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "eb7b20e2-a202-4cfa-a0e7-0f606b7ee00c")
+	)
+	(fp_rect
+		(start -9.39 -31)
+		(end -2.99 -23)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "548c09eb-11d4-47ab-b1a7-8b1f8e8f318c")
+	)
+	(fp_text user "CLK0"
+		(at -6.19 -27 0)
+		(layer "F.Fab")
+		(uuid "61106a19-2268-4bdf-aac0-eb0f29f73d96")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start 0.61 -31)
+		(end 7.01 -23)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "12fb83ba-7e20-4f58-a894-d3ddac5cc387")
+	)
+	(fp_text user "CLK1"
+		(at 3.81 -27 0)
+		(layer "F.Fab")
+		(uuid "736090c8-0bce-413b-b3c2-3897227d209f")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start 10.61 -31)
+		(end 17.01 -23)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e7dc75e7-b0e4-4990-b20f-2bc70c3b315e")
+	)
+	(fp_text user "CLK2"
+		(at 13.81 -27 0)
+		(layer "F.Fab")
+		(uuid "bd91c2c8-d3c3-4618-8b24-2c95c5a020de")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "Si5351 CLOCK GEN"
+		(at 3.81 -14 0)
+		(layer "F.SilkS")
+		(uuid "7eb24610-a747-4375-b4fa-31a9fd1e26ab")
+		(effects
+			(font
+				(size 1.1 1.1)
+				(thickness 0.165)
+			)
+		)
+	)
+	(fp_text user "3x SMA out (board edge)"
+		(at 3.81 -11.5 0)
+		(layer "F.SilkS")
+		(uuid "0f08d578-6137-4ab8-a257-c5ea3010c6b9")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "VCC-GND-SCL-SDA"
+		(at 3.81 -9.2 0)
+		(layer "F.SilkS")
+		(uuid "370a3fdb-6ab1-4cfc-be17-9b2daac13334")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x04_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 270)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 3.81 -4.4 0)
+		(layer "F.Fab")
+		(uuid "d41d6fb0-eb51-439b-a2e6-e2e06e5fec04")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

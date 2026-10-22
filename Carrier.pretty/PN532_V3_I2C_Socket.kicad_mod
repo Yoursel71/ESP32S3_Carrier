@@ -1,0 +1,310 @@
+(footprint "PN532_V3_I2C_Socket"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "Elechouse PN532 V3 (42.7x40.4mm), socket for the 1x4 I2C header on its left edge")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at -2.5 -1.5 0)
+		(layer "F.SilkS")
+		(uuid "c400c7d1-1b2b-45f7-8460-de5f1b6c349e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "PN532_V3_I2C_Socket"
+		(at 16 20 0)
+		(layer "F.Fab")
+		(uuid "14796101-9aa6-452e-9206-421cf0b9e992")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2df89fdd-239c-4537-93c7-dc3e11fd0490")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Elechouse PN532 V3 (42.7x40.4mm), socket for the 1x4 I2C header on its left edge"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "33f621ff-8ce4-4cbd-a954-5d7c7c0f3506")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "771863cf-7e9c-46ab-8678-a8575701aee4")
+	)
+	(fp_text user "GND"
+		(at 1.5 0 0)
+		(layer "F.SilkS")
+		(uuid "0ec8c8b7-0e90-48e0-a481-e32aa6668a39")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at 0 2.54)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "90e10119-0167-4b3f-9577-7d9cff8568db")
+	)
+	(fp_text user "VCC"
+		(at 1.5 2.54 0)
+		(layer "F.SilkS")
+		(uuid "96e8a1bc-4af0-4c8f-8b13-ee02ff0058cd")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at 0 5.08)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "5790a643-7f5c-41f2-9278-9ba3dc425b15")
+	)
+	(fp_text user "SDA"
+		(at 1.5 5.08 0)
+		(layer "F.SilkS")
+		(uuid "571ff7cd-e59c-4c1c-86bc-58ab78ccbf88")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at 0 7.62)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "78d89317-50d8-462a-977e-4af43ed976fb")
+	)
+	(fp_text user "SCL"
+		(at 1.5 7.62 0)
+		(layer "F.SilkS")
+		(uuid "f30b7c49-6414-4373-a060-812f23c31747")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+			(justify left)
+		)
+	)
+	(fp_rect
+		(start -6.5 -16.09)
+		(end 36.2 24.31)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "6803b898-5b10-496d-a68d-7eeeaa5a14b5")
+	)
+	(fp_line
+		(start -6.5 -16.09)
+		(end 36.2 -16.09)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "52573b14-2836-4b8b-bd2b-7a71c9cf3645")
+	)
+	(fp_line
+		(start -6.5 24.31)
+		(end 36.2 24.31)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "036a4235-06a6-4a8e-8830-c07649807fb4")
+	)
+	(fp_line
+		(start -6.5 -16.09)
+		(end -6.5 24.31)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "29008a49-c0b9-4287-a673-7c0c9380d0fb")
+	)
+	(fp_line
+		(start 36.2 -16.09)
+		(end 36.2 24.31)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "28f9ff9a-c908-4ae2-a5c0-a8b08f500601")
+	)
+	(fp_rect
+		(start -7 -16.59)
+		(end 36.7 24.81)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "a162ed9b-2a53-45e8-89b4-65d9f1032ee1")
+	)
+	(fp_text user "PN532 NFC V3"
+		(at 14.85 4.11 0)
+		(layer "F.Fab")
+		(uuid "d81e18ae-f9d8-456a-b19b-ba7d3a66279d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0.2 -9.69)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "326cdd77-9344-4df6-be6a-9065b95b4626")
+	)
+	(pad "" np_thru_hole circle
+		(at 31 18.51)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "0a473b6c-cca2-429c-bcb5-f9463bca7dab")
+	)
+	(fp_circle
+		(center 0.2 -9.69)
+		(end 3 -9.69)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "6e9f0950-7ca4-4410-97c4-10574147458e")
+	)
+	(fp_circle
+		(center 31 18.51)
+		(end 33.8 18.51)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "340f0081-4172-4ce0-920c-d8469357d2d1")
+	)
+	(fp_text user "PN532 V3 NFC"
+		(at 16 -6 0)
+		(layer "F.SilkS")
+		(uuid "0adb0e63-28e0-41a9-8bb0-e112823bb577")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.18)
+			)
+		)
+	)
+	(fp_text user "I2C: SW1=ON SW2=OFF"
+		(at 16 -3.5 0)
+		(layer "F.SilkS")
+		(uuid "8b587621-aa56-448a-8fda-772c865bc8b7")
+		(effects
+			(font
+				(size 0.9 0.9)
+				(thickness 0.135)
+			)
+		)
+	)
+	(fp_text user "antenna area - no copper"
+		(at 16 9 0)
+		(layer "F.SilkS")
+		(uuid "717f9177-14b4-4198-aea1-13f62c83fa80")
+		(effects
+			(font
+				(size 0.9 0.9)
+				(thickness 0.135)
+			)
+		)
+	)
+	(fp_text user "support: nylon M3"
+		(at 16 15 0)
+		(layer "F.SilkS")
+		(uuid "3a040ac7-f359-4410-83b4-d70686cfeb0d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x04_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 16 21.6 0)
+		(layer "F.Fab")
+		(uuid "0e869ca7-4de7-4b21-8469-fecca7b930c9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

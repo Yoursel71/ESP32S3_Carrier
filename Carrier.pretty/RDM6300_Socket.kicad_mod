@@ -1,0 +1,327 @@
+(footprint "RDM6300_Socket"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "RDM6300 (38.5x19mm): P1 1x5 (TX,RX,NC,GND,+5V) + P2 1x2 antenna socket")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at -12 -1 0)
+		(layer "F.SilkS")
+		(uuid "f55c515c-5c05-4df8-9014-52fcc26b6be0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RDM6300_Socket"
+		(at -16 -4 0)
+		(layer "F.Fab")
+		(uuid "76794987-46db-412a-bdba-95e495b186f6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "192e4f8c-5daf-4c7d-8084-b20f106b57fc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "RDM6300 (38.5x19mm): P1 1x5 (TX,RX,NC,GND,+5V) + P2 1x2 antenna socket"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ddd00ac-367a-4bd5-9a99-d34b77202d8a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "82d7bf58-20d6-469d-890e-cf4f5df7d2cb")
+	)
+	(fp_text user "TX"
+		(at 0 3.15 90)
+		(layer "F.SilkS")
+		(uuid "ad4ba3a2-1321-483d-b67a-75b832f88e56")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at -2.54 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "41ecc01e-266a-4540-83e6-30fcdca21d0a")
+	)
+	(fp_text user "RX"
+		(at -2.54 3.15 90)
+		(layer "F.SilkS")
+		(uuid "5506566a-7036-42af-93d5-9e62eb7e080b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at -5.08 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9504804b-2c83-46ed-94d4-620ddf1ab8a3")
+	)
+	(fp_text user "NC"
+		(at -5.08 3.15 90)
+		(layer "F.SilkS")
+		(uuid "8ed02abe-7edc-43ef-b48c-5f14d5a2e944")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at -7.62 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "61cd9847-b09c-4955-891d-38ce048a9f0b")
+	)
+	(fp_text user "GND"
+		(at -7.62 3.15 90)
+		(layer "F.SilkS")
+		(uuid "edc9d756-334e-4915-aa14-1989828ea2e0")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "5" thru_hole circle
+		(at -10.16 0)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "817c7906-f655-4619-9bb7-9e5302465532")
+	)
+	(fp_text user "5V"
+		(at -10.16 3.15 90)
+		(layer "F.SilkS")
+		(uuid "ad59259b-8bea-436f-948e-e468bf162f2f")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "6" thru_hole rect
+		(at -32.1 -15.8)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "39b0f3e3-e39c-4add-90b7-afcb490abd05")
+	)
+	(pad "7" thru_hole circle
+		(at -29.56 -15.8)
+		(size 1.7 1.7)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b5e43832-fb3e-4c42-b33e-339233bc7b19")
+	)
+	(fp_text user "ANT1"
+		(at -32.1 -13 90)
+		(layer "F.SilkS")
+		(uuid "ec49173d-1b3c-458a-ad66-9d6c242fbc72")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "ANT2"
+		(at -29.56 -13 90)
+		(layer "F.SilkS")
+		(uuid "37faad9b-60a4-4ba8-ab27-5e66c794e5d1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start -35.6 -17.4)
+		(end 2.9 1.6)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e7c7cfd4-2826-4846-bc48-222959f81348")
+	)
+	(fp_line
+		(start -35.6 -17.4)
+		(end 2.9 -17.4)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "60ff1099-8e1b-4b43-aec2-e4a183edcbcc")
+	)
+	(fp_line
+		(start -35.6 1.6)
+		(end 2.9 1.6)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "40b51406-3e02-4be0-b535-fbddec93d95b")
+	)
+	(fp_line
+		(start -35.6 -17.4)
+		(end -35.6 1.6)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "28e54d40-2b34-4a47-9ce3-6df4457f78ff")
+	)
+	(fp_line
+		(start 2.9 -17.4)
+		(end 2.9 1.6)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "35111753-ef74-44bd-b343-e5630cae07ab")
+	)
+	(fp_rect
+		(start -36.1 -17.9)
+		(end 3.4 2.1)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "d7c64a11-cf80-46a3-99f8-0c1ada59dbf6")
+	)
+	(fp_text user "RDM6300"
+		(at -16.35 -7.9 0)
+		(layer "F.Fab")
+		(uuid "09230fed-165a-4721-ad58-6e4fee4a04bd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "RDM6300 125kHz"
+		(at -16 -9 0)
+		(layer "F.SilkS")
+		(uuid "c8c6cf87-2928-4e75-b270-3e1e80a02138")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.18)
+			)
+		)
+	)
+	(fp_text user "P2 (antenna)"
+		(at -29.6 -10 0)
+		(layer "F.SilkS")
+		(uuid "c750300e-f7fd-4512-a46a-6f9f2bfa0928")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "P1"
+		(at -5.08 -2.2 0)
+		(layer "F.SilkS")
+		(uuid "fefb0355-e2d3-4288-897d-f1b3f23398ca")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x05_P2.54mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 90)
+		)
+	)
+	(model "${KICAD10_3DMODEL_DIR}/Connector_PinSocket_2.54mm.3dshapes/PinSocket_1x02_P2.54mm_Vertical.step"
+		(offset
+			(xyz -32.1 15.8 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 270)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at -16 -2.4 0)
+		(layer "F.Fab")
+		(uuid "55c85848-adce-4853-a428-da24d5850632")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

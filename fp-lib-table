@@ -1,4 +1,4 @@
 (fp_lib_table
 	(version 7)
-	(lib (name "Tasiyici") (type "KiCad") (uri "${KIPRJMOD}/Tasiyici.pretty") (options "") (descr "Proje footprintleri"))
+	(lib (name "Carrier") (type "KiCad") (uri "${KIPRJMOD}/Carrier.pretty") (options "") (descr "Project footprints"))
 )

@@ -1,4 +1,4 @@
 (sym_lib_table
 	(version 7)
-	(lib (name "Tasiyici") (type "KiCad") (uri "${KIPRJMOD}/Tasiyici.kicad_sym") (options "") (descr "Proje sembolleri"))
+	(lib (name "Carrier") (type "KiCad") (uri "${KIPRJMOD}/Carrier.kicad_sym") (options "") (descr "Project symbols"))
 )

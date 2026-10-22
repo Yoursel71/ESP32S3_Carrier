@@ -1,0 +1,644 @@
+<title>ESP32-S3 Carrier 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an EDA-style workbench - full-bleed 3D canvas, layer rail on the left, net inspector on the right.
+   Single dark visual world on purpose (board viewers read best on a dark bench). */
+:root {
+  color-scheme: dark;
+  --bg: #0c1215;
+  --panel: #131c21;
+  --panel-2: #18242a;
+  --line: #24343c;
+  --fg: #dce7ea;
+  --muted: #8ba0a8;
+  --copper: #df9a5f;   /* top copper */
+  --teal: #56b6c8;     /* bottom copper */
+  --hi: #ffe46a;       /* selected net */
+  --keep: #e0614e;     /* copper keep-out */
+  --mask: #1d4a37;     /* solder mask */
+  --font-display: "Saira Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 14px; overflow: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.app { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+header.bar {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--panel); border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.brand h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: .02em; text-wrap: balance; }
+.brand .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.views { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+button, .chip {
+  font: 500 12px/1 var(--font-body); color: var(--fg); background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 6px; padding: 8px 10px; cursor: pointer;
+}
+button:hover { border-color: var(--muted); }
+button:focus-visible, input:focus-visible, .netrow:focus-visible, .pinrow:focus-visible { outline: 2px solid var(--hi); outline-offset: 2px; }
+button.on { border-color: var(--hi); color: var(--hi); }
+.main { position: relative; min-height: 0; display: grid; grid-template-columns: 236px 1fr 300px; }
+#stage { position: relative; min-width: 0; min-height: 0; }
+#stage canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+aside { background: var(--panel); border-color: var(--line); border-style: solid; border-width: 0; overflow: auto; min-width: 0; }
+aside.left { border-right-width: 1px; padding: 14px 14px 18px max(14px, env(safe-area-inset-left, 0px)); }
+aside.right { border-left-width: 1px; padding: 14px max(14px, env(safe-area-inset-right, 0px)) 18px 14px; display: flex; flex-direction: column; gap: 14px; }
+h2 { margin: 0 0 8px; font: 700 12px/1.2 var(--font-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.group { display: flex; flex-direction: column; gap: 2px; margin-bottom: 16px; }
+label.tog { display: grid; grid-template-columns: 18px 14px 1fr; align-items: center; gap: 8px; padding: 5px 4px; border-radius: 5px; cursor: pointer; }
+label.tog:hover { background: var(--panel-2); }
+label.tog input { margin: 0; accent-color: var(--hi); }
+.sw { width: 14px; height: 10px; border-radius: 2px; }
+.slider { display: grid; gap: 6px; margin: 6px 0 12px; }
+.slider .row { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); }
+.slider output { font-family: var(--font-mono); color: var(--fg); }
+input[type=range] { width: 100%; accent-color: var(--hi); }
+.hint { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.net-card { background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.net-name { font: 700 20px/1.1 var(--font-mono); color: var(--hi); word-break: break-all; }
+.kv { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.kv div { display: flex; flex-direction: column; gap: 2px; }
+.kv span { font-size: 11px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.kv b { font: 500 14px var(--font-mono); font-variant-numeric: tabular-nums; }
+.pins { display: flex; flex-direction: column; gap: 2px; max-height: 260px; overflow: auto; }
+.pinrow, .netrow { display: grid; align-items: center; gap: 8px; padding: 5px 6px; border-radius: 5px; cursor: pointer; background: none; border: 0; color: var(--fg); text-align: left; width: 100%; font: 400 13px var(--font-body); }
+.pinrow { grid-template-columns: 40px 30px 1fr; }
+.pinrow:hover, .netrow:hover { background: var(--bg); }
+.pinrow .ref { font: 600 13px var(--font-mono); }
+.pinrow .num { font: 400 12px var(--font-mono); color: var(--muted); }
+.pinrow .fn { font-size: 12px; color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.netrow { grid-template-columns: 10px 1fr auto; }
+.netrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.netrow.sel { background: var(--bg); color: var(--hi); }
+.netrow .cnt { font: 400 11px var(--font-mono); color: var(--muted); }
+#netsearch { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font: 13px var(--font-body); }
+.netlist { display: flex; flex-direction: column; gap: 1px; overflow: auto; min-height: 120px; flex: 1; }
+#tip { position: absolute; pointer-events: none; background: rgba(12,18,21,.92); border: 1px solid var(--line); color: var(--fg); padding: 6px 8px; border-radius: 6px; font: 12px var(--font-mono); white-space: nowrap; transform: translate(12px, 12px); z-index: 3; }
+.legend { position: absolute; left: 12px; bottom: 12px; display: flex; gap: 12px; flex-wrap: wrap; background: rgba(12,18,21,.78); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 12px; color: var(--muted); z-index: 2; }
+.legend i { display: inline-block; width: 12px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+#loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-family: var(--font-mono); }
+@media (max-width: 900px) {
+  body { overflow: auto; }
+  .app { height: auto; }
+  .main { grid-template-columns: 1fr; }
+  #stage { height: 62vh; order: 1; }
+  aside.right { order: 2; border-left-width: 0; border-top-width: 1px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  aside.left { order: 3; border-right-width: 0; border-top-width: 1px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .netlist { max-height: 260px; }
+  .views { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <h1>ESP32-S3 Carrier 3D</h1>
+      <span class="meta" id="meta"></span>
+    </div>
+    <div class="views" role="group" aria-label="Camera views">
+      <button id="v-iso" class="on">3D</button>
+      <button id="v-top">Top</button>
+      <button id="v-bot">Bottom</button>
+      <button id="v-clear">Clear selection</button>
+    </div>
+  </header>
+  <div class="main">
+    <aside class="left" aria-label="Layers">
+      <h2>Layers</h2>
+      <div class="group" id="layers"></div>
+      <h2>Layer separation</h2>
+      <div class="slider">
+        <div class="row"><label for="explode">Explode</label><output id="explode-o">0 mm</output></div>
+        <input type="range" id="explode" min="0" max="12" step="0.5" value="0">
+      </div>
+      <div class="slider">
+        <div class="row"><label for="mask">Board opacity</label><output id="mask-o">85%</output></div>
+        <input type="range" id="mask" min="0" max="100" step="5" value="85">
+      </div>
+      <label class="tog" style="margin-bottom:14px"><input type="checkbox" id="isolate"><span></span><span>Hide other nets</span></label>
+      <h2>How to use</h2>
+      <p class="hint">Click any track, pad, via or copper pour to light up its whole net on both layers. Drag to orbit, right-drag or two fingers to pan, scroll to zoom. Turn the board down and push the layers apart to see where a net changes layer through a via.</p>
+    </aside>
+    <div id="stage">
+      <div id="loading">Loading board…</div>
+      <div id="tip" hidden></div>
+      <div class="legend">
+        <span><i style="background:var(--copper)"></i>Top copper</span>
+        <span><i style="background:var(--teal)"></i>Bottom copper</span>
+        <span><i style="background:var(--hi)"></i>Selected net</span>
+        <span><i style="background:var(--keep)"></i>Keep-out</span>
+      </div>
+    </div>
+    <aside class="right" aria-label="Net inspector">
+      <div>
+        <h2>Selected net</h2>
+        <div class="net-card" id="card">
+          <div class="net-name" id="n-name">-</div>
+          <div class="kv">
+            <div><span>Class</span><b id="n-class">-</b></div>
+            <div><span>Top</span><b id="n-top">-</b></div>
+            <div><span>Bottom</span><b id="n-bot">-</b></div>
+            <div><span>Vias</span><b id="n-vias">-</b></div>
+            <div><span>Pins</span><b id="n-pins">-</b></div>
+            <div><span>Segments</span><b id="n-seg">-</b></div>
+          </div>
+          <div class="pins" id="n-pinlist" aria-label="Connected pins"></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;min-height:0;flex:1">
+        <h2>All nets</h2>
+        <input id="netsearch" type="search" placeholder="Filter nets (e.g. SPI, GND, BTN)" aria-label="Filter nets">
+        <div class="netlist" id="netlist"></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const BOARD = /*__BOARD_DATA__*/null;
+
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const css = getComputedStyle(document.documentElement);
+  const col = (v) => new THREE.Color(css.getPropertyValue(v).trim());
+  const C = { copper: col("--copper"), teal: col("--teal"), hi: col("--hi"), keep: col("--keep"), mask: col("--mask"), bg: col("--bg") };
+  const W = BOARD.board.w, H = BOARD.board.h, T = BOARD.board.t;
+  $("meta").textContent = `rev ${BOARD.board.rev} · ${W} × ${H} mm · 2 layers · ${BOARD.nets.length} nets`;
+
+  // ---------- three setup ----------
+  const stage = $("stage");
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setClearColor(C.bg, 1);
+  stage.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 2, 3000);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.12;
+  controls.screenSpacePanning = true;
+  scene.add(new THREE.HemisphereLight(0xe8f2ff, 0x203038, 0.95));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.75);
+  sun.position.set(-80, 160, 120);
+  scene.add(sun);
+  const sun2 = new THREE.DirectionalLight(0xffffff, 0.35);
+  sun2.position.set(90, -140, -80);
+  scene.add(sun2);
+
+  // board coords (x right, y down, mm) -> scene (x right, y up, z towards viewer)
+  const X = (x) => x - W / 2, Z = (y) => y - H / 2;
+
+  // ---------- geometry helpers ----------
+  function triPoly(flat, y, out) {
+    const pts = [];
+    for (let i = 0; i < flat.length; i += 2) pts.push(new THREE.Vector2(flat[i], flat[i + 1]));
+    if (pts.length < 3) return;
+    const tris = THREE.ShapeUtils.triangulateShape(pts, []);
+    for (const t of tris) for (const k of t) out.push(X(pts[k].x), y, Z(pts[k].y));
+  }
+  function capsule(x1, y1, x2, y2, w, y, out, seg = 8) {
+    const r = w / 2, dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1e-6;
+    const ux = dx / L, uy = dy / L, nx = -uy, ny = ux;
+    const a = [x1 + nx * r, y1 + ny * r], b = [x2 + nx * r, y2 + ny * r], c = [x2 - nx * r, y2 - ny * r], d = [x1 - nx * r, y1 - ny * r];
+    const push = (p) => out.push(X(p[0]), y, Z(p[1]));
+    push(a); push(b); push(c); push(a); push(c); push(d);
+    for (const [cx, cy, sgn] of [[x1, y1, -1], [x2, y2, 1]]) {
+      const base = Math.atan2(ny, nx);
+      for (let i = 0; i < seg; i++) {
+        const t0 = base + (sgn > 0 ? -1 : 1) * Math.PI * i / seg, t1 = base + (sgn > 0 ? -1 : 1) * Math.PI * (i + 1) / seg;
+        push([cx, cy]); push([cx + Math.cos(t0) * r, cy + Math.sin(t0) * r]); push([cx + Math.cos(t1) * r, cy + Math.sin(t1) * r]);
+      }
+    }
+  }
+  function disc(cx, cy, r, y, out, seg = 20) {
+    for (let i = 0; i < seg; i++) {
+      const a0 = 2 * Math.PI * i / seg, a1 = 2 * Math.PI * (i + 1) / seg;
+      out.push(X(cx), y, Z(cy), X(cx + Math.cos(a0) * r), y, Z(cy + Math.sin(a0) * r), X(cx + Math.cos(a1) * r), y, Z(cy + Math.sin(a1) * r));
+    }
+  }
+  function meshFrom(arr, mat) {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(arr, 3));
+    g.computeVertexNormals();
+    return new THREE.Mesh(g, mat);
+  }
+  const flatMat = (c, op = 1) => new THREE.MeshStandardMaterial({ color: c.clone(), side: THREE.DoubleSide, roughness: 0.45, metalness: 0.35, transparent: op < 1, opacity: op, polygonOffset: true, polygonOffsetFactor: -1 });
+
+  // ---------- layers ----------
+  const groups = {};
+  const mk = (name) => { const g = new THREE.Group(); g.name = name; scene.add(g); groups[name] = g; return g; };
+  ["board", "zoneTop", "zoneBot", "trackTop", "trackBot", "padTop", "padBot", "vias", "silkTop", "silkBot", "keepout", "comps", "modules", "labels"].forEach(mk);
+  const pickables = [];
+  const netMeshes = []; // {mesh, net, base: Color, baseOpacity}
+
+  // board body
+  (function () {
+    const r = BOARD.board.r, s = new THREE.Shape();
+    s.moveTo(-W / 2 + r, H / 2);
+    s.lineTo(W / 2 - r, H / 2); s.absarc(W / 2 - r, H / 2 - r, r, Math.PI / 2, 0, true);
+    s.lineTo(W / 2, -H / 2 + r); s.absarc(W / 2 - r, -H / 2 + r, r, 0, -Math.PI / 2, true);
+    s.lineTo(-W / 2 + r, -H / 2); s.absarc(-W / 2 + r, -H / 2 + r, r, -Math.PI / 2, -Math.PI, true);
+    s.lineTo(-W / 2, H / 2 - r); s.absarc(-W / 2 + r, H / 2 - r, r, Math.PI, Math.PI / 2, true);
+    const g = new THREE.ExtrudeGeometry(s, { depth: T, bevelEnabled: false, curveSegments: 10 });
+    g.rotateX(-Math.PI / 2);
+    g.translate(0, -T / 2, 0);
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: C.mask, roughness: 0.6, metalness: 0.05, transparent: true, opacity: 0.85 }));
+    m.renderOrder = 1;
+    groups.board.add(m);
+    groups.board.userData.mat = m.material;
+  })();
+
+  function addNetMesh(group, arr, net, color, opacity, kind) {
+    if (!arr.length) return;
+    const m = meshFrom(arr, flatMat(color, opacity));
+    m.userData = { net, kind, base: color.clone(), baseOpacity: opacity };
+    group.add(m);
+    pickables.push(m);
+    netMeshes.push(m);
+  }
+
+  // tracks grouped by net and layer
+  const trk = {};
+  for (const [x1, y1, x2, y2, w, l, n] of BOARD.tracks) {
+    const k = n + ":" + l;
+    (trk[k] = trk[k] || []);
+    capsule(x1, y1, x2, y2, w, 0, trk[k]);
+  }
+  for (const k in trk) { const [n, l] = k.split(":").map(Number); addNetMesh(l ? groups.trackBot : groups.trackTop, trk[k], n, l ? C.teal : C.copper, 1, "track"); }
+
+  // pads (THT pads go on both layers, with a drill mark)
+  const padTop = {}, padBot = {}, drills = [];
+  for (const p of BOARD.pads) {
+    if (p.l & 1) triPoly(p.poly, 0, (padTop[p.net] = padTop[p.net] || []));
+    if (p.l & 2) triPoly(p.poly, 0, (padBot[p.net] = padBot[p.net] || []));
+    if (p.d > 0) drills.push(p);
+  }
+  for (const n in padTop) addNetMesh(groups.padTop, padTop[n], +n, n < 0 ? new THREE.Color(0x9aa7ad) : C.copper, 1, "pad");
+  for (const n in padBot) addNetMesh(groups.padBot, padBot[n], +n, n < 0 ? new THREE.Color(0x9aa7ad) : C.teal, 1, "pad");
+  (function () {
+    const top = [], bot = [];
+    for (const p of drills) { disc(p.c[0], p.c[1], p.d / 2, 0.012, top, 16); disc(p.c[0], p.c[1], p.d / 2, -0.012, bot, 16); }
+    const mat = new THREE.MeshBasicMaterial({ color: 0x050809, side: THREE.DoubleSide });
+    const a = meshFrom(top, mat), b = meshFrom(bot, mat);
+    groups.padTop.add(a); groups.padBot.add(b);
+  })();
+
+  // vias: copper ring on both sides + barrel through the board
+  const viaGeo = {};
+  for (const [x, y, d, dr, n] of BOARD.vias) (viaGeo[n] = viaGeo[n] || []).push([x, y, d, dr]);
+  const barrels = [];
+  for (const n in viaGeo) {
+    const top = [], bot = [];
+    for (const [x, y, d] of viaGeo[n]) { disc(x, y, d / 2, 0, top, 16); disc(x, y, d / 2, 0, bot, 16); }
+    const color = +n === BOARD.nets.indexOf("GND") ? C.copper.clone().lerp(C.teal, 0.5) : C.copper.clone().lerp(C.teal, 0.5);
+    const mt = meshFrom(top, flatMat(color, 1)); mt.userData = { net: +n, kind: "via", base: color.clone(), baseOpacity: 1, side: "top" };
+    const mb = meshFrom(bot, flatMat(color, 1)); mb.userData = { net: +n, kind: "via", base: color.clone(), baseOpacity: 1, side: "bot" };
+    groups.vias.add(mt, mb); pickables.push(mt, mb); netMeshes.push(mt, mb);
+    for (const [x, y, d, dr] of viaGeo[n]) {
+      const cg = new THREE.CylinderGeometry(dr / 2 + 0.04, dr / 2 + 0.04, 1, 12, 1, true);
+      const cm = new THREE.Mesh(cg, new THREE.MeshStandardMaterial({ color: color.clone(), metalness: 0.5, roughness: 0.4, side: THREE.DoubleSide, transparent: true, opacity: 1 }));
+      cm.position.set(X(x), 0, Z(y));
+      cm.userData = { net: +n, kind: "barrel", base: color.clone(), baseOpacity: 1 };
+      groups.vias.add(cm); barrels.push(cm); pickables.push(cm); netMeshes.push(cm);
+    }
+  }
+
+  // copper pours
+  for (const z of BOARD.zones) {
+    if (z.keepout) {
+      const [x1, y1, x2, y2] = z.bb, arr = [];
+      triPoly([x1, y1, x2, y1, x2, y2, x1, y2], 0, arr);
+      const mat = new THREE.MeshBasicMaterial({ color: C.keep, transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false });
+      const a = meshFrom(arr, mat), b = meshFrom(arr, mat);
+      a.userData.side = "top"; b.userData.side = "bot";
+      groups.keepout.add(a, b);
+      continue;
+    }
+    const arr = [];
+    for (const poly of z.polys) triPoly(poly, 0, arr);
+    addNetMesh(z.l ? groups.zoneBot : groups.zoneTop, arr, z.net, z.l ? C.teal : C.copper, 0.32, "pour");
+  }
+
+  // silkscreen
+  for (const [key, grp] of [["F", groups.silkTop], ["B", groups.silkBot]]) {
+    const arr = [];
+    for (const poly of BOARD.silk[key]) triPoly(poly, 0, arr);
+    if (arr.length) grp.add(meshFrom(arr, new THREE.MeshBasicMaterial({ color: 0xeef3f1, side: THREE.DoubleSide })));
+  }
+
+  // components (simple bodies) and plug-in modules (translucent slabs on sockets)
+  const H_OF = { cap: 11, button: 3.6, buzzer: 9.5, to92: 4.8, led: 5.6, sot223: 1.7, sot23: 1.1, slide: 3.6, diode: 1.9, irrx: 6, header: 2.5, jumper: 0.05, smd: 0.55, hole: 0 };
+  const compMat = new THREE.MeshStandardMaterial({ color: 0x3a4a52, roughness: 0.55, metalness: 0.2 });
+  const capMat = new THREE.MeshStandardMaterial({ color: 0x2d5fa8, roughness: 0.4, metalness: 0.3 });
+  const btnMat = new THREE.MeshStandardMaterial({ color: 0x2b2f33, roughness: 0.5 });
+  const ledMat = new THREE.MeshStandardMaterial({ color: 0x7cd27a, roughness: 0.3, transparent: true, opacity: 0.85 });
+  const sockMat = new THREE.MeshStandardMaterial({ color: 0x15191c, roughness: 0.6 });
+  const modMat = new THREE.MeshStandardMaterial({ color: 0x2c6e8f, roughness: 0.6, transparent: true, opacity: 0.28, depthWrite: false, side: THREE.DoubleSide });
+  const modEdge = new THREE.LineBasicMaterial({ color: 0x8fd3ea });
+  const SOCK = 8.5;
+  const padsByRef = {};
+  for (const p of BOARD.pads) (padsByRef[p.r] = padsByRef[p.r] || []).push(p);
+  for (const c of BOARD.comps) {
+    const [x1, y1, x2, y2] = c.bb, cx = (x1 + x2) / 2, cy = (y1 + y2) / 2;
+    if (c.k === "hole") continue;
+    if (c.k === "module") {
+      for (const p of padsByRef[c.r] || []) {
+        const b = new THREE.Mesh(new THREE.BoxGeometry(2.5, SOCK, 2.5), sockMat);
+        b.position.set(X(p.c[0]), SOCK / 2, Z(p.c[1]));
+        groups.modules.add(b);
+      }
+      const w = x2 - x1 - 1, d = y2 - y1 - 1;
+      const g = new THREE.BoxGeometry(w, 1.6, d);
+      const m = new THREE.Mesh(g, modMat);
+      m.position.set(X(cx), SOCK + 0.8, Z(cy));
+      groups.modules.add(m);
+      const e = new THREE.LineSegments(new THREE.EdgesGeometry(g), modEdge);
+      e.position.copy(m.position);
+      groups.modules.add(e);
+      groups.labels.add(label(c.v, X(cx), SOCK + 3, Z(cy), 1.15));
+      continue;
+    }
+    const h = H_OF[c.k] ?? 1;
+    let mesh;
+    if (c.k === "cap" || c.k === "buzzer") {
+      const r = Math.min(x2 - x1, y2 - y1) / 2 - 0.3;
+      mesh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, 28), c.k === "cap" ? capMat : btnMat);
+    } else if (c.k === "led") {
+      const r = 2.5;
+      mesh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 8.6, 20), ledMat);
+      mesh.rotation.x = Math.PI / 2;
+    } else {
+      const sx = Math.max(0.6, x2 - x1 - (c.k === "smd" ? 0.6 : 1)), sz = Math.max(0.6, y2 - y1 - (c.k === "smd" ? 0.6 : 1));
+      mesh = new THREE.Mesh(new THREE.BoxGeometry(sx, Math.max(h, 0.05), sz), c.k === "button" || c.k === "irrx" ? btnMat : compMat);
+    }
+    mesh.position.set(X(cx), (c.k === "led" ? 3 : h / 2), Z(cy));
+    groups.comps.add(mesh);
+    if (c.k !== "smd" && c.k !== "jumper") groups.labels.add(label(c.r, X(cx), h + 1.6, Z(cy), 0.7));
+  }
+
+  function label(text, x, y, z, scale) {
+    const cv = document.createElement("canvas"), ctx = cv.getContext("2d");
+    const fs = 48;
+    ctx.font = `600 ${fs}px "IBM Plex Sans", "Segoe UI", sans-serif`;
+    const w = Math.ceil(ctx.measureText(text).width) + 28;
+    cv.width = w; cv.height = fs + 22;
+    ctx.font = `600 ${fs}px "IBM Plex Sans", "Segoe UI", sans-serif`;
+    ctx.fillStyle = "rgba(12,18,21,0.78)";
+    ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.fillStyle = "#dce7ea";
+    ctx.textBaseline = "middle";
+    ctx.fillText(text, 14, cv.height / 2 + 2);
+    const tex = new THREE.CanvasTexture(cv);
+    tex.anisotropy = 4;
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, depthTest: false, transparent: true }));
+    sp.scale.set(cv.width / cv.height * 3.2 * scale, 3.2 * scale, 1);
+    sp.position.set(x, y, z);
+    sp.renderOrder = 5;
+    return sp;
+  }
+
+  // ---------- layer stack / explode ----------
+  let explode = 0;
+  function stack() {
+    const t = T / 2, e = explode;
+    groups.board.position.y = 0;
+    groups.zoneTop.position.y = t + 0.02 + e;
+    groups.trackTop.position.y = t + 0.06 + e;
+    groups.padTop.position.y = t + 0.09 + e;
+    groups.silkTop.position.y = t + 0.14 + e * 1.4;
+    groups.zoneBot.position.y = -t - 0.02 - e;
+    groups.trackBot.position.y = -t - 0.06 - e;
+    groups.padBot.position.y = -t - 0.09 - e;
+    groups.silkBot.position.y = -t - 0.14 - e * 1.4;
+    for (const m of groups.vias.children) {
+      if (m.userData.side === "top") m.position.y = t + 0.11 + e;
+      else if (m.userData.side === "bot") m.position.y = -t - 0.11 - e;
+    }
+    for (const b of barrels) { b.scale.y = T + 2 * e + 0.22; b.position.y = 0; }
+    for (const m of groups.keepout.children) m.position.y = m.userData.side === "top" ? t + 0.17 + e : -t - 0.17 - e;
+    groups.comps.position.y = t + e * 2.6;
+    groups.modules.position.y = t + e * 2.6;
+    groups.labels.position.y = t + e * 2.6;
+  }
+
+  // ---------- layer toggles ----------
+  const LAYERS = [
+    ["silkTop", "Top silkscreen", "#eef3f1", true],
+    ["comps", "Components", "#3a4a52", true],
+    ["modules", "Plug-in modules", "#2c6e8f", false],
+    ["labels", "Labels", "#dce7ea", true],
+    ["trackTop", "Top tracks", "var(--copper)", true],
+    ["padTop", "Top pads", "var(--copper)", true],
+    ["zoneTop", "Top GND pour", "var(--copper)", true],
+    ["vias", "Vias", "#9b9890", true],
+    ["board", "Board (FR4)", "var(--mask)", true],
+    ["zoneBot", "Bottom GND pour", "var(--teal)", true],
+    ["padBot", "Bottom pads", "var(--teal)", true],
+    ["trackBot", "Bottom tracks", "var(--teal)", true],
+    ["silkBot", "Bottom silkscreen", "#eef3f1", true],
+    ["keepout", "Antenna keep-outs", "var(--keep)", true],
+  ];
+  const layersBox = $("layers");
+  for (const [key, name, color, on] of LAYERS) {
+    const id = "lay-" + key;
+    const l = document.createElement("label");
+    l.className = "tog";
+    l.innerHTML = `<input type="checkbox" id="${id}" ${on ? "checked" : ""}><span class="sw" style="background:${color}"></span><span>${name}</span>`;
+    layersBox.appendChild(l);
+    groups[key].visible = on;
+    l.querySelector("input").addEventListener("change", (ev) => { groups[key].visible = ev.target.checked; });
+  }
+  $("explode").addEventListener("input", (ev) => { explode = +ev.target.value; $("explode-o").textContent = explode + " mm"; stack(); });
+  $("mask").addEventListener("input", (ev) => {
+    const v = +ev.target.value / 100;
+    $("mask-o").textContent = Math.round(v * 100) + "%";
+    groups.board.userData.mat.opacity = v;
+    groups.board.userData.mat.depthWrite = v > 0.95;
+    groups.board.visible = v > 0 && $("lay-board").checked;
+  });
+
+  // ---------- net selection ----------
+  const netStats = BOARD.nets.map(() => ({ top: 0, bot: 0, seg: 0, vias: 0 }));
+  for (const [x1, y1, x2, y2, w, l, n] of BOARD.tracks) {
+    if (n < 0) continue;
+    const L = Math.hypot(x2 - x1, y2 - y1);
+    netStats[n].seg++;
+    if (l) netStats[n].bot += L; else netStats[n].top += L;
+  }
+  for (const v of BOARD.vias) if (v[4] >= 0) netStats[v[4]].vias++;
+  const compVal = {};
+  for (const c of BOARD.comps) compVal[c.r] = c.v;
+  const padIndex = {};
+  for (const p of BOARD.pads) padIndex[p.r + ":" + p.n] = p;
+
+  let selected = -1;
+  function applySelection() {
+    const iso = $("isolate").checked;
+    for (const m of netMeshes) {
+      const mat = m.material, d = m.userData;
+      if (selected < 0) {
+        mat.color.copy(d.base); mat.opacity = d.baseOpacity; mat.transparent = d.baseOpacity < 1; mat.emissive && mat.emissive.setHex(0); m.visible = true;
+      } else if (d.net === selected) {
+        mat.color.copy(C.hi); mat.opacity = d.kind === "pour" ? 0.75 : 1; mat.transparent = d.kind === "pour"; mat.emissive && mat.emissive.copy(C.hi).multiplyScalar(0.35); m.visible = true;
+      } else {
+        mat.color.copy(d.base); mat.opacity = d.kind === "pour" ? 0.08 : d.kind === "barrel" ? 0.05 : 0.2; mat.transparent = true; mat.emissive && mat.emissive.setHex(0); m.visible = !iso;
+      }
+      mat.needsUpdate = true;
+    }
+    document.querySelectorAll(".netrow").forEach((r) => r.classList.toggle("sel", +r.dataset.net === selected));
+    const has = selected >= 0;
+    const name = has ? BOARD.nets[selected] : "-";
+    $("n-name").textContent = has ? name.replace(/^\//, "") : "Click a track to select its net";
+    $("n-class").textContent = has ? (BOARD.netclass[name] || "Default") : "-";
+    const s = has ? netStats[selected] : null;
+    $("n-top").textContent = has ? s.top.toFixed(1) + " mm" : "-";
+    $("n-bot").textContent = has ? s.bot.toFixed(1) + " mm" : "-";
+    $("n-vias").textContent = has ? s.vias : "-";
+    $("n-seg").textContent = has ? s.seg : "-";
+    const pins = has ? (BOARD.pins[selected] || []) : [];
+    $("n-pins").textContent = has ? pins.length : "-";
+    const list = $("n-pinlist");
+    list.innerHTML = "";
+    for (const [ref, num, fn] of pins) {
+      const b = document.createElement("button");
+      b.className = "pinrow";
+      b.innerHTML = `<span class="ref">${ref}</span><span class="num">${num}</span><span class="fn" title="${(compVal[ref] || "")}">${fn || ""} · ${compVal[ref] || ""}</span>`;
+      b.addEventListener("click", () => focusPad(ref, num));
+      list.appendChild(b);
+    }
+  }
+  function select(n) { selected = n; applySelection(); }
+  $("isolate").addEventListener("change", applySelection);
+  $("v-clear").addEventListener("click", () => select(-1));
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") select(-1); });
+
+  // net list
+  const netlist = $("netlist");
+  const order = BOARD.nets.map((n, i) => i).sort((a, b) => BOARD.nets[a].replace(/^\//, "").localeCompare(BOARD.nets[b].replace(/^\//, "")));
+  for (const i of order) {
+    const n = BOARD.nets[i];
+    const r = document.createElement("button");
+    r.className = "netrow";
+    r.dataset.net = i;
+    const cls = BOARD.netclass[n] || "Default";
+    const dot = cls === "GND" ? "var(--teal)" : cls === "Power" ? "var(--keep)" : "var(--copper)";
+    r.innerHTML = `<span class="dot" style="background:${dot}"></span><span>${n.replace(/^\//, "")}</span><span class="cnt">${(BOARD.pins[i] || []).length} pins</span>`;
+    r.addEventListener("click", () => select(i));
+    netlist.appendChild(r);
+  }
+  $("netsearch").addEventListener("input", (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    netlist.querySelectorAll(".netrow").forEach((r) => { r.hidden = q && !r.textContent.toLowerCase().includes(q); });
+  });
+
+  // ---------- picking ----------
+  const ray = new THREE.Raycaster(), mouse = new THREE.Vector2(), tip = $("tip");
+  const OFFS = [[0, 0], [4, 0], [-4, 0], [0, 4], [0, -4], [3, 3], [-3, 3], [3, -3], [-3, -3], [8, 0], [-8, 0], [0, 8], [0, -8], [6, 6], [-6, 6], [6, -6], [-6, -6]];
+  function pick(ev) {
+    const rect = renderer.domElement.getBoundingClientRect();
+    const vis = pickables.filter((m) => m.visible && m.parent.visible);
+    let pour = null;
+    for (const [dx, dy] of OFFS) {
+      mouse.x = ((ev.clientX + dx - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((ev.clientY + dy - rect.top) / rect.height) * 2 + 1;
+      ray.setFromCamera(mouse, camera);
+      const hits = ray.intersectObjects(vis, false);
+      const solid = hits.find((h) => h.object.userData.kind !== "pour");
+      if (solid) return solid;
+      if (!pour && hits.length && dx === 0 && dy === 0) pour = hits[0];
+    }
+    return pour;
+  }
+  function nearestPad(pt) {
+    const bx = pt.x + W / 2, by = pt.z + H / 2;
+    let best = null, bd = 2.2;
+    for (const p of BOARD.pads) { const d = Math.hypot(p.c[0] - bx, p.c[1] - by); if (d < bd) { bd = d; best = p; } }
+    return best;
+  }
+  let down = null;
+  renderer.domElement.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; });
+  renderer.domElement.addEventListener("pointerup", (e) => {
+    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
+    const h = pick(e);
+    if (h && h.object.userData.net >= 0) select(h.object.userData.net === selected ? -1 : h.object.userData.net);
+  });
+  let hoverT = 0;
+  renderer.domElement.addEventListener("pointermove", (e) => {
+    if (e.buttons) { tip.hidden = true; return; }
+    const now = performance.now();
+    if (now - hoverT < 40) return;
+    hoverT = now;
+    const h = pick(e);
+    if (!h) { tip.hidden = true; return; }
+    const d = h.object.userData, rect = stage.getBoundingClientRect();
+    let txt = d.net >= 0 ? BOARD.nets[d.net].replace(/^\//, "") : "no net";
+    if (d.kind === "pad") {
+      const p = nearestPad(h.point);
+      if (p) {
+        const fn = (BOARD.pins[p.net] || []).find((q) => q[0] === p.r && q[1] === p.n);
+        txt = `${p.r} pin ${p.n}${fn && fn[2] ? " (" + fn[2] + ")" : ""} · ${txt}`;
+      }
+    } else txt = `${d.kind} · ${txt}`;
+    tip.textContent = txt;
+    tip.style.left = (e.clientX - rect.left) + "px";
+    tip.style.top = (e.clientY - rect.top) + "px";
+    tip.hidden = false;
+  });
+  renderer.domElement.addEventListener("pointerleave", () => { tip.hidden = true; });
+
+  // ---------- camera ----------
+  let anim = null;
+  function fly(pos, target, ms = 650) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const p0 = camera.position.clone(), t0 = controls.target.clone(), start = performance.now();
+    if (reduce) { camera.position.copy(pos); controls.target.copy(target); return; }
+    anim = (now) => {
+      const k = Math.min(1, (now - start) / ms), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+      camera.position.lerpVectors(p0, pos, e);
+      controls.target.lerpVectors(t0, target, e);
+      if (k >= 1) anim = null;
+    };
+  }
+  const views = {
+    iso: () => fly(new THREE.Vector3(-95, 150, 175), new THREE.Vector3(0, 0, 8)),
+    top: () => fly(new THREE.Vector3(0, 260, 0.01), new THREE.Vector3(0, 0, 0)),
+    bot: () => fly(new THREE.Vector3(0, -260, 0.01), new THREE.Vector3(0, 0, 0)),
+  };
+  function setView(k) { views[k](); ["iso", "top", "bot"].forEach((v) => $("v-" + v).classList.toggle("on", v === k)); }
+  $("v-iso").addEventListener("click", () => setView("iso"));
+  $("v-top").addEventListener("click", () => setView("top"));
+  $("v-bot").addEventListener("click", () => setView("bot"));
+  function focusPad(ref, num) {
+    const p = padIndex[ref + ":" + num];
+    if (!p) return;
+    const target = new THREE.Vector3(X(p.c[0]), 0, Z(p.c[1]));
+    const dir = camera.position.clone().sub(controls.target).normalize().multiplyScalar(70);
+    fly(target.clone().add(dir), target);
+  }
+
+  // ---------- resize / loop ----------
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / Math.max(h, 1);
+    camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(stage);
+  stack();
+  camera.position.set(-95, 150, 175);
+  controls.target.set(0, 0, 8);
+  resize();
+  const spi = BOARD.nets.indexOf("/SPI_SCK");
+  select(spi >= 0 ? spi : -1);
+  $("loading").remove();
+  renderer.setAnimationLoop((now) => { if (anim) anim(now); controls.update(); renderer.render(scene, camera); });
+})();
+</script>

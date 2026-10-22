@@ -1,110 +1,116 @@
-# ESP32-S3 Taşıyıcı Kart (KiCad 10)
+# ESP32-S3 Carrier Board (KiCad 10)
 
-ESP32-S3-DevKitC-1 (N16R8) tabanlı, 2 katmanlı, elde taşınır taşıyıcı PCB. Tüm modüller 2,54 mm dişi header soketlerine takılır; kartın üzerinde yalnızca soketler, butonlar, güç devresi ve pasifler var.
+A 2-layer handheld carrier PCB for the ESP32-S3-DevKitC-1 (N16R8). Every module plugs into 2.54 mm female header sockets; the board itself only carries the sockets, buttons, power circuitry, IR parts and passives.
 
-![Üstten render](cikti/ustten_render.png)
+![Top render](output/render_top.png)
 
 | | |
 |---|---|
-| Kart | 116 × 155 mm, 2 katman, 1,6 mm FR4, R4 yuvarlatılmış köşe, 4× M3 delik (kenardan 5 mm) |
-| ERC | **0 hata, 0 uyarı** (`cikti/ERC_raporu.rpt`) |
-| DRC | **0 ihlal, 0 bağlanmamış pad, şema–PCB uyumu tam** (`--schematic-parity --severity-all`, `cikti/DRC_raporu.rpt`) |
-| Yönlendirme | Freerouting 2.5.0, %100 yönlendirildi; iki katmanda GND dökümü + 232 dikiş via |
-| İz / boşluk | sinyal 0,25 mm, güç 0,6 mm, GND 0,5 mm; boşluk 0,20–0,25 mm; via 0,6/0,3 ve 0,8/0,4 mm. Pad girişlerindeki inceltmeler 0,20 mm'ye genişletildi; tek bir iz (IR_RX) 0,187 mm kaldı, kural alt sınırı 0,15 mm (6 mil, standart üretici kapasitesi) |
+| Board | 116 × 170 mm, 2 layers, 1.6 mm FR4, R4 rounded corners, 4× M3 holes (5 mm from the edges) |
+| Modules | CC1101 433 MHz (top centre), 2× NRF24L01+PA+LNA, PN532 V3 (I2C), RDM6300 125 kHz, Si5351 clock generator (3× SMA), Catalex microSD, 1.3" SH1106 I2C OLED |
+| On board | 3× IR LED (940 nm) + VS1838B receiver, passive buzzer, 6 buttons (D-pad + OK + BACK), module power switch with soft-start, AMS1117-3.3 |
+| ERC | **0 errors, 0 warnings** (`output/ERC_report.rpt`) |
+| DRC | **0 violations, 0 unconnected pads, schematic ↔ PCB in sync** (`--schematic-parity --severity-all`, `output/DRC_report.rpt`) |
+| Routing | Freerouting 2.5.0, 100 % routed; GND pour on both layers + 240 stitching vias |
+| Tracks | signal 0.25 mm, power 0.6 mm, GND 0.5 mm, minimum 0.20 mm; clearance 0.20–0.25 mm; vias 0.6/0.3 and 0.8/0.4 mm |
 
-## Dosyalar
+## Files
 
-| Dosya | İçerik |
+| File | Contents |
 |---|---|
-| `ESP32S3_Tasiyici.kicad_pro / .kicad_sch / .kicad_pcb` | KiCad 10 projesi |
-| `Tasiyici.kicad_sym`, `Tasiyici.pretty/` | Projeye özel semboller ve modül soket footprint'leri (modül gövdesi Fab + courtyard'da) |
-| `cikti/ustten_render.png`, `perspektif_render.png`, `alttan_render.png` | 3B render'lar |
-| `cikti/montaj_1-1.pdf` | **1:1 montaj kontrol çizimi** (A4, ölçeksiz, 50 mm kontrol çubuğu) |
-| `cikti/bakir_katmanlari_1-1.pdf` | Üst ve alt bakır, 1:1 |
-| `cikti/sema.pdf` | Şema |
-| `cikti/ERC_raporu.rpt`, `cikti/DRC_raporu.rpt` | Kontrol raporları |
-| `cikti/gerber_ESP32S3_Tasiyici.zip` | Üretim dosyaları (Gerber + Excellon) |
-| `cikti/BOM.csv` | Malzeme listesi |
-| `scripts/` | Her şeyi tek kaynaktan (`tasarim.py`) yeniden üreten betikler |
+| `ESP32S3_Carrier.kicad_pro / .kicad_sch / .kicad_pcb` | KiCad 10 project |
+| `Carrier.kicad_sym`, `Carrier.pretty/` | Project symbols and module socket footprints (module body on Fab + courtyard) |
+| `output/board_explorer.html` | **Interactive 3D board explorer**: open it in a browser, toggle layers, pull them apart, click a track to light up its whole net and list the connected pins |
+| `output/render_top.png`, `render_perspective.png`, `render_bottom.png` | 3D renders |
+| `output/assembly_1to1.pdf` | **1:1 assembly check drawing** (A4, unscaled, 50 mm check bar) |
+| `output/copper_layers_1to1.pdf` | Top and bottom copper, 1:1 |
+| `output/schematic.pdf` | Schematic |
+| `output/ERC_report.rpt`, `output/DRC_report.rpt` | Check reports |
+| `output/gerbers_ESP32S3_Carrier.zip` | Fabrication files (Gerber + Excellon) |
+| `output/BOM.csv` | Bill of materials |
+| `scripts/` | Regenerates everything from one source file (`design.py`) |
 
-## Pin haritası (ESP32-S3)
+## Pin map (ESP32-S3)
 
-| Fonksiyon | GPIO |
+| Function | GPIO |
 |---|---|
-| I2C SDA / SCL (OLED + PN532) | IO8 / IO18 (4,7k pull-up → +3V3_MOD) |
+| I2C SDA / SCL (OLED 0x3C, PN532 0x24, Si5351 0x60) | IO8 / IO18 (4.7k pull-ups to +3V3_MOD) |
 | SPI MOSI / SCK / MISO (CC1101, microSD, 2× NRF24) | IO11 / IO12 / IO13 |
-| CC1101 CS / GDO0 | IO10 / IO9 |
+| CC1101 CS / GDO0 / GDO2 | IO10 / IO9 / IO42 |
 | microSD CS | IO14 |
-| NRF24 #1 CE / CSN | IO4 / IO5 |
-| NRF24 #2 CE / CSN | IO6 / IO7 |
-| IR alıcı VS1838B | IO1 |
-| IR LED (Q1 PN2222A, 220 Ω baz) | IO2 |
-| Pasif buzzer (Q2 sürücü) | IO47 |
-| Butonlar UP / DOWN / LEFT / RIGHT / OK / BACK (GND'ye çeker) | IO15 / IO16 / IO38 / IO39 / IO40 / IO41 |
-| RDM6300 TX (bölücüyle 5 V → 3,4 V) | **IO17** (istekte pin yoktu, eklendi) |
-| Kullanılmayan | 0, 3, 19, 20, 21, 35–37, 42, 45, 46, 48, TX/RX, RST; CC1101 GDO2 ve NRF24 IRQ bağlı değil |
+| NRF24 #1 CE / CSN / IRQ | IO4 / IO5 / IO21 |
+| NRF24 #2 CE / CSN / IRQ | IO6 / IO7 / IO48 |
+| IR receiver VS1838B | IO1 |
+| IR transmitter (Q1 PN2222A, 220 Ω base, 3 LEDs) | IO2 |
+| Passive buzzer (Q2 driver) | IO47 |
+| Buttons UP / DOWN / LEFT / RIGHT / OK / BACK (pull to GND) | IO15 / IO16 / IO38 / IO39 / IO40 / IO41 |
+| RDM6300 TX (5 V → 3.4 V divider) | IO17 |
+| Unused | 0, 3, 19, 20, 35–37, 45, 46, TX/RX, RST |
 
-Butonlarda ESP32'nin iç pull-up'ını açın. DevKitC-1 v1.1'de IO38 aynı zamanda karttaki RGB LED'in veri hattı; buton çalışır ama RGB LED'i kullanırsanız çakışır.
+Enable the internal pull-ups for the buttons. On DevKitC-1 v1.1, IO38 also drives the on-board RGB LED, so the button works but the RGB LED cannot be used at the same time. GDO2 and the two NRF24 IRQ lines are optional; firmware may ignore them.
 
-## Güç mimarisi
+## Power
 
 ```
-USB → DevKit 5V pini → +5V ──[Q3 AO3401A P-MOSFET]── +5V_MOD ──┬─ microSD (5V), RDM6300 (5V), IR LED, buzzer
-                          SW7 sürgülü anahtar Q3'ü açar      └─ U2 AMS1117-3.3 → +3V3_MOD → CC1101, 2× NRF24, PN532, OLED, VS1838B
+USB → DevKit 5V pin → +5V ──[Q3 AO3401A, soft-start]── +5V_MOD ──┬─ microSD (5 V), RDM6300 (5 V), 3× IR LED, buzzer
+                     SW7 slide switch drives Q3's gate          └─ U2 AMS1117-3.3 → +3V3_MOD → CC1101, 2× NRF24, PN532, OLED, Si5351, VS1838B
 ```
 
-- **SW7 KAPALI:** ESP32 çalışmaya devam eder, tüm modüllerin beslemesi kesilir.
-- Modüllerin 3,3 V'u ESP32'nin kendi 3V3 pininden değil, ayrı AMS1117'den gelir. Sebep: modül tarafındaki ~800 µF kondansatör anahtar açılınca ESP32'nin 3V3 hattını anlık çökertip ESP'yi resetlerdi; ayrıca iki PA+LNA radyo + PN532 + WiFi, DevKit regülatörünün sınırına yaklaşıyordu.
-- Dekuplaj: her modül VCC'sinde 100 nF; CC1101 ve iki NRF24'te ayrıca 100 µF; +3V3_MOD'da 470 µF.
-- Tepe akım ~1 A'e çıkabilir; iyi bir USB portu/şarj adaptörü kullanın.
-- Yük altında +5V_MOD ~4,4–4,6 V'a inebilir; AMS1117'nin düşümü ~1,1 V olduğu için +3V3_MOD biraz sarkarsa U2 yerine aynı pin dizilişli (1 GND, 2 VO, 3 VI) SOT-223 kılıflı düşük düşümlü (LDO) bir 3,3 V regülatör takın; pin dizilişini datasheet'ten kontrol edin.
-- Anahtar kapalıyken firmware modül pinlerini (CS vb.) HIGH sürmemeli; yoksa modüller pin üzerinden kısmen beslenir.
+- **SW7 OFF:** the ESP32 keeps running, every module is unpowered.
+- **Soft-start:** R16 (100k) + C16 (100 nF gate-drain) ramp +5V_MOD in about 20 ms. Without it, switching ~900 µF of module capacitance on at once would pull the DevKit's 5 V rail down and reset the ESP32.
+- The modules' 3.3 V comes from a separate AMS1117, not from the DevKit's 3V3 pin (two PA+LNA radios + PN532 + Wi-Fi would overload the DevKit regulator).
+- Decoupling: 100 nF at every module's VCC; an extra 100 µF at the CC1101 and both NRF24s; 470 µF bulk on +3V3_MOD; a 100 µF reservoir next to the IR LEDs.
+- Peak current can approach 1 A, so use a decent USB port or charger. Under load +5V_MOD may sit near 4.5 V; if +3V3_MOD sags, replace U2 with a low-dropout SOT-223 regulator that has the same pin-out (1 GND, 2 VOUT, 3 VIN).
+- While SW7 is off, firmware should not drive module pins (CS etc.) high, otherwise the modules get back-powered through their I/O pins.
 
-## İstekten farklar / eklemeler
+## Design review (rev 1.1)
 
-1. **OLED:** 2,42" 7 pin yerine **1,3" SH1106, 4 pin I2C (GND-VCC-SCL-SDA)** — sonradan verdiğin bilgiye göre. Firmware'de SH1106 sürücüsü kullanın (SSD1306 değil), adres genelde 0x3C.
-2. **RDM6300:** Standart modüle göre çizildi: P1 (TX, RX, NC, GND, +5V) + P2 anten (2 pin). Bobin karttaki **J8**'e takılır. TX, R8/R9 bölücüsüyle IO17'ye gider.
-3. **Güç anahtarı:** Sürgülü anahtar yük akımı taşımaz, P-MOSFET'i (Q3) sürer (anahtarlar ~100 mA'lik, modüller ~700 mA çekebilir).
-4. **IR LED:** 220 Ω baz direncine ek olarak LED'e 47 Ω akım sınırlayıcı (+5V_MOD'dan ~70 mA) ve 10k baz pull-down. IR LED kart kenarına yatay bakacak şekilde footprint seçildi.
-5. **Buzzer:** Manyetik pasif buzzer GPIO'yu zorlayacağı için Q2 + 1k + 1N4148 sürücü eklendi (5 V buzzer önerilir).
-6. **microSD MISO:** Eski Catalex modülleri MISO'yu hiç bırakmaz ve ortak SPI'yı bozar. MISO hattında normalde kapalı **JP1** lehim köprüsü var; sorun olursa köprüyü kesip moduldeki 74LVC125'in MISO OE ucunu CS'ye bağlayın.
-7. **Bakır yasak alanları:** PN532 anteninin ve ESP32 WROOM anteninin altında iki katmanda da bakır yok.
+All connections were re-checked pin by pin against the module pin-outs (`scripts/netcheck.py` compares the schematic netlist with `design.py`). Changes from rev 1.0:
 
-## Doğrulanması gereken ölçüler (ÖNEMLİ)
+1. **Inrush fix (bug):** module power is now soft-started (see above).
+2. **IR receiver:** rotated 180° so the lens faces the board edge (it faced inwards); added an R11/C11 (100 Ω / 100 nF) supply filter as recommended in the VS1838B datasheet.
+3. **IR transmitter:** three IR LEDs, each with its own 33 Ω resistor (~95 mA peak each, ~0.3 A total through Q1), plus a 100 µF local reservoir.
+4. **SPI chip selects:** 10k pull-ups (R12–R15) keep every SPI device deselected while the ESP32 boots.
+5. **CC1101 moved to the centre** of the top edge; the NRF24s sit at the corners with the IR parts in between.
+6. **Si5351 added** on the shared I2C bus, bottom right, with its three SMA outputs over the bottom edge.
+7. CC1101 GDO2 and both NRF24 IRQ lines are now routed to free GPIOs.
+8. Everything (silkscreen, schematic, files) is in English.
 
-Modüller isimsiz klon; footprint'ler aşağıdaki varsayımlarla çizildi. **Sipariş vermeden önce `cikti/montaj_1-1.pdf`'i %100 / "gerçek boyut" ayarıyla yazdırın, 50 mm çubuğunu cetvelle kontrol edin ve modülleri kağıdın üstüne koyun.**
+## Dimensions to verify before ordering (IMPORTANT)
 
-> **Dikkat — 2×4 soketler (J1 CC1101, J2/J3 NRF24):** 2×4 bir header kağıda hem doğru hem 180° ters, hatta aynalı otursa da pinler deliklere denk gelir. Yani "pinler oturdu" kontrolü yetmez. Modülü yüzü yukarı, SMA dışarı bakacak şekilde tutup **modülün kendi GND etiketini/kare padini** kağıttaki **GND** yazısıyla eşleştirin: bu çizimde GND sol alt köşede (dış sıra soldan GND-CE-SCK-MISO, iç sıra VCC-CSN-MOSI-IRQ). Uymuyorsa sipariş vermeden önce `scripts/kutuphane.py` içindeki `fp_2x4` sırasını değiştirin.
+The modules are unbranded clones; the footprints use the assumptions below. **Before ordering, print `output/assembly_1to1.pdf` at 100 % / "actual size", check the 50 mm bar with a ruler and lay the modules on the paper.**
 
-| Modül | Kabul edilen gövde | Header konumu (üstten bakış) | Kaynak |
+> **2×4 sockets (J1 CC1101, J2/J3 NRF24):** a 2×4 header lands in the holes whether it is the right way round, rotated 180° or mirrored, so "the pins fit" proves nothing. Hold the module face up with the SMA pointing away and match the **module's own GND label / square pad** with **GND** on the printout: GND is the bottom-left pin (outer row left to right GND-CE-SCK-MISO, inner row VCC-CSN-MOSI-IRQ). The NRF24 orientation has been confirmed on a real module.
+
+| Module | Assumed body | Header position (top view) | Source |
 |---|---|---|---|
-| ESP32-S3-DevKitC-1 | 25,4 × 62,74 mm (+~7 mm anten taşması) | 2× 1×22, 22,86 mm ara; 22. pin USB ucundan 8,00 mm | Espressif v1.1 ölçü çizimi (DXF, 2022-04-29) — kesin |
-| CC1101 433 MHz SMA | 27 × 40 mm + SMA | 2×4, SMA'nın karşı ucunda ortalı. Dış sıra GND-GDO0-SCK-MISO, iç sıra VCC-CSN-MOSI-GDO2 | Verdiğin ~50×27 ölçü; NRF24 ile aynı diziliş varsayıldı |
-| NRF24L01+PA+LNA | 16,5 × 41 mm + SMA | 2×4 alt uçta ortalı. Dış sıra GND-CE-SCK-MISO, iç sıra VCC-CSN-MOSI-IRQ (GND sol alt köşe) | Satıcı pinout çizimleri |
-| PN532 V3 | 42,7 × 40,4 mm | 1×4 sol kenarda, kenardan ~6,5 mm içeride, dikeyde ortalı; 2 çapraz montaj deliği | Elechouse V3 kılavuzu |
-| OLED 1,3" SH1106 | 35,4 × 33,5 mm | 1×4 üst kenarda ortalı | Yaygın modül ölçüsü |
-| Catalex microSD | 42 × 24 mm | 1×6 kısa kenarda, kart yuvası sağ kenarda | Yaygın modül ölçüsü |
-| RDM6300 | 38,5 × 19 mm | P1 alt kenar sağda (TX en sağda), P2 sol üstte | RDM630 çizimi (yaklaşık) |
+| ESP32-S3-DevKitC-1 | 25.4 × 62.74 mm (+~7 mm antenna overhang) | 2× 1×22, 22.86 mm apart; pin 22 is 8.00 mm from the USB end | Espressif v1.1 dimension drawing (DXF, 2022-04-29), exact |
+| CC1101 433 MHz SMA | 27 × 40 mm + SMA | 2×4, centred at the end opposite the SMA; same pin pattern as the NRF24 | Owner's ~50×27 mm figure |
+| NRF24L01+PA+LNA | 16.5 × 41 mm + SMA | 2×4 centred at the bottom end | Vendor pin-out drawings, confirmed |
+| PN532 V3 | 42.7 × 40.4 mm | 1×4 on the left edge, ~6.5 mm in from the edge, vertically centred; 2 diagonal mounting holes | Elechouse V3 manual |
+| Si5351 (4-pin) | 32 × 25 mm + 3 SMA | 1×4 centred on the edge opposite the SMAs (VCC-GND-SCL-SDA, left to right with the SMAs pointing up) | Typical 3-SMA module, **estimate** |
+| OLED 1.3" SH1106 | 35.4 × 33.5 mm | 1×4 centred on the top edge | Typical module size |
+| Catalex microSD | 42 × 24 mm | 1×6 on the short edge, card slot at the board edge | Typical module size |
+| RDM6300 | 38.5 × 19 mm | P1 along the bottom edge on the right (TX right-most), P2 top left | RDM630 drawing (approximate) |
 
-SMA'lı modüllerin anten ucu kartın üst kenarından dışarı taşacak şekilde yerleştirildi; modül biraz uzunsa daha çok taşar, sorun değil.
+Tightest gaps between module bodies (plan view): PN532 ↔ DevKit ~1.8 mm, PN532 ↔ C6 ~3.9 mm, PN532 ↔ microSD ~4.1 mm. The PN532 header position was measured from a photo, so check these on paper first.
 
-En dar kalan yerler (modül gövdeleri arası, üstten bakış): PN532 ↔ DevKit ~1,8 mm, PN532 ↔ C6 (100 µF) ~3,9 mm, PN532 ↔ microSD ~4,1 mm. PN532'nin header konumu fotoğraftan ölçüldüğü için bunları kağıt üstünde özellikle kontrol edin.
+## Assembly notes
 
-## Montaj notları
+- Female sockets: 2× 1×22, 3× 2×4, 3× 1×4 (PN532, OLED, Si5351), 1× 1×6, 1× 1×5, 1× 1×2 (+ a 1×2 male header for J8). Standard 8.5 mm tall sockets fit.
+- Solder straight (not right-angle) male pins to the PN532, pointing down; DIP switch **I2C: 1 = ON, 2 = OFF**. The two holes at its corners are for nylon standoffs.
+- The transistors are `PN2222A` (E-B-C). A `P2N2222A` is C-B-E, so check before soldering.
+- The IR LEDs use a horizontal footprint and point out of the top edge.
+- Keep the 125 kHz coil away from the GND pour and metal (for example on the enclosure lid).
+- SMD parts use hand-solder friendly 0805/1206 footprints.
 
-- Dişi soketler: 2× 1×22, 3× 2×4, 2× 1×4, 1× 1×6, 1× 1×5, 1× 1×2 (+ J8 için 1×2 erkek pin). Standart 8,5 mm yükseklikte soketler uygundur.
-- PN532 düz (90° bükülmemiş) erkek pinle, aşağı doğru lehimlenmeli; DIP anahtar **I2C: 1=ON, 2=OFF**. Karşı köşedeki delikler naylon ara parça içindir.
-- 2N2222 için `PN2222A` (E-B-C) dizilişi kullanıldı; `P2N2222A` gövdeli olanlar C-B-E'dir, takmadan kontrol edin.
-- 125 kHz bobini metal ve GND dökümünden uzak tutun (kasa kapağına vb.).
-- SMD parçalar el lehimine uygun 0805/1206 "HandSolder" footprint'leriyle.
+## Regenerating
 
-## Yeniden üretme
-
-KiCad 10 (`D:\KiCad`), Freerouting 2.5.0 jar ve Java 25 gerekir (yollar `scripts/uret.py` başında).
+Needs KiCad 10 (`D:\KiCad`), the Freerouting 2.5.0 jar and Java 25 (paths at the top of `scripts/build.py`).
 
 ```
-D:\KiCad\bin\python.exe scripts\uret.py hepsi      # kütüphane → şema → ERC → PCB → yönlendirme → döküm → DRC → çıktılar
-D:\KiCad\bin\python.exe scripts\uret.py cikti      # sadece çıktıları yeniden üret
+D:\KiCad\bin\python.exe scripts\build.py all       # library → schematic → ERC → PCB → routing → pour → DRC → outputs → 3D explorer
+D:\KiCad\bin\python.exe scripts\build.py outputs   # outputs only
 ```
 
-Bileşen, net veya konum değişikliği `scripts/tasarim.py` içinden yapılır; şema ve PCB aynı veriden üretildiği için birbirleriyle uyumlu kalır (`scripts/netkontrol.py` şema netlistini tasarım verisiyle pin pin karşılaştırır).
+Change components, nets or positions in `scripts/design.py`; the schematic and the PCB are generated from the same data, so they always match.
