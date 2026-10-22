@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\thewo\\Desktop\\ESP32S3_Tasiyici\\ESP32S3_Carrier.kicad_sch")
-		(date "2026-10-22T09:53:00")
+		(date "2026-10-22T10:05:24")
 		(tool "Eeschema 10.0.6")
 		(sheet
 			(number "1")
@@ -1745,7 +1745,7 @@
 			(ref "J9")
 			(value "Si5351 clock gen (3x SMA)")
 			(footprint "Carrier:Si5351_3SMA_Socket")
-			(description "Si5351 clock generator module, 3x SMA, 4-pin I2C")
+			(description "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN")
 			(fields
 				(field
 					(name "Footprint") "Carrier:Si5351_3SMA_Socket")
@@ -1753,12 +1753,12 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Si5351 clock generator module, 3x SMA, 4-pin I2C")
+					(name "Description") "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN")
 			)
 			(libsource
 				(lib "Carrier")
-				(part "Si5351_I2C")
-				(description "Si5351 clock generator module, 3x SMA, 4-pin I2C")
+				(part "Si5351_7pin")
+				(description "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN")
 			)
 			(property
 				(name "Sheetname")
@@ -1788,6 +1788,15 @@
 						)
 						(pin
 							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
 						)
 					)
 				)
@@ -4267,8 +4276,8 @@
 		)
 		(libpart
 			(lib "Carrier")
-			(part "Si5351_I2C")
-			(description "Si5351 clock generator module, 3x SMA, 4-pin I2C")
+			(part "Si5351_7pin")
+			(description "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN")
 			(fields
 				(field
 					(name "Reference") "J")
@@ -4280,27 +4289,42 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Si5351 clock generator module, 3x SMA, 4-pin I2C")
+					(name "Description") "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "VCC")
+					(name "CLK0")
 					(type "passive")
 				)
 				(pin
 					(num "2")
-					(name "GND")
+					(name "CLK1")
 					(type "passive")
 				)
 				(pin
 					(num "3")
-					(name "SCL")
+					(name "CLK2")
 					(type "passive")
 				)
 				(pin
 					(num "4")
+					(name "SCL")
+					(type "passive")
+				)
+				(pin
+					(num "5")
 					(name "SDA")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "VIN")
 					(type "passive")
 				)
 			)
@@ -4855,8 +4879,8 @@
 			)
 			(node
 				(ref "J9")
-				(pin "1")
-				(pinfunction "VCC_1")
+				(pin "7")
+				(pinfunction "VIN_7")
 				(pintype "passive")
 			)
 			(node
@@ -5240,8 +5264,8 @@
 			)
 			(node
 				(ref "J9")
-				(pin "3")
-				(pinfunction "SCL_3")
+				(pin "4")
+				(pinfunction "SCL_4")
 				(pintype "passive")
 			)
 			(node
@@ -5274,8 +5298,8 @@
 			)
 			(node
 				(ref "J9")
-				(pin "4")
-				(pinfunction "SDA_4")
+				(pin "5")
+				(pinfunction "SDA_5")
 				(pintype "passive")
 			)
 			(node
@@ -5939,8 +5963,8 @@
 			)
 			(node
 				(ref "J9")
-				(pin "2")
-				(pinfunction "GND_2")
+				(pin "6")
+				(pinfunction "GND_6")
 				(pintype "passive")
 			)
 			(node
@@ -6073,6 +6097,39 @@
 		)
 		(net
 			(code "46")
+			(name "unconnected-(J9-CLK0-Pad1)")
+			(class "Default")
+			(node
+				(ref "J9")
+				(pin "1")
+				(pinfunction "CLK0_1")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(J9-CLK1-Pad2)")
+			(class "Default")
+			(node
+				(ref "J9")
+				(pin "2")
+				(pinfunction "CLK1_2")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(J9-CLK2-Pad3)")
+			(class "Default")
+			(node
+				(ref "J9")
+				(pin "3")
+				(pinfunction "CLK2_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "49")
 			(name "unconnected-(SW7-C-Pad3)")
 			(class "Default")
 			(node
@@ -6083,7 +6140,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "50")
 			(name "unconnected-(U1-3V3-Pad1)")
 			(class "Default")
 			(node
@@ -6094,7 +6151,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "51")
 			(name "unconnected-(U1-3V3-Pad2)")
 			(class "Default")
 			(node
@@ -6105,7 +6162,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "52")
 			(name "unconnected-(U1-IO0-Pad36)")
 			(class "Default")
 			(node
@@ -6116,7 +6173,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "53")
 			(name "unconnected-(U1-IO3-Pad13)")
 			(class "Default")
 			(node
@@ -6127,7 +6184,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "54")
 			(name "unconnected-(U1-IO19-Pad42)")
 			(class "Default")
 			(node
@@ -6138,7 +6195,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "55")
 			(name "unconnected-(U1-IO20-Pad41)")
 			(class "Default")
 			(node
@@ -6149,7 +6206,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "56")
 			(name "unconnected-(U1-IO35-Pad35)")
 			(class "Default")
 			(node
@@ -6160,7 +6217,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "57")
 			(name "unconnected-(U1-IO36-Pad34)")
 			(class "Default")
 			(node
@@ -6171,7 +6228,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "58")
 			(name "unconnected-(U1-IO37-Pad33)")
 			(class "Default")
 			(node
@@ -6182,7 +6239,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "59")
 			(name "unconnected-(U1-IO45-Pad37)")
 			(class "Default")
 			(node
@@ -6193,7 +6250,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "60")
 			(name "unconnected-(U1-IO46-Pad14)")
 			(class "Default")
 			(node
@@ -6204,7 +6261,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "61")
 			(name "unconnected-(U1-RST-Pad3)")
 			(class "Default")
 			(node
@@ -6215,7 +6272,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "62")
 			(name "unconnected-(U1-RX-Pad25)")
 			(class "Default")
 			(node
@@ -6226,7 +6283,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "63")
 			(name "unconnected-(U1-TX-Pad24)")
 			(class "Default")
 			(node

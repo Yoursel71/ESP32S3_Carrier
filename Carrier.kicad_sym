@@ -1943,7 +1943,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "Si5351_I2C"
+	(symbol "Si5351_7pin"
 		(pin_names
 			(offset 1.016)
 		)
@@ -1951,7 +1951,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "J"
-			(at -7.62 7.62 0)
+			(at -7.62 11.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1960,7 +1960,7 @@
 			)
 		)
 		(property "Value" "Si5351"
-			(at -7.62 -7.62 0)
+			(at -7.62 -11.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1986,7 +1986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Si5351 clock generator module, 3x SMA, 4-pin I2C"
+		(property "Description" "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN"
 			(at 0 0 0)
 			(effects
 				(font
@@ -1995,10 +1995,10 @@
 				(hide yes)
 			)
 		)
-		(symbol "Si5351_I2C_0_1"
+		(symbol "Si5351_7pin_0_1"
 			(rectangle
-				(start -7.62 6.35)
-				(end 7.62 -6.35)
+				(start -7.62 10.16)
+				(end 7.62 -10.16)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -2008,11 +2008,11 @@
 				)
 			)
 		)
-		(symbol "Si5351_I2C_1_1"
+		(symbol "Si5351_7pin_1_1"
 			(pin passive line
-				(at -10.16 3.81 0)
+				(at -10.16 7.62 0)
 				(length 2.54)
-				(name "VCC"
+				(name "CLK0"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2028,9 +2028,9 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 1.27 0)
+				(at -10.16 5.08 0)
 				(length 2.54)
-				(name "GND"
+				(name "CLK1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2046,9 +2046,9 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 -1.27 0)
+				(at -10.16 2.54 0)
 				(length 2.54)
-				(name "SCL"
+				(name "CLK2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -2064,7 +2064,25 @@
 				)
 			)
 			(pin passive line
-				(at -10.16 -3.81 0)
+				(at -10.16 0 0)
+				(length 2.54)
+				(name "SCL"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -10.16 -2.54 0)
 				(length 2.54)
 				(name "SDA"
 					(effects
@@ -2073,7 +2091,43 @@
 						)
 					)
 				)
-				(number "4"
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -10.16 -5.08 0)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at -10.16 -7.62 0)
+				(length 2.54)
+				(name "VIN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "7"
 					(effects
 						(font
 							(size 1.27 1.27)

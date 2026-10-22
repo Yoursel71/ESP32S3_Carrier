@@ -90,7 +90,7 @@
     )
     (component Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder::1
       (place C16 63500 -191500 front 0 (PN 100nF))
-      (place C17 147500 -179500 front 0 (PN 100nF))
+      (place C17 129400 -180800 front 0 (PN 100nF))
       (place C11 130500 -47600 front 0 (PN 100nF))
       (place C10 71000 -149500 front 0 (PN 100nF))
       (place C8 59000 -88900 front 0 (PN 100nF))
@@ -155,7 +155,7 @@
       (place JP1 120000 -150100 front 90 (PN SD_MISO))
     )
     (component Carrier:Si5351_3SMA_Socket
-      (place J9 140810 -184000 front 180 (PN "Si5351 clock gen (3x SMA)"))
+      (place J9 144620 -187600 front 180 (PN "Si5351 clock gen (3x SMA)"))
     )
     (component Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
       (place J8 51000 -150500 front 90 (PN "125kHz coil"))
@@ -1088,18 +1088,21 @@
       (pin Cust[T]Pad_1000.000000x500.000000_1500.000000x1000.000000_19_um_86772D42E08000F807F2952CF30D331A 2 650 0)
     )
     (image Carrier:Si5351_3SMA_Socket
-      (outline (polygon signal 0  -12685 31495  20305 31495  20305 -2495  -12685 -2495))
-      (outline (path signal 100  -12190 23000  19810 23000  19810 -2000  -12190 -2000  -12190 23000))
-      (outline (path signal 150  -12190 -2000  19810 -2000))
-      (outline (path signal 150  -12190 21000  -12190 -2000))
-      (outline (path signal 150  19810 21000  19810 -2000))
-      (outline (path signal 100  -9390 31000  -2990 31000  -2990 23000  -9390 23000  -9390 31000))
-      (outline (path signal 100  610 31000  7010 31000  7010 23000  610 23000  610 31000))
-      (outline (path signal 100  10610 31000  17010 31000  17010 23000  10610 23000  10610 31000))
-      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+      (outline (polygon signal 0  -8225 28895  23465 28895  23465 -2695  -8225 -2695))
+      (outline (path signal 100  -7730 19400  22970 19400  22970 -2200  -7730 -2200  -7730 19400))
+      (outline (path signal 150  -7730 -2200  22970 -2200))
+      (outline (path signal 150  -7730 17400  -7730 -2200))
+      (outline (path signal 150  22970 17400  22970 -2200))
+      (outline (path signal 100  -5180 28400  1220 28400  1220 19400  -5180 19400  -5180 28400))
+      (outline (path signal 100  4420 28400  10820 28400  10820 19400  4420 19400  4420 28400))
+      (outline (path signal 100  14020 28400  20420 28400  20420 19400  14020 19400  14020 28400))
+      (pin Round[A]Pad_1700.000000_um 1 0 0)
       (pin Round[A]Pad_1700.000000_um 2 2540 0)
       (pin Round[A]Pad_1700.000000_um 3 5080 0)
       (pin Round[A]Pad_1700.000000_um 4 7620 0)
+      (pin Round[A]Pad_1700.000000_um 5 10160 0)
+      (pin Round[A]Pad_1700.000000_um 6 12700 0)
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 7 15240 0)
     )
     (image Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
       (outline (polygon signal 0  -1765 -4315  -1765 1765  1765 1765  1765 -4315))
@@ -1479,7 +1482,7 @@
   (network
     (net +3V3_MOD
       (pins C14-1 C13-1 U2-2 U2-2@1 R11-1 R15-1 R14-1 R13-1 R12-1 R2-1 R1-1 C17-1
-        C8-1 C7-1 C6-1 C5-1 C4-1 C3-1 C2-1 C1-1 J9-1 J5-2 J4-2 J3-2 J2-2 J1-2)
+        C8-1 C7-1 C6-1 C5-1 C4-1 C3-1 C2-1 C1-1 J9-7 J5-2 J4-2 J3-2 J2-2 J1-2)
     )
     (net +5V
       (pins Q3-2 R10-1 U1-21)
@@ -1525,10 +1528,10 @@
       (pins J1-8 U1-28)
     )
     (net /I2C_SCL
-      (pins R2-2 J9-3 J5-3 J4-4 U1-11)
+      (pins R2-2 J9-4 J5-3 J4-4 U1-11)
     )
     (net /I2C_SDA
-      (pins R1-2 J9-4 J5-4 J4-3 U1-12)
+      (pins R1-2 J9-5 J5-4 J4-3 U1-12)
     )
     (net /IR_A1
       (pins R5-2 D1-2)
@@ -1608,7 +1611,7 @@
     (net GND
       (pins SW6-2 SW6-2@1 SW5-2 SW5-2@1 SW4-2 SW4-2@1 SW3-2 SW3-2@1 SW2-2 SW2-2@1
         SW1-2 SW1-2@1 C14-2 C13-2 C12-2 U2-1 SW7-1 R7-2 Q2-1 U3-2 C15-2 R4-2 Q1-1
-        R9-2 C17-2 C11-2 C10-2 C9-2 C8-2 C7-2 C6-2 C5-2 C4-2 C3-2 C2-2 C1-2 J9-2 J7-4
+        R9-2 C17-2 C11-2 C10-2 C9-2 C8-2 C7-2 C6-2 C5-2 C4-2 C3-2 C2-2 C1-2 J9-6 J7-4
         J6-1 J5-1 J4-1 J3-1 J2-1 J1-1 U1-23 U1-43 U1-22 U1-44)
     )
     (net "unconnected-(J7-NC-Pad3)"
@@ -1616,6 +1619,15 @@
     )
     (net "unconnected-(J7-RX-Pad2)"
       (pins J7-2)
+    )
+    (net "unconnected-(J9-CLK0-Pad1)"
+      (pins J9-1)
+    )
+    (net "unconnected-(J9-CLK1-Pad2)"
+      (pins J9-2)
+    )
+    (net "unconnected-(J9-CLK2-Pad3)"
+      (pins J9-3)
     )
     (net "unconnected-(SW7-C-Pad3)"
       (pins SW7-3)
@@ -1667,7 +1679,8 @@
       /IR_RX /IR_RX_VCC /IR_TX /NRF1_CE /NRF1_CSN /NRF1_IRQ /NRF2_CE /NRF2_CSN
       /NRF2_IRQ /PWR_GATE /PWR_SW /RFID_ANT1 /RFID_ANT2 /RFID_TX /RFID_TX5V
       /SD_CS /SD_MISO_RAW /SPI_MISO /SPI_MOSI /SPI_SCK "unconnected-(J7-NC-Pad3)"
-      "unconnected-(J7-RX-Pad2)" "unconnected-(SW7-C-Pad3)" "unconnected-(U1-3V3-Pad1)"
+      "unconnected-(J7-RX-Pad2)" "unconnected-(J9-CLK0-Pad1)" "unconnected-(J9-CLK1-Pad2)"
+      "unconnected-(J9-CLK2-Pad3)" "unconnected-(SW7-C-Pad3)" "unconnected-(U1-3V3-Pad1)"
       "unconnected-(U1-3V3-Pad2)" "unconnected-(U1-IO0-Pad36)" "unconnected-(U1-IO19-Pad42)"
       "unconnected-(U1-IO20-Pad41)" "unconnected-(U1-IO3-Pad13)" "unconnected-(U1-IO35-Pad35)"
       "unconnected-(U1-IO36-Pad34)" "unconnected-(U1-IO37-Pad33)" "unconnected-(U1-IO45-Pad37)"

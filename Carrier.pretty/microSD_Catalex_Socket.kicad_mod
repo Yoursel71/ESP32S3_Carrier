@@ -7,7 +7,7 @@
 	(property "Reference" "REF**"
 		(at 6 -3.5 0)
 		(layer "F.SilkS")
-		(uuid "26e9f2e7-5f26-4148-9a20-05ab69db6b95")
+		(uuid "dfcb289e-08de-41ba-9279-976796f24bc3")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 	(property "Value" "microSD_Catalex_Socket"
 		(at 20 15 0)
 		(layer "F.Fab")
-		(uuid "0a9cd409-d6f4-48f3-973c-6f2fb18061f8")
+		(uuid "b7d1a334-9929-48fa-8091-47ce1597f7a1")
 		(effects
 			(font
 				(size 1 1)
@@ -30,7 +30,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "97b51299-ea1b-4014-a2e1-9661e7b9f711")
+		(uuid "fa22ce5a-e1be-4497-a4f3-90888b221559")
 		(effects
 			(font
 				(size 1 1)
@@ -42,7 +42,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a2f9220c-9eac-4677-bb27-b001d0e3e4e5")
+		(uuid "5cc9dec0-3c85-4b18-9517-03afb5140a1a")
 		(effects
 			(font
 				(size 1 1)
@@ -57,12 +57,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "e1342a2f-4590-42b5-9f87-f9e23689a8ad")
+		(uuid "d103fadc-dcf9-4dcf-87cf-24c49c70814a")
 	)
 	(fp_text user "GND"
 		(at 1.5 0 0)
 		(layer "F.SilkS")
-		(uuid "3e7d2ded-86f1-49f0-9038-1ecd793739c1")
+		(uuid "dbae604b-44a3-4f41-a0df-2c033cdc714e")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -77,12 +77,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "32b49e0b-b200-44f0-8080-7b2344e2a69f")
+		(uuid "fc2de183-bccf-4437-85a7-4c6ee84859c6")
 	)
 	(fp_text user "VCC"
 		(at 1.5 2.54 0)
 		(layer "F.SilkS")
-		(uuid "96432c95-4fcc-49ae-9133-c11a74cdc073")
+		(uuid "e065f5f6-1464-4c41-b290-a5fe5c0de3a3")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -97,12 +97,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "2baa6f12-c389-4ce4-b12e-f2960f686938")
+		(uuid "a7ff308c-3173-4aba-8718-015597c561fd")
 	)
 	(fp_text user "MISO"
 		(at 1.5 5.08 0)
 		(layer "F.SilkS")
-		(uuid "2216e54e-6298-471d-90e1-0f9881696e36")
+		(uuid "d7604fbb-3fe7-48d8-9618-5021b739c0ea")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -117,12 +117,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "4e3c35ff-d7ad-4de2-b925-994e13b3871a")
+		(uuid "62d054fe-d8f2-41d1-b7c4-dcda8f7cbc71")
 	)
 	(fp_text user "MOSI"
 		(at 1.5 7.62 0)
 		(layer "F.SilkS")
-		(uuid "1df44f81-1666-49cf-ba99-5b8adddb2bf7")
+		(uuid "c92e45d0-edc9-4116-a931-cd8e426249ea")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -137,12 +137,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "7b7638a8-d0d0-462e-9626-ea64327f17a4")
+		(uuid "682bff27-5d4a-449d-8ec3-c522bca4f92b")
 	)
 	(fp_text user "SCK"
 		(at 1.5 10.16 0)
 		(layer "F.SilkS")
-		(uuid "6bf671be-c94b-4fd8-af84-2d1a5a082fb5")
+		(uuid "09078284-bd9d-4e1c-aedb-42b14cdc423b")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -157,12 +157,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "c0d134cc-1c1e-4417-9abb-92e2a61b1610")
+		(uuid "d73a8061-6aca-4af7-92df-533bc4901228")
 	)
 	(fp_text user "CS"
 		(at 1.5 12.7 0)
 		(layer "F.SilkS")
-		(uuid "913e79da-ac9a-4336-a883-774071b07553")
+		(uuid "dc8a7f1d-da5b-4528-81f6-8473ccc5636d")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -180,7 +180,7 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "55cf46bd-c984-4746-905d-1326b08942fe")
+		(uuid "3dd20647-aec4-467c-86f7-6ca73e101676")
 	)
 	(fp_line
 		(start -1.7 -5.65)
@@ -190,7 +190,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "7c3f9ea1-4a2f-4483-8642-3ce41811361f")
+		(uuid "6eed1fd8-768c-4580-88b3-0b36c3782c10")
 	)
 	(fp_rect
 		(start -2.2 -6.15)
@@ -201,12 +201,12 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "38aae1cf-a278-436a-9ab6-cfedc69fb658")
+		(uuid "628a03d8-b766-4689-81de-dcdc0c113948")
 	)
 	(fp_text user "Catalex microSD"
 		(at 19.3 6.35 0)
 		(layer "F.Fab")
-		(uuid "718330bf-2f16-4d9c-aae3-f7d67217f19c")
+		(uuid "b01e6339-f193-420f-a88e-3882382630b6")
 		(effects
 			(font
 				(size 1 1)
@@ -222,7 +222,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "f7bfb2b7-0881-49b1-9a0f-447b01376bec")
+		(uuid "3618b5f7-3269-4b5b-b5ee-341be5aa9263")
 	)
 	(fp_line
 		(start -1.7 18.35)
@@ -232,7 +232,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "b783ea42-da8b-4fab-82d4-576c5b633bb4")
+		(uuid "f423cd9f-8c47-469d-bf57-d0fa5b65a4c9")
 	)
 	(fp_rect
 		(start 26 0.35)
@@ -243,12 +243,12 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "da5de074-2401-417d-8b67-61a4a71574a4")
+		(uuid "90721b9e-53f7-4c05-812f-5814a63d1d38")
 	)
 	(fp_text user "card slot ->"
 		(at 31 6.35 0)
 		(layer "F.Fab")
-		(uuid "a8dbab05-7b65-499f-bf29-37dd1daa0c47")
+		(uuid "52419ad9-6c39-4785-b2cb-21213359f44b")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -259,7 +259,7 @@
 	(fp_text user "microSD (Catalex)"
 		(at 20 3 0)
 		(layer "F.SilkS")
-		(uuid "43a9c259-fa4f-4f10-b1bc-04f9dc141097")
+		(uuid "7641b74a-6f15-4c2d-8337-8bcec01a7886")
 		(effects
 			(font
 				(size 1.1 1.1)
@@ -270,7 +270,7 @@
 	(fp_text user "card slot at edge ->"
 		(at 20 9.5 0)
 		(layer "F.SilkS")
-		(uuid "34d28764-a1bc-4d16-818f-89be48fd9e92")
+		(uuid "2da44632-806e-467a-b676-0a9ccf877cb6")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -292,7 +292,7 @@
 	(fp_text user "${REFERENCE}"
 		(at 20 16.6 0)
 		(layer "F.Fab")
-		(uuid "d4ebcd57-59ad-4edb-b8b1-b8819d993fba")
+		(uuid "83fa0757-3993-4409-be6e-da7bc076735d")
 		(effects
 			(font
 				(size 1 1)

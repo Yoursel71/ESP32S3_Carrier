@@ -7,7 +7,7 @@
 	(property "Reference" "REF**"
 		(at -11.89 2 0)
 		(layer "F.SilkS")
-		(uuid "eefff2f2-6125-4a2d-88f5-afb5dd09f328")
+		(uuid "925dc6c7-3915-46ca-85e8-cbeafedc6f29")
 		(effects
 			(font
 				(size 1 1)
@@ -18,7 +18,7 @@
 	(property "Value" "OLED_1.3in_I2C_Socket"
 		(at 3.81 29 0)
 		(layer "F.Fab")
-		(uuid "32551998-88f1-4d21-96c3-579143edc970")
+		(uuid "01995526-e4a8-49f0-b79a-6a101acfb329")
 		(effects
 			(font
 				(size 1 1)
@@ -30,7 +30,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "eaa24a59-638b-4cda-8d6f-9cd904589837")
+		(uuid "4bd3cf30-786b-4f03-a7fd-e6b095f3cd73")
 		(effects
 			(font
 				(size 1 1)
@@ -42,7 +42,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "398215b8-209f-4514-8e22-649e2906dd40")
+		(uuid "b610af98-f99a-4b60-92ef-0869eb2e6218")
 		(effects
 			(font
 				(size 1 1)
@@ -57,12 +57,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "a3770606-6608-4ca0-be33-7746fb50e7d0")
+		(uuid "4e9e5238-2c3f-40cd-b80f-f725b2548b7e")
 	)
 	(fp_text user "GND"
 		(at 0 3 90)
 		(layer "F.SilkS")
-		(uuid "e3fd544c-50e5-4d68-91ff-597459b239f6")
+		(uuid "00eec5fd-2e05-4c09-b436-2ae8af964001")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -76,12 +76,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "ff35cb78-907a-4aa1-9506-3c6064fcabac")
+		(uuid "69de64e5-64aa-426d-b91b-de64fcaab6cb")
 	)
 	(fp_text user "VCC"
 		(at 2.54 3 90)
 		(layer "F.SilkS")
-		(uuid "a69b0ca2-9209-473a-a5a3-cb0edeeb9b49")
+		(uuid "f648ab52-7b17-4267-a21f-85c9f5201bb3")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -95,12 +95,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b9b0ea1a-7a82-48b4-97cc-5e8994c1a226")
+		(uuid "62a16393-bfe3-40ca-be77-7df8c05509d5")
 	)
 	(fp_text user "SCL"
 		(at 5.08 3 90)
 		(layer "F.SilkS")
-		(uuid "969ab19a-d501-467c-9bf8-6061b35caed2")
+		(uuid "f5683d27-f1d7-49ac-bf0c-3dffa3769bc4")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -114,12 +114,12 @@
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "cfb57719-6492-42b2-9c85-128db410935a")
+		(uuid "51a6b6f6-ecb2-4334-98e2-16d235c0480d")
 	)
 	(fp_text user "SDA"
 		(at 7.62 3 90)
 		(layer "F.SilkS")
-		(uuid "cfdebc21-0c99-4a14-99f7-3c58260c8d5d")
+		(uuid "3ff121d4-2f54-4384-9951-45b626c2334e")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -136,7 +136,7 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "44d665a6-021f-4c6e-bafa-3b3c661f727e")
+		(uuid "b35e47a6-00bc-4c56-9dfb-53826d2babe6")
 	)
 	(fp_line
 		(start -13.89 -1.6)
@@ -146,7 +146,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "16c3585b-70a8-4db3-a63b-441399064c97")
+		(uuid "3e728422-363d-4f41-90e5-0c6a94430e9e")
 	)
 	(fp_line
 		(start -13.89 31.9)
@@ -156,7 +156,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "4b925ecf-1a7f-4006-9a89-922e533f40aa")
+		(uuid "8ed7339c-a13c-4e4f-bcd0-964a25d90fed")
 	)
 	(fp_line
 		(start -13.89 -1.6)
@@ -166,7 +166,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "e5f03315-6718-42d7-a47a-3650ef45c821")
+		(uuid "a7686b59-3137-4315-bd44-77b2636d97a5")
 	)
 	(fp_line
 		(start 21.51 -1.6)
@@ -176,7 +176,7 @@
 			(type dash)
 		)
 		(layer "F.SilkS")
-		(uuid "59542f1d-9862-4f6b-9f20-a7b2cbfb60c9")
+		(uuid "9fe268da-c94b-46ef-85f4-52af74eb4f8a")
 	)
 	(fp_rect
 		(start -14.39 -2.1)
@@ -187,12 +187,12 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "8a9da802-bc74-42d2-80a8-b4e534842390")
+		(uuid "f834ad8f-5a21-417c-a349-f4724b9b6a70")
 	)
 	(fp_text user "OLED 1.3in SH1106"
 		(at 3.81 15.15 0)
 		(layer "F.Fab")
-		(uuid "903f53c9-7b5a-4bca-b456-2f7dc0db4d47")
+		(uuid "717ced54-d149-4f37-ad84-6344bea586c0")
 		(effects
 			(font
 				(size 1 1)
@@ -209,12 +209,12 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "bfbd88f7-4326-43d6-a1d3-adb30d07b687")
+		(uuid "4533bcd1-1d16-4eb8-b32a-3fcf26d6fcfd")
 	)
 	(fp_text user "OLED 1.3\" SH1106 I2C"
 		(at 3.81 12 0)
 		(layer "F.SilkS")
-		(uuid "e999c62d-7d72-4c71-a342-cc6f7a0a9b93")
+		(uuid "6861c2f2-d2ea-43ac-9cef-e9878632f878")
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -225,7 +225,7 @@
 	(fp_text user "GND-VCC-SCL-SDA"
 		(at 3.81 15 0)
 		(layer "F.SilkS")
-		(uuid "58af22ee-2820-4d8e-b8a0-12de723fff8a")
+		(uuid "3d805d68-9851-44a7-9674-bac0b989cbc3")
 		(effects
 			(font
 				(size 0.9 0.9)
@@ -247,7 +247,7 @@
 	(fp_text user "${REFERENCE}"
 		(at 3.81 30.6 0)
 		(layer "F.Fab")
-		(uuid "b2cff60e-3393-419a-b072-fcf077ee563b")
+		(uuid "66d7d660-8dd8-4cca-8327-622ef1042ac5")
 		(effects
 			(font
 				(size 1 1)

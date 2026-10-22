@@ -11,7 +11,7 @@ A 2-layer handheld carrier PCB for the ESP32-S3-DevKitC-1 (N16R8). Every module 
 | On board | 3× IR LED (940 nm) + VS1838B receiver, passive buzzer, 6 buttons (D-pad + OK + BACK), module power switch with soft-start, AMS1117-3.3 |
 | ERC | **0 errors, 0 warnings** (`output/ERC_report.rpt`) |
 | DRC | **0 violations, 0 unconnected pads, schematic ↔ PCB in sync** (`--schematic-parity --severity-all`, `output/DRC_report.rpt`) |
-| Routing | Freerouting 2.5.0, 100 % routed; GND pour on both layers + 240 stitching vias |
+| Routing | Freerouting 2.5.0, 100 % routed; GND pour on both layers + 277 stitching vias |
 | Tracks | signal 0.25 mm, power 0.6 mm, GND 0.5 mm, minimum 0.20 mm; clearance 0.20–0.25 mm; vias 0.6/0.3 and 0.8/0.4 mm |
 
 ## Files
@@ -72,7 +72,7 @@ All connections were re-checked pin by pin against the module pin-outs (`scripts
 3. **IR transmitter:** three IR LEDs, each with its own 47 Ω resistor (~67 mA each, ~0.2 A total through Q1), plus a 100 µF local reservoir. Drive IO2 only with the modulated 38 kHz carrier and never hold it high: the LEDs and resistors are sized for pulsed use.
 4. **SPI chip selects:** 10k pull-ups (R12–R15) keep every SPI device deselected while the ESP32 boots.
 5. **CC1101 moved to the centre** of the top edge; the NRF24s sit at the corners with the IR parts in between.
-6. **Si5351 added** on the shared I2C bus, bottom right, with its three SMA outputs over the bottom edge.
+6. **Si5351A added** (7-pin module) on the shared I2C bus, bottom right, with its three SMA outputs over the bottom edge.
 7. CC1101 GDO2 and both NRF24 IRQ lines are now routed to free GPIOs.
 8. Everything (silkscreen, schematic, files) is in English.
 
@@ -80,15 +80,15 @@ All connections were re-checked pin by pin against the module pin-outs (`scripts
 
 The modules are unbranded clones; the footprints use the assumptions below. **Before ordering, print `output/assembly_1to1.pdf` at 100 % / "actual size", check the 50 mm bar with a ruler and lay the modules on the paper.**
 
-> **2×4 sockets (J1 CC1101, J2/J3 NRF24):** a 2×4 header lands in the holes whether it is the right way round, rotated 180° or mirrored, so "the pins fit" proves nothing. Hold the module face up with the SMA pointing away and match the **module's own GND label / square pad** with **GND** on the printout: GND is the bottom-left pin (outer row left to right GND-CE-SCK-MISO, inner row VCC-CSN-MOSI-IRQ). The NRF24 orientation has been confirmed on a real module.
+> **2×4 sockets (J1 CC1101, J2/J3 NRF24):** a 2×4 header lands in the holes whether it is the right way round, rotated 180° or mirrored, so "the pins fit" proves nothing. Hold the module face up with the SMA pointing away and match the **module's own GND label / square pad** with **GND** on the printout: GND is the bottom-left pin (outer row left to right GND-CE-SCK-MISO, inner row VCC-CSN-MOSI-IRQ). The NRF24 and CC1101 orientation has been confirmed on the real modules.
 
 | Module | Assumed body | Header position (top view) | Source |
 |---|---|---|---|
 | ESP32-S3-DevKitC-1 | 25.4 × 62.74 mm (+~7 mm antenna overhang) | 2× 1×22, 22.86 mm apart; pin 22 is 8.00 mm from the USB end | Espressif v1.1 dimension drawing (DXF, 2022-04-29), exact |
-| CC1101 433 MHz SMA | 27 × 40 mm + SMA | 2×4, centred at the end opposite the SMA; same pin pattern as the NRF24 | Owner's ~50×27 mm figure |
+| CC1101 433 MHz SMA | 27 × 40 mm + SMA | 2×4, centred at the end opposite the SMA; same pin pattern as the NRF24 (GND bottom-left, confirmed) | Owner's ~50×27 mm figure |
 | NRF24L01+PA+LNA | 16.5 × 41 mm + SMA | 2×4 centred at the bottom end | Vendor pin-out drawings, confirmed |
 | PN532 V3 | 42.7 × 40.4 mm | 1×4 on the left edge, ~6.5 mm in from the edge, vertically centred; 2 diagonal mounting holes | Elechouse V3 manual |
-| Si5351 (4-pin) | 32 × 25 mm + 3 SMA | 1×4 centred on the edge opposite the SMAs (VCC-GND-SCL-SDA, left to right with the SMAs pointing up) | Typical 3-SMA module, **estimate** |
+| Si5351A (7-pin) | 30.7 × 21.6 mm + 3 SMA | 1×7 centred on the long edge opposite the SMAs, 2.2 mm from the edge; left to right with the SMAs pointing up: 0, 1, 2, SCL, SDA, GND, VIN (square pad) | Owner's module (CJMCU/Adafruit-style board), confirmed from its drawing |
 | OLED 1.3" SH1106 | 35.4 × 33.5 mm | 1×4 centred on the top edge | Typical module size |
 | Catalex microSD | 42 × 24 mm | 1×6 on the short edge, card slot at the board edge | Typical module size |
 | RDM6300 | 38.5 × 19 mm | P1 along the bottom edge on the right (TX right-most), P2 top left | RDM630 drawing (approximate) |
@@ -97,7 +97,8 @@ Tightest gaps between module bodies (plan view): PN532 ↔ DevKit ~1.8 mm, PN532
 
 ## Assembly notes
 
-- Female sockets: 2× 1×22, 3× 2×4, 3× 1×4 (PN532, OLED, Si5351), 1× 1×6, 1× 1×5, 1× 1×2 (+ a 1×2 male header for J8). Standard 8.5 mm tall sockets fit.
+- Female sockets: 2× 1×22, 3× 2×4, 1× 1×7 (Si5351), 2× 1×4 (PN532, OLED), 1× 1×6, 1× 1×5, 1× 1×2 (+ a 1×2 male header for J8). Standard 8.5 mm tall sockets fit.
+- Si5351: only SCL, SDA, GND and VIN are used (pins 0/1/2 duplicate the SMA outputs and stay unconnected). VIN is fed from +3V3_MOD on purpose: the module's I2C level shifter pulls the bus up to VIN, so 5 V there would put 5 V on the ESP32's I2C pins.
 - Solder straight (not right-angle) male pins to the PN532, pointing down; DIP switch **I2C: 1 = ON, 2 = OFF**. The two holes at its corners are for nylon standoffs.
 - The transistors are `PN2222A` (E-B-C). A `P2N2222A` is C-B-E, so check before soldering.
 - The IR LEDs use a horizontal footprint and point out of the top edge.

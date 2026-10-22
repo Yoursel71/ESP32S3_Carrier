@@ -140,8 +140,9 @@ def write_symlib():
                    P("GND", "VCC", "MISO", "MOSI", "SCK", "CS")),
         box_symbol("RDM6300", "J", "RDM6300", "Carrier:RDM6300_Socket", "RDM6300 125kHz, P1 (1-5) + P2 antenna (6-7)",
                    P("TX", "RX", "NC", "GND", "+5V", "ANT1", "ANT2")),
-        box_symbol("Si5351_I2C", "J", "Si5351", "Carrier:Si5351_3SMA_Socket", "Si5351 clock generator module, 3x SMA, 4-pin I2C",
-                   P("VCC", "GND", "SCL", "SDA")),
+        box_symbol("Si5351_7pin", "J", "Si5351", "Carrier:Si5351_3SMA_Socket",
+                   "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN",
+                   P("CLK0", "CLK1", "CLK2", "SCL", "SDA", "GND", "VIN")),
         box_symbol("VS1838B", "U", "VS1838B", "OptoDevice:Vishay_MINICAST-3Pin", "38kHz IR receiver (OUT, GND, VCC)",
                    P("OUT", "GND", "VCC"), half_w=5.08),
         flatten("Transistor_BJT", "PN2222A"),
@@ -385,28 +386,30 @@ def fp_rdm():
 
 
 def fp_si5351():
-    """Top view with the SMA edge up: 1x4 header (VCC, GND, SCL, SDA) centred on the opposite edge."""
+    """Si5351A module (30.7 x 21.6 mm). Top view with the CLK/SMA edge up: 1x7 header 2.2 mm from the
+    opposite long edge, centred, pins left to right 0, 1, 2, SCL, SDA, GND, VIN (VIN = square pad)."""
     it = []
-    names = ["VCC", "GND", "SCL", "SDA"]
-    for k in range(4):
-        it.append(tht_pad(str(k + 1), 2.54 * k, 0, rect=(k == 0)))
-        it.append(fp_text(names[k], 2.54 * k, -3.2, size=0.8, angle=90))
-    cx = 3.81
-    bw, blen, sma = 32.0, 25.0, 8.0
+    names = ["0", "1", "2", "SCL", "SDA", "GND", "VIN"]
+    for k in range(7):
+        it.append(tht_pad(str(k + 1), 2.54 * k, 0, rect=(k == 6)))
+        it.append(fp_text(names[k], 2.54 * k, 3.6, size=0.8, angle=90))
+    cx = 7.62
+    bw, blen, sma = 30.7, 21.6, 9.0
     x1, x2 = cx - bw / 2, cx + bw / 2
-    y2 = 2.0
+    y2 = 2.2
     y1 = y2 - blen
     it += body(x1, y1, x2, y2, "Si5351", sides="B", crt_extra=(x1, y1 - sma, x2, y1))
     it += [fp_line(x1, y1 + 2.0, x1, y2, "F.SilkS", 0.15, "dash"), fp_line(x2, y1 + 2.0, x2, y2, "F.SilkS", 0.15, "dash")]
-    for k, dx in enumerate((-10.0, 0.0, 10.0)):
+    for k, dx in enumerate((-9.6, 0.0, 9.6)):
         it.append(fp_rect(cx + dx - 3.2, y1 - sma, cx + dx + 3.2, y1, "F.Fab", 0.1))
         it.append(fp_text("CLK%d" % k, cx + dx, y1 - sma / 2, "F.Fab", 0.8))
-    it.append(fp_text("Si5351 CLOCK GEN", cx, y1 + 9.0, "F.SilkS", 1.1))
-    it.append(fp_text("3x SMA out (board edge)", cx, y1 + 11.5, "F.SilkS", 0.8))
-    it.append(fp_text("VCC-GND-SCL-SDA", cx, y1 + 13.8, "F.SilkS", 0.8))
-    it.append(model("PinSocket_1x04_P2.54mm_Vertical", 0, 0, 270))
-    footprint("Si5351_3SMA_Socket", "Si5351 clock generator module (~32x25mm + 3 SMA), 1x4 I2C header (VCC,GND,SCL,SDA)",
-              it, (x1 + 2.5, y1 + 4.0), (cx, y1 + 17.0))
+    it.append(fp_text("Si5351 CLOCK GEN", cx, y1 + 6.5, "F.SilkS", 1.1))
+    it.append(fp_text("3x SMA out (board edge)", cx, y1 + 9.0, "F.SilkS", 0.8))
+    it.append(fp_text("VIN = 3.3V only", cx, y1 + 11.3, "F.SilkS", 0.8))
+    it.append(model("PinSocket_1x07_P2.54mm_Vertical", 0, 0, 270))
+    footprint("Si5351_3SMA_Socket",
+              "Si5351A clock generator module (30.7x21.6mm + 3 SMA), 1x7 header 0,1,2,SCL,SDA,GND,VIN",
+              it, (x1 + 2.5, y1 + 3.0), (cx, y1 + 14.0))
 
 
 def write_fplib():
