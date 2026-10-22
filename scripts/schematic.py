@@ -168,7 +168,8 @@ NOTES = """NOTES
    PN532 V3 DIP switch: SW1=ON SW2=OFF for I2C.
 5) RDM6300 TX is 5 V logic -> R8/R9 divider (~3.4 V) -> IO17. The 125 kHz coil plugs into J8.
 6) IR receiver VS1838B on IO1 (R11/C11 supply filter, lens faces the top edge). IR transmitter on IO2: Q1 + 220R base,
-   three IR LEDs, each with its own 33R resistor (~95 mA peak each), C15 local reservoir. Buzzer on IO47 (Q2 + 1N4148).
+   three IR LEDs, each with its own 47R resistor (~67 mA each), C15 local reservoir. Drive IO2 only with the 38 kHz carrier,
+   never hold it high. Buzzer on IO47 (Q2 + 1N4148).
 7) Buttons pull to GND (enable internal pull-ups): UP=IO15 DOWN=IO16 LEFT=IO38 RIGHT=IO39 OK=IO40 BACK=IO41.
    Note: on DevKitC-1 v1.1 IO38 also drives the on-board RGB LED.
 8) JP1: normally-closed solder bridge. Old Catalex modules never release MISO; if SPI devices clash, cut JP1 and tie the

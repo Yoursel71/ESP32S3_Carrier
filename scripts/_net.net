@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\thewo\\Desktop\\ESP32S3_Tasiyici\\ESP32S3_Carrier.kicad_sch")
-		(date "2026-10-22T09:33:42")
+		(date "2026-10-22T09:53:00")
 		(tool "Eeschema 10.0.6")
 		(sheet
 			(number "1")
@@ -2263,7 +2263,7 @@
 		)
 		(comp
 			(ref "R5")
-			(value "33")
+			(value "47")
 			(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
 			(description "Resistor")
 			(fields
@@ -2911,7 +2911,7 @@
 		)
 		(comp
 			(ref "R17")
-			(value "33")
+			(value "47")
 			(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
 			(description "Resistor")
 			(fields
@@ -2965,7 +2965,7 @@
 		)
 		(comp
 			(ref "R18")
-			(value "33")
+			(value "47")
 			(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
 			(description "Resistor")
 			(fields

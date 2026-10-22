@@ -142,9 +142,9 @@
       (place Q1 78500 -62800 front 0 (PN PN2222A))
     )
     (component Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
-      (place R18 122230 -54200 front 90 (PN 33))
-      (place R17 85229.999 -54200 front 90 (PN 33))
-      (place R5 77230 -54200 front 90 (PN 33))
+      (place R18 122230 -54200 front 90 (PN 47))
+      (place R17 85229.999 -54200 front 90 (PN 47))
+      (place R5 77230 -54200 front 90 (PN 47))
     )
     (component LED_THT:LED_D5.0mm_Horizontal_O1.27mm_Z3.0mm
       (place D3 124770 -48500 front 180 (PN "IR LED 940nm"))

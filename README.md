@@ -69,7 +69,7 @@ All connections were re-checked pin by pin against the module pin-outs (`scripts
 
 1. **Inrush fix (bug):** module power is now soft-started (see above).
 2. **IR receiver:** rotated 180° so the lens faces the board edge (it faced inwards); added an R11/C11 (100 Ω / 100 nF) supply filter as recommended in the VS1838B datasheet.
-3. **IR transmitter:** three IR LEDs, each with its own 33 Ω resistor (~95 mA peak each, ~0.3 A total through Q1), plus a 100 µF local reservoir.
+3. **IR transmitter:** three IR LEDs, each with its own 47 Ω resistor (~67 mA each, ~0.2 A total through Q1), plus a 100 µF local reservoir. Drive IO2 only with the modulated 38 kHz carrier and never hold it high: the LEDs and resistors are sized for pulsed use.
 4. **SPI chip selects:** 10k pull-ups (R12–R15) keep every SPI device deselected while the ESP32 boots.
 5. **CC1101 moved to the centre** of the top edge; the NRF24s sit at the corners with the IR parts in between.
 6. **Si5351 added** on the shared I2C bus, bottom right, with its three SMA outputs over the bottom edge.
@@ -114,3 +114,5 @@ D:\KiCad\bin\python.exe scripts\build.py outputs   # outputs only
 ```
 
 Change components, nets or positions in `scripts/design.py`; the schematic and the PCB are generated from the same data, so they always match.
+
+After a re-route, DRC may report `starved_thermal` on a GND pad that ends up boxed in by tracks; add that `(ref, pad)` to `SOLID_GND` in `scripts/finish.py` and run `build.py finish` again.
