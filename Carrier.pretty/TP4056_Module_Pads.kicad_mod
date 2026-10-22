@@ -1,0 +1,260 @@
+(footprint "TP4056_Module_Pads"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "TP4056 protected charger module (~28x17.5mm, USB at the left edge), wire/pin pads")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at 14 -1.6 0)
+		(layer "F.SilkS")
+		(uuid "82474d61-f069-4edd-abc7-d4f6f92633ab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TP4056_Module_Pads"
+		(at 14 19 0)
+		(layer "F.Fab")
+		(uuid "a4e86ff8-0609-40e1-85f4-6bfc0bc15d16")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "30c4127a-7718-401a-8f5d-db6e58f10608")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "TP4056 protected charger module (~28x17.5mm, USB at the left edge), wire/pin pads"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e66f3853-d207-43f3-a98d-53de03442210")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 26.4 1.8)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "718317bd-b357-481f-a07b-98623d4b5bb9")
+	)
+	(fp_text user "OUT+"
+		(at 23.4 1.8 0)
+		(layer "F.SilkS")
+		(uuid "1b98e2c8-27a0-400f-89ba-629cc283aff9")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at 26.4 6.6)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "66c3b604-cd71-45b9-b20f-46c0eb66e669")
+	)
+	(fp_text user "B+"
+		(at 23.4 6.6 0)
+		(layer "F.SilkS")
+		(uuid "bf06a4af-220f-481b-942c-349495663494")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at 26.4 10.9)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "96a93072-7070-423d-ae90-c955e740701c")
+	)
+	(fp_text user "B-"
+		(at 23.4 10.9 0)
+		(layer "F.SilkS")
+		(uuid "06f12b68-1486-4e88-b286-95d26ebc274d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at 26.4 15.7)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "addeb6db-0fc6-4274-8727-96883034dc98")
+	)
+	(fp_text user "OUT-"
+		(at 23.4 15.7 0)
+		(layer "F.SilkS")
+		(uuid "170af5fa-2efb-4c43-85e1-b15b4bd4eca9")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start -1.5 5)
+		(end 3 12.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "aa941d24-04bc-48a9-abb5-58bca016d682")
+	)
+	(fp_text user "USB"
+		(at 0.75 8.75 0)
+		(layer "F.Fab")
+		(uuid "67fb1313-31f1-490f-a8ff-856359d8b64c")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start 0 0)
+		(end 28 17.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "f39fe81b-89ac-49ce-8dc9-4619dafd619a")
+	)
+	(fp_line
+		(start 0 0)
+		(end 28 0)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "ea817aee-173b-4bab-9483-392614db6bd3")
+	)
+	(fp_line
+		(start 0 17.5)
+		(end 28 17.5)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "c94310ef-fc3d-468b-82ba-623bbd415be7")
+	)
+	(fp_line
+		(start 28 0)
+		(end 28 17.5)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "1a1bbffa-c588-4cc9-8001-35f2dc8335e8")
+	)
+	(fp_rect
+		(start -2 -0.5)
+		(end 28.5 18)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "96c9d4ac-fe0a-40d1-8676-35cff2f84008")
+	)
+	(fp_text user "TP4056"
+		(at 14 8.75 0)
+		(layer "F.Fab")
+		(uuid "d6e57da1-0286-4893-b6a0-b1289ae6fd71")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "TP4056"
+		(at 14 7.55 0)
+		(layer "F.SilkS")
+		(uuid "712e4b8a-87da-4993-af58-e0734a107432")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "USB charge <-"
+		(at 14 9.65 0)
+		(layer "F.SilkS")
+		(uuid "b4753490-da9c-4617-920a-dc9ad9c86987")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "verify pads"
+		(at 14 11.05 0)
+		(layer "F.SilkS")
+		(uuid "97b9c1ab-0faa-4a6c-b12e-54310f78db64")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 14 20.6 0)
+		(layer "F.Fab")
+		(uuid "96c85383-ca27-4c52-98a3-3fd48da11741")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

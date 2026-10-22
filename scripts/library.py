@@ -143,6 +143,11 @@ def write_symlib():
         box_symbol("Si5351_7pin", "J", "Si5351", "Carrier:Si5351_3SMA_Socket",
                    "Si5351A clock generator module (CJMCU/Adafruit style), 3x SMA, 7-pin header 0,1,2,SCL,SDA,GND,VIN",
                    P("CLK0", "CLK1", "CLK2", "SCL", "SDA", "GND", "VIN")),
+        box_symbol("TP4056_Module", "U", "TP4056", "Carrier:TP4056_Module_Pads",
+                   "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)",
+                   P("OUT+", "B+", "B-", "OUT-")),
+        box_symbol("MT3608_Module", "U", "MT3608", "Carrier:MT3608_Module_Pads", "MT3608 boost converter module",
+                   P("VIN+", "VIN-", "VOUT+", "VOUT-")),
         box_symbol("VS1838B", "U", "VS1838B", "OptoDevice:Vishay_MINICAST-3Pin", "38kHz IR receiver (OUT, GND, VCC)",
                    P("OUT", "GND", "VCC"), half_w=5.08),
         flatten("Transistor_BJT", "PN2222A"),
@@ -412,6 +417,23 @@ def fp_si5351():
               it, (x1 + 2.5, y1 + 3.0), (cx, y1 + 14.0))
 
 
+def fp_wired_module(name, descr, bw, bh, pads, label, notes, usb=None, sides="LRTB"):
+    """Module mounted flat; its pad holes are tied to these board pads with pin legs or short wires.
+    Origin = module top-left corner. pads: [(num, name, x, y)]."""
+    it = []
+    for num, nm, x, y in pads:
+        it.append(tht_pad(num, x, y, rect=(num == "1"), size=2.2, drill=1.2))
+        it.append(fp_text(nm, x - 3.0 if x > bw / 2 else x + 3.0, y, size=0.8))
+    if usb:
+        it.append(fp_rect(usb[0], usb[1], usb[2], usb[3], "F.Fab", 0.1))
+        it.append(fp_text("USB", (usb[0] + usb[2]) / 2, (usb[1] + usb[3]) / 2, "F.Fab", 0.8))
+    it += body(0, 0, bw, bh, label, sides=sides, crt_extra=usb)
+    it.append(fp_text(label, bw / 2, bh / 2 - 1.2, "F.SilkS", 1.0))
+    for i, n in enumerate(notes):
+        it.append(fp_text(n, bw / 2, bh / 2 + 0.9 + 1.4 * i, "F.SilkS", 0.8))
+    footprint(name, descr, it, (bw / 2, -1.6), (bw / 2, bh + 1.5))
+
+
 def write_fplib():
     os.makedirs(FPLIB, exist_ok=True)
     fp_devkit()
@@ -424,6 +446,12 @@ def write_fplib():
     fp_sd()
     fp_rdm()
     fp_si5351()
+    fp_wired_module("TP4056_Module_Pads", "TP4056 protected charger module (~28x17.5mm, USB at the left edge), wire/pin pads",
+                    28.0, 17.5, [("1", "OUT+", 26.4, 1.8), ("2", "B+", 26.4, 6.6), ("3", "B-", 26.4, 10.9), ("4", "OUT-", 26.4, 15.7)],
+                    "TP4056", ["USB charge <-", "verify pads"], usb=(-1.5, 5.0, 3.0, 12.5), sides="RTB")
+    fp_wired_module("MT3608_Module_Pads", "MT3608 boost module (~36x17mm), wire/pin pads at the corners",
+                    36.0, 17.0, [("1", "VIN+", 1.8, 2.2), ("2", "VIN-", 1.8, 14.8), ("3", "VOUT+", 34.2, 2.2), ("4", "VOUT-", 34.2, 14.8)],
+                    "MT3608 BOOST", ["set OUT = 5.3V", "verify pads"])
 
 
 def write_tables():

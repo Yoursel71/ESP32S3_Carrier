@@ -7,7 +7,7 @@
 	(title_block
 		(title "ESP32-S3 Carrier Board")
 		(date "2026-10-22")
-		(rev "1.1")
+		(rev "1.2")
 		(company "github.com/Yoursel71")
 		(comment 1 "ESP32-S3-DevKitC-1 N16R8 + CC1101 + 2x NRF24 + PN532 + RDM6300 + Si5351 + microSD + OLED")
 	)
@@ -5157,6 +5157,463 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Carrier:TP4056_Module"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TP4056"
+				(at -7.62 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Carrier:TP4056_Module_Pads"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TP4056_Module_0_1"
+				(rectangle
+					(start -7.62 6.35)
+					(end 7.62 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TP4056_Module_1_1"
+				(pin passive line
+					(at -10.16 3.81 0)
+					(length 2.54)
+					(name "OUT+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 1.27 0)
+					(length 2.54)
+					(name "B+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -1.27 0)
+					(length 2.54)
+					(name "B-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -3.81 0)
+					(length 2.54)
+					(name "OUT-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Carrier:MT3608_Module"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MT3608"
+				(at -7.62 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Carrier:MT3608_Module_Pads"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "MT3608 boost converter module"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MT3608_Module_0_1"
+				(rectangle
+					(start -7.62 6.35)
+					(end 7.62 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "MT3608_Module_1_1"
+				(pin passive line
+					(at -10.16 3.81 0)
+					(length 2.54)
+					(name "VIN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 1.27 0)
+					(length 2.54)
+					(name "VIN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -1.27 0)
+					(length 2.54)
+					(name "VOUT+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -3.81 0)
+					(length 2.54)
+					(name "VOUT-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635)
+						(xy -1.905 1.27)
+						(xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -0.635 -1.27)
+						(xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27)
+						(xy 1.27 -1.27)
+						(xy -1.27 0)
+						(xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers
 				(hide yes)
@@ -5499,136 +5956,136 @@
 			)
 		)
 		(pin "1"
-			(uuid "b2078e7c-51d0-49c7-9ad3-7ebcddc5cf4c")
+			(uuid "f915d84f-0487-4636-8cb0-a64393e0590f")
 		)
 		(pin "2"
-			(uuid "2619c014-9e55-40e2-beef-7c4e73552d1d")
+			(uuid "df646cd8-b8f1-4dbf-a320-8af5c2532fe1")
 		)
 		(pin "3"
-			(uuid "ca4b084c-9942-466a-8ed5-d6b9920844c7")
+			(uuid "d119f94b-8a3f-4dd5-a8b9-894b8b763e3a")
 		)
 		(pin "4"
-			(uuid "49231cf8-eb03-4fab-ae44-3bc76f135de4")
+			(uuid "ff49630a-9fb4-49e5-af7c-88e6fffdf33d")
 		)
 		(pin "5"
-			(uuid "11757dcc-7587-48b9-9a43-61594f5bc0a2")
+			(uuid "c298e3d5-54a1-4378-baa8-d7a8d00cfa96")
 		)
 		(pin "6"
-			(uuid "a8d0ba0a-d1ec-4e72-8e2a-2579d3aac8e5")
+			(uuid "23c1efdf-9477-4ee0-b5dd-2480e8e3a79a")
 		)
 		(pin "7"
-			(uuid "753d764f-0626-4cb6-8b67-523078d92102")
+			(uuid "a3f21444-f82d-4749-bbb3-c2a6b4e3a292")
 		)
 		(pin "8"
-			(uuid "86e9f1e2-bc10-4c91-a45f-db4a29777c42")
+			(uuid "776d2671-b237-4c88-84cc-a29a9675f8af")
 		)
 		(pin "9"
-			(uuid "cd96980e-af1a-46c6-a6ab-222062dbc0b0")
+			(uuid "882e56e2-2061-46cd-bc0d-c21458b03e8f")
 		)
 		(pin "10"
-			(uuid "cb412931-1871-4a64-bc69-5024c710ed67")
+			(uuid "c8b988b1-3750-42d7-8831-457e92a5de27")
 		)
 		(pin "11"
-			(uuid "f80fdedf-4d76-4a72-9fa5-65c2d1189e23")
+			(uuid "2caf4d53-a432-4c87-8c4f-73995064c009")
 		)
 		(pin "12"
-			(uuid "e0154e5b-4c02-4d55-a251-9b81bf35db86")
+			(uuid "ddd06a4f-4494-4a86-b291-c6361343befc")
 		)
 		(pin "13"
-			(uuid "cc37ced6-9982-48aa-9874-4e93a0cece95")
+			(uuid "e671e823-29b0-4f2e-b270-274dc6f7c43f")
 		)
 		(pin "14"
-			(uuid "00df7a27-6ac9-404b-86c7-82e02735a409")
+			(uuid "0dea79c7-624a-4314-9458-4bd5807390ad")
 		)
 		(pin "15"
-			(uuid "661b4ac3-049a-46fb-84b4-fecc581d1961")
+			(uuid "2a584aaf-dedb-4ce4-bd87-240d742770f8")
 		)
 		(pin "16"
-			(uuid "645ecbb0-973d-4e61-8ca4-fff566378eb7")
+			(uuid "937667b2-4a1d-4e1f-8a6e-b6a2941a4d83")
 		)
 		(pin "17"
-			(uuid "ee678dab-5e19-4b98-9d06-e705c1018e7c")
+			(uuid "a7e6484d-b7ac-480c-bdd6-7ec6381ca39e")
 		)
 		(pin "18"
-			(uuid "0ebed5a9-6619-444d-8514-bce005d23592")
+			(uuid "aec9d514-4939-47ee-a506-e47bdb2b5abc")
 		)
 		(pin "19"
-			(uuid "fb2457f6-7cc9-4d2c-97d0-a7d8f1f86f88")
+			(uuid "62eb168a-776c-4f93-be7d-637e2529a97d")
 		)
 		(pin "20"
-			(uuid "47819fb1-8302-408c-810c-74b262c50ffc")
+			(uuid "b63df549-d29d-4959-b0f1-0efbf27a9509")
 		)
 		(pin "21"
-			(uuid "7a2dd387-3cea-452a-91a1-5c9e267876a9")
+			(uuid "e180aebd-4a04-4076-baf2-c13d6658e71b")
 		)
 		(pin "22"
-			(uuid "7b8eb296-cc68-4ba6-8a67-ff0f217d4a32")
+			(uuid "c21a268a-6615-44f3-b817-029d1bb282c9")
 		)
 		(pin "23"
-			(uuid "4f3e837e-4119-42dd-91c1-e5b3f8cddbdf")
+			(uuid "c6c527a8-bc70-4b40-819a-8336d963fe67")
 		)
 		(pin "24"
-			(uuid "c2c25132-fe67-4e54-94e5-f3240dd32c0d")
+			(uuid "5dcf27fd-45b9-4d08-afa8-bcb18630f194")
 		)
 		(pin "25"
-			(uuid "e46cffae-b728-494a-9a26-dde218c77f95")
+			(uuid "248893fa-a347-4361-886f-fc099de93afd")
 		)
 		(pin "26"
-			(uuid "ce83667f-d56d-4dbd-948b-40c1d27cc355")
+			(uuid "a33fd431-062f-4a0a-9375-70350c759692")
 		)
 		(pin "27"
-			(uuid "b682422f-c925-4bdf-a37a-2c6f4964429d")
+			(uuid "707f2a54-e8ec-49c0-8a31-17a21c186a5c")
 		)
 		(pin "28"
-			(uuid "084904dd-c449-4a2a-bd3f-9811ce327820")
+			(uuid "0e4d4b00-944c-4076-b511-c313bf05b536")
 		)
 		(pin "29"
-			(uuid "dc6d5168-94d7-41a3-8b06-e2df738e63ea")
+			(uuid "4ee6887a-5302-48cf-9091-655d57c2921a")
 		)
 		(pin "30"
-			(uuid "68f5a00b-5ba4-484c-b70b-e52a6d74002b")
+			(uuid "3a8448a0-4541-479e-84ac-c4071e489598")
 		)
 		(pin "31"
-			(uuid "87590cd6-10aa-4d5a-af1d-fba375e79af0")
+			(uuid "7f1c51d9-56aa-416e-841e-210616b2c359")
 		)
 		(pin "32"
-			(uuid "77980247-8922-4fc5-be0c-444f13b55480")
+			(uuid "db413bd2-0bf4-4691-864a-1585d0ae78f3")
 		)
 		(pin "33"
-			(uuid "5184838a-c29f-486e-abba-f0dcd72730d3")
+			(uuid "43981749-9b5c-4d77-b708-31fcd08a9b9f")
 		)
 		(pin "34"
-			(uuid "5ec14e55-f5bd-4a7d-850f-7402aeb557ee")
+			(uuid "6025a701-480d-4365-aa14-2a8a92c1c2d6")
 		)
 		(pin "35"
-			(uuid "64c70a81-eaee-4eae-a173-72f1a60a808d")
+			(uuid "6a08d8b7-f97e-41bc-8723-573c1b2cb420")
 		)
 		(pin "36"
-			(uuid "ca0131d7-7fe6-49e9-83ed-65a743883e17")
+			(uuid "34b57e57-332f-4708-8d08-33530d1160e1")
 		)
 		(pin "37"
-			(uuid "5686552e-8c71-46b1-876e-dc87124217c1")
+			(uuid "ce8533d9-7fc0-4532-9983-226a5d6f4664")
 		)
 		(pin "38"
-			(uuid "88d3c674-2a59-4d5f-b922-04a82b2bee9f")
+			(uuid "3d04a4ff-ec60-4ecc-a3bc-3927847078dc")
 		)
 		(pin "39"
-			(uuid "41bfe769-1381-47c0-af68-0dec06cfa767")
+			(uuid "46565923-7716-4401-a0c0-d8e492a9aef3")
 		)
 		(pin "40"
-			(uuid "4abf3547-a6e5-490e-9fcb-83829e9f8cbe")
+			(uuid "84865113-0248-4c60-80fe-b195f1078e73")
 		)
 		(pin "41"
-			(uuid "e8c30409-2de8-4480-b465-042ca0024861")
+			(uuid "311f3b50-5140-43cb-a3b2-e001a24daecd")
 		)
 		(pin "42"
-			(uuid "4bbb5aef-db2e-4d50-91b7-8589a5671417")
+			(uuid "8eae7989-0616-407d-a09c-c50fc8abd5f5")
 		)
 		(pin "43"
-			(uuid "9c3b4193-3d91-4119-967f-1f2f8e706f93")
+			(uuid "ff4c80df-ddad-49ed-8920-4e22fed856c9")
 		)
 		(pin "44"
-			(uuid "44c852cd-c159-4a9a-85ea-555083cd8cc8")
+			(uuid "4a67c6d1-4557-43c4-83cf-8a828f30ea9e")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -5641,15 +6098,15 @@
 	)
 	(no_connect
 		(at 86.36 105.41)
-		(uuid "ab84b677-629e-4571-974f-ad937834992c")
+		(uuid "28d08c42-09c4-4e57-9855-25e9fa96d583")
 	)
 	(no_connect
 		(at 86.36 107.95)
-		(uuid "c66eb619-c914-4905-aa4c-1c6e097ceb11")
+		(uuid "4d378705-d793-408b-90c4-00042e76c8b9")
 	)
 	(no_connect
 		(at 86.36 110.49)
-		(uuid "9807dd5c-26c9-4a90-9157-c151cd8c9024")
+		(uuid "6683ed34-4822-479b-8b8a-a21e113947b4")
 	)
 	(label "NRF1_CE"
 		(at 86.36 113.03 180)
@@ -5659,7 +6116,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f5eadc3a-f60a-4c0f-8eba-bc34b90dfdf5")
+		(uuid "5c01dc76-a6f4-4c5b-a35d-3b8b91db11ed")
 	)
 	(label "NRF1_CSN"
 		(at 86.36 115.57 180)
@@ -5669,7 +6126,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f4f93512-c90b-4774-bcec-fa63e168af9d")
+		(uuid "44a19b95-e336-4fe2-9cfd-7e51ab692201")
 	)
 	(label "NRF2_CE"
 		(at 86.36 118.11 180)
@@ -5679,7 +6136,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "cf15c196-4464-4f71-b67f-b8d633a25331")
+		(uuid "387aac09-b47e-4787-8d65-f45f77199cb6")
 	)
 	(label "NRF2_CSN"
 		(at 86.36 120.65 180)
@@ -5689,7 +6146,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6a12ed94-66cd-4fe6-9618-3b893d4dce32")
+		(uuid "92eec2ce-1125-4aae-9038-b50a6d6123ed")
 	)
 	(label "BTN_UP"
 		(at 86.36 123.19 180)
@@ -5699,7 +6156,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "754161fb-9f1a-4fc7-bea3-9d30f30dd9e9")
+		(uuid "e61d5229-f4cc-4643-b87c-dce7e185108e")
 	)
 	(label "BTN_DOWN"
 		(at 86.36 125.73 180)
@@ -5709,7 +6166,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "311d7217-090c-4ba5-bc76-2d2964e6261d")
+		(uuid "510ab3e3-8a8a-40d0-a3f4-f5e0a9562285")
 	)
 	(label "RFID_TX"
 		(at 86.36 128.27 180)
@@ -5719,7 +6176,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "742dc271-e42a-4862-a208-548cc19cf2ff")
+		(uuid "f9ebafd9-4495-4599-a8c9-c67224365300")
 	)
 	(label "I2C_SCL"
 		(at 86.36 130.81 180)
@@ -5729,7 +6186,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "65d9ea1b-b4e2-473e-8e37-65f4e64dbf3f")
+		(uuid "d2ceea78-42a3-418c-8079-1931df70301d")
 	)
 	(label "I2C_SDA"
 		(at 86.36 133.35 180)
@@ -5739,15 +6196,21 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c8d197c7-c4ef-4393-916d-d9b8843dae33")
+		(uuid "664a1d34-3043-4a0a-be9d-265ef1f81e42")
 	)
-	(no_connect
-		(at 86.36 135.89)
-		(uuid "55cf8785-aecf-436e-b2ef-cd87fb66a897")
+	(label "BAT_SENSE"
+		(at 86.36 135.89 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ed5fb6f1-bc69-4ca4-945c-4e1177b84878")
 	)
 	(no_connect
 		(at 86.36 138.43)
-		(uuid "2c7bc393-a751-40d2-b141-7bae47ef85de")
+		(uuid "a86015b6-38ed-4a96-a6b7-c418c16daca9")
 	)
 	(label "CC_GDO0"
 		(at 86.36 140.97 180)
@@ -5757,7 +6220,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "922c011c-452d-4aa3-9370-69b676046497")
+		(uuid "4e8ea26f-0322-4e8d-a209-941c9519378e")
 	)
 	(label "CC_CS"
 		(at 86.36 143.51 180)
@@ -5767,7 +6230,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "551f74e6-ab34-4115-8b03-d97c2488b440")
+		(uuid "bcbbd8cf-2f46-4f43-9f9a-185e4ebe4113")
 	)
 	(label "SPI_MOSI"
 		(at 86.36 146.05 180)
@@ -5777,7 +6240,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9d0f0961-4874-426f-9560-545e46193064")
+		(uuid "a26aa5c5-cae1-4bab-9f7e-d94e10147cf0")
 	)
 	(label "SPI_SCK"
 		(at 86.36 148.59 180)
@@ -5787,7 +6250,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "33539460-edc3-418a-bceb-979a55d4c439")
+		(uuid "2a384953-195e-47d8-a3c4-2e0d448910b1")
 	)
 	(label "SPI_MISO"
 		(at 86.36 151.13 180)
@@ -5797,7 +6260,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4ece0286-f2da-4d74-833b-8a1c4f209a4f")
+		(uuid "1e90fc7e-64e2-4967-8be7-b7f61f2f0285")
 	)
 	(label "SD_CS"
 		(at 86.36 153.67 180)
@@ -5807,7 +6270,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "bad8dc5c-4d87-4956-ba5d-5c8f60bff561")
+		(uuid "cc7213bb-dae3-47df-92b2-4280ed07ec9a")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -5817,7 +6280,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "581ba6ef-a1a4-4700-b5e1-6a2497f9d443")
+		(uuid "9646e969-6da8-4551-8ed5-f0677b6374e0")
 		(property "Reference" "#PWR001"
 			(at 90.17 156.21 0)
 			(effects
@@ -5860,7 +6323,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a6b98b64-f19f-4f40-8744-de2ed09c347b")
+			(uuid "3c515ba7-6ff4-479f-99b1-67a0fb26e651")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -5879,7 +6342,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "fdcfb748-3602-451b-b8e5-da609588a9b5")
+		(uuid "a0c05895-fc2c-4d3c-9df7-5f85adde32fe")
 		(property "Reference" "#PWR002"
 			(at 80.01 158.75 0)
 			(effects
@@ -5922,7 +6385,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c93c6f21-40b2-4bc8-bf7f-08b0d0c5cd83")
+			(uuid "02cd8903-a060-41cd-84c0-72ded61882d8")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -5941,7 +6404,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "980d0366-fadd-4352-908b-60e1e5516741")
+		(uuid "cda47828-6409-41aa-842e-3089f2da7dc6")
 		(property "Reference" "#PWR003"
 			(at 123.19 105.41 0)
 			(effects
@@ -5984,7 +6447,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "317a8d16-c8c7-4118-8309-c35478120e4a")
+			(uuid "1ae80c58-0271-44b4-8c0a-51b4b8c9d3fc")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -5997,11 +6460,11 @@
 	)
 	(no_connect
 		(at 116.84 107.95)
-		(uuid "c16f458f-1931-4e6c-94e4-eff18411b0ee")
+		(uuid "c1958728-ad8b-461c-83dd-6729866e3b69")
 	)
 	(no_connect
 		(at 116.84 110.49)
-		(uuid "a90ca742-e1d9-42a4-a888-19741f22fd05")
+		(uuid "561dac85-fedd-465d-a44a-8252265861cb")
 	)
 	(label "IR_RX"
 		(at 116.84 113.03 0)
@@ -6011,7 +6474,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "79287cd7-82a3-4b64-baa1-d9423421e4c0")
+		(uuid "eea2a3c7-7fd3-436b-ae2c-2053e145cac9")
 	)
 	(label "IR_TX"
 		(at 116.84 115.57 0)
@@ -6021,7 +6484,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "9f804e42-874b-4e08-8f90-64d1688981b3")
+		(uuid "c1343ca0-e0e9-4252-9a9c-a2fa7f5045b3")
 	)
 	(label "CC_GDO2"
 		(at 116.84 118.11 0)
@@ -6031,7 +6494,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "56f4cb1e-e944-40fd-b7bd-15b4ade0d769")
+		(uuid "b048a971-6720-49e2-9dba-c94c34f356d4")
 	)
 	(label "BTN_BACK"
 		(at 116.84 120.65 0)
@@ -6041,7 +6504,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e04d7903-96fd-4329-b422-87b95773b0da")
+		(uuid "ca705876-b0de-4762-9438-086ee6eddbab")
 	)
 	(label "BTN_OK"
 		(at 116.84 123.19 0)
@@ -6051,7 +6514,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1824936e-856c-4346-8e7b-1628f508e2de")
+		(uuid "35be1cbf-91cb-4c0d-9a0b-17c18bf92bbf")
 	)
 	(label "BTN_RIGHT"
 		(at 116.84 125.73 0)
@@ -6061,7 +6524,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "027f0bc3-0393-4b01-8734-8a4854775ba5")
+		(uuid "65904c8f-babb-4fae-a08f-106a5aa9c44d")
 	)
 	(label "BTN_LEFT"
 		(at 116.84 128.27 0)
@@ -6071,27 +6534,27 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a0446339-5f47-4cdf-ab05-f38126cd6b11")
+		(uuid "0bcc2e29-5ee4-422e-8bbb-4b8d12f5f454")
 	)
 	(no_connect
 		(at 116.84 130.81)
-		(uuid "061fce7b-153b-4774-a7fb-5351b69bf480")
+		(uuid "c10f86ca-3380-4b93-8d82-def81bf69440")
 	)
 	(no_connect
 		(at 116.84 133.35)
-		(uuid "ab7cf58e-e89c-481b-8797-db6b7c0a1c6a")
+		(uuid "cca828ec-1132-428b-ae59-af21bae50b06")
 	)
 	(no_connect
 		(at 116.84 135.89)
-		(uuid "a9555ecc-266e-4ad4-b5eb-d82548cdae3f")
+		(uuid "d70dc08e-6d96-4dfe-841b-f1b65dc5b5f0")
 	)
 	(no_connect
 		(at 116.84 138.43)
-		(uuid "782c2d95-190d-4311-8cfa-4771e7cb19c6")
+		(uuid "00c23640-eef3-42bd-880f-1b9b98dc0b05")
 	)
 	(no_connect
 		(at 116.84 140.97)
-		(uuid "1c4db047-0aa6-460b-96df-cef7ec655da0")
+		(uuid "c7a9b138-9379-4117-94f1-079cd277119a")
 	)
 	(label "NRF2_IRQ"
 		(at 116.84 143.51 0)
@@ -6101,7 +6564,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "05eebe38-d4b3-42f7-a9d9-7f021312d284")
+		(uuid "5e693a30-156c-401c-9f9a-ab4798571572")
 	)
 	(label "BUZ"
 		(at 116.84 146.05 0)
@@ -6111,7 +6574,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "69b403b1-d827-408d-b574-8ac05a2de067")
+		(uuid "a4820fd6-bc32-445f-9418-dd87a676af80")
 	)
 	(label "NRF1_IRQ"
 		(at 116.84 148.59 0)
@@ -6121,15 +6584,15 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2a377c97-e85c-4f21-8bb1-d44bc368eb4b")
+		(uuid "07096a70-9338-4e2b-8290-0803e327607d")
 	)
 	(no_connect
 		(at 116.84 151.13)
-		(uuid "adb769bc-2b73-4004-8b01-78192860ecfe")
+		(uuid "c70a984c-8650-4bcd-89d3-3a49e769f9e2")
 	)
 	(no_connect
 		(at 116.84 153.67)
-		(uuid "792c77ac-3bdf-4579-9825-5668151d634b")
+		(uuid "612082aa-ecb0-44a7-a5f4-b48ded6fe550")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6139,7 +6602,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "05dc1522-4baa-46b4-b980-ea5782363bab")
+		(uuid "4014a57a-0644-4b36-9910-0d708d97921c")
 		(property "Reference" "#PWR004"
 			(at 123.19 156.21 0)
 			(effects
@@ -6182,7 +6645,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2d188f6b-2d55-42bd-a2f3-6687c73544ef")
+			(uuid "c23eb7e4-2a49-4ed7-a9c5-7517ae2810fc")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6201,7 +6664,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c9992404-f830-44c0-8fb5-fccf2ad937d4")
+		(uuid "019cc1c8-515d-42a6-a576-d92d2c8f781a")
 		(property "Reference" "#PWR005"
 			(at 123.19 158.75 0)
 			(effects
@@ -6244,7 +6707,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ad60259a-00ab-460a-80ff-ab35c19e394a")
+			(uuid "215d7a60-dcf5-4823-8234-26a70ea07607")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6310,28 +6773,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "98fa12aa-cee0-4bda-8296-f6c0dbf53ca7")
+			(uuid "a1b19a40-064e-40eb-bdce-a87b3102a3fb")
 		)
 		(pin "2"
-			(uuid "65e7ae8c-4ff2-4bfd-88bc-dc7ee256bcd0")
+			(uuid "a5dfd948-f57d-4b80-8709-3f109326db0b")
 		)
 		(pin "3"
-			(uuid "41c169ce-e0c3-401d-a306-f03628a35aa6")
+			(uuid "ccf66271-7499-44ea-9a34-c49514bcb746")
 		)
 		(pin "4"
-			(uuid "94b256a8-ff4a-4e90-a5df-58a89b3df56a")
+			(uuid "6f61ae32-b2cb-4475-b5b7-3e20494230b3")
 		)
 		(pin "5"
-			(uuid "3785a2d0-4b1a-4505-85e6-08308f111281")
+			(uuid "b438beb9-a6de-4d13-a157-591467e36df4")
 		)
 		(pin "6"
-			(uuid "42f362af-5f8d-4e06-b544-ff795c11bace")
+			(uuid "345d4bb9-7559-47a8-ad13-5bfae87bf770")
 		)
 		(pin "7"
-			(uuid "5169809a-ff3d-458b-9619-27a87b5d81c4")
+			(uuid "715f4502-d732-4f60-92d9-12c857e2a3fe")
 		)
 		(pin "8"
-			(uuid "fb15eacf-18e9-40f1-83e7-77b52b729838")
+			(uuid "a20d6a47-3ca2-4d8c-acc1-42c1019c309a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6350,7 +6813,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "cd7e421e-34c9-4595-a8c0-1c2996ab8835")
+		(uuid "883bc51c-3647-437e-bca2-d547a9a78c79")
 		(property "Reference" "#PWR006"
 			(at 212.09 54.61 0)
 			(effects
@@ -6393,7 +6856,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "eb73ce6e-ced9-43d1-ba2e-f568cdb5af14")
+			(uuid "92e3d49b-fde4-4e89-bd79-b90e0b2a4d23")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6412,7 +6875,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "82c19b37-4c85-4e8e-affa-90a57a71419a")
+		(uuid "d4aa9c4a-9e35-4465-9506-a230d166ffbc")
 		(property "Reference" "#PWR007"
 			(at 222.25 57.15 0)
 			(effects
@@ -6455,7 +6918,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5936b19e-ffc5-4f43-8767-981223ad2980")
+			(uuid "f1f2c921-990f-4f82-8f74-b7d26cfdd5d5")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6474,7 +6937,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c01278c5-71b3-446b-b485-02249fa1b666")
+		(uuid "7616d1ee-b2eb-4b2f-9da0-3645e42777c8")
 	)
 	(label "CC_CS"
 		(at 218.44 62.23 180)
@@ -6484,7 +6947,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ee3eb2cc-f532-4cca-a79b-3c0043b6fce7")
+		(uuid "45dbb8dc-e748-4305-962d-de76824253ec")
 	)
 	(label "SPI_SCK"
 		(at 218.44 64.77 180)
@@ -6494,7 +6957,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "93040ef6-7504-4276-bf62-891ac1697148")
+		(uuid "ab54ff70-49c4-4e5c-9b5a-932d5d429bee")
 	)
 	(label "SPI_MOSI"
 		(at 218.44 67.31 180)
@@ -6504,7 +6967,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "97706b31-9f20-4ddc-9ca9-369c1c6de14d")
+		(uuid "08924c79-25ce-4c5b-bf9f-275f1aa6d71f")
 	)
 	(label "SPI_MISO"
 		(at 218.44 69.85 180)
@@ -6514,7 +6977,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c0f659e3-d73a-4ab4-897f-925e3acfa112")
+		(uuid "d352f453-c983-4a9b-9213-12483fcbdfbe")
 	)
 	(label "CC_GDO2"
 		(at 218.44 72.39 180)
@@ -6524,7 +6987,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "17c94c21-9a00-4038-a678-dd6dbfbd4040")
+		(uuid "eca6309f-478e-439f-9beb-513335c62dfa")
 	)
 	(symbol
 		(lib_id "Carrier:NRF24L01_PA_LNA")
@@ -6581,28 +7044,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "d673b146-560d-4365-9186-aa353e2ac1fc")
+			(uuid "4dc92d8a-b4ba-43da-8d17-8341380ffbb6")
 		)
 		(pin "2"
-			(uuid "4759d1f0-0367-45c2-929d-330b08fcc2c7")
+			(uuid "7d77910d-c032-4c5f-9363-9004dc907424")
 		)
 		(pin "3"
-			(uuid "4ed422e4-a1c7-4115-8c59-d405f33d537f")
+			(uuid "12d90fd1-badb-4451-90d6-c9a889adfacc")
 		)
 		(pin "4"
-			(uuid "8016342f-8517-4569-9c99-43cd7f135b46")
+			(uuid "2c89ce31-e053-4f17-bcb6-1dd1158b088b")
 		)
 		(pin "5"
-			(uuid "35c2bcb3-7100-4098-9c42-825aa22c0fb0")
+			(uuid "d413943b-0e06-4295-861f-9933158c8959")
 		)
 		(pin "6"
-			(uuid "ff78fd36-7cd6-46b5-8179-44e7f518ad76")
+			(uuid "a8edd1de-1116-4ce6-9771-076a5c295ca2")
 		)
 		(pin "7"
-			(uuid "ba16097f-ff11-4712-9744-466774f0b8f4")
+			(uuid "5547d330-1c44-4f66-a77e-b5c210631618")
 		)
 		(pin "8"
-			(uuid "fc947463-65f4-4e1f-8228-7a5d8416a848")
+			(uuid "c30fcf00-4847-41ab-adc5-dcc8430bef4b")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6621,7 +7084,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "7e7b0253-9b41-4753-9df0-f28d17e4ba6e")
+		(uuid "7333e0e6-d6ac-4569-9477-6f01090e5cdd")
 		(property "Reference" "#PWR008"
 			(at 212.09 97.79 0)
 			(effects
@@ -6664,7 +7127,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "47f13097-636c-45b6-bb12-e088d68b39ef")
+			(uuid "601a8fd4-07d9-40a1-b135-3d0293f56835")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6683,7 +7146,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b98b51a2-f1d4-499d-972b-61b90790e88b")
+		(uuid "ec37bf78-5466-493f-a8ee-9351335e63b0")
 		(property "Reference" "#PWR009"
 			(at 222.25 100.33 0)
 			(effects
@@ -6726,7 +7189,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b9424ce8-4767-45de-ba64-578acde75315")
+			(uuid "95337ddb-f229-41bf-84f4-3b9fd10346d9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6745,7 +7208,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2a296b25-1aa4-424f-bcb6-4f5cd456ec8d")
+		(uuid "d55bc933-6b50-406a-8edc-5ceed77af8c5")
 	)
 	(label "NRF1_CSN"
 		(at 218.44 105.41 180)
@@ -6755,7 +7218,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7b405cfb-4a77-4703-8b1a-4101e71d4959")
+		(uuid "25a210d3-54bf-401d-96b4-2e2d9d8a36a9")
 	)
 	(label "SPI_SCK"
 		(at 218.44 107.95 180)
@@ -6765,7 +7228,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "53143437-c19b-426a-93b8-c443e7812056")
+		(uuid "43ba2e94-c84c-4e86-9acb-45da475e7d74")
 	)
 	(label "SPI_MOSI"
 		(at 218.44 110.49 180)
@@ -6775,7 +7238,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "02432d96-7355-4015-a3d1-b9507eab7898")
+		(uuid "e48831c4-04a1-40a9-8f88-472f4c0ae5bf")
 	)
 	(label "SPI_MISO"
 		(at 218.44 113.03 180)
@@ -6785,7 +7248,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "672c3e07-2b6f-446d-8796-75509026cbac")
+		(uuid "f77065c3-5751-4483-bdc5-610958a61b6e")
 	)
 	(label "NRF1_IRQ"
 		(at 218.44 115.57 180)
@@ -6795,7 +7258,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7bd2f133-5094-471b-af3e-ddaa054cda02")
+		(uuid "d6440a39-205c-4070-9f9d-3b720db8920f")
 	)
 	(symbol
 		(lib_id "Carrier:NRF24L01_PA_LNA")
@@ -6852,28 +7315,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9beeecd-017a-41a9-95e5-ce70e76cc3b0")
+			(uuid "ffe107d0-ce1b-40c2-a90c-b723734cf6e2")
 		)
 		(pin "2"
-			(uuid "44b78212-1e44-4d99-98f5-1fbc95900abd")
+			(uuid "bfd7051e-8c41-47a5-8413-a4eb647f4340")
 		)
 		(pin "3"
-			(uuid "df30c531-9cea-4988-8344-dca5dce083aa")
+			(uuid "6e4f3379-704a-4dc9-9755-7cacbce71196")
 		)
 		(pin "4"
-			(uuid "b87cd283-f05c-447e-a2a6-bd7b95d7a9e9")
+			(uuid "aafe40c2-2da2-4e7c-ac45-afd6d6a15f80")
 		)
 		(pin "5"
-			(uuid "e4db4956-ecf9-4f85-a68b-6bc697ac3dec")
+			(uuid "0a0061fd-e021-4a14-b948-cb90c394f5ba")
 		)
 		(pin "6"
-			(uuid "4da57ab5-bc0f-403e-a5f5-716c44d70467")
+			(uuid "999d29af-2bbb-4ecb-aede-b9ae63753a83")
 		)
 		(pin "7"
-			(uuid "d457e83d-a965-4d41-a215-01b6095212c9")
+			(uuid "538190d1-0abc-45b6-a952-5efe344b1ed5")
 		)
 		(pin "8"
-			(uuid "c8348bc5-ebf0-498c-856a-861d7a226162")
+			(uuid "f7731c4f-c65b-40e9-99c1-17f3f0b7e909")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6892,7 +7355,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ccb86465-6278-4952-a693-67bff6f22e95")
+		(uuid "5222d655-637e-426c-a0da-b32b01976475")
 		(property "Reference" "#PWR010"
 			(at 212.09 140.97 0)
 			(effects
@@ -6935,7 +7398,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "967ce018-c4db-4bd3-afb8-bfb72146e177")
+			(uuid "a123732b-2ea2-4963-a450-a5b38cc2e4d9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -6954,7 +7417,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "496e4370-ff6b-4698-9d7d-7c97b885f8eb")
+		(uuid "ceee4a49-ca4b-4859-a55c-bd212c236dae")
 		(property "Reference" "#PWR011"
 			(at 222.25 143.51 0)
 			(effects
@@ -6997,7 +7460,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3e9bfe29-7dbb-4667-b614-97bbaec94efc")
+			(uuid "76714536-f0f4-4ee2-a26b-d4f9233aa5a2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7016,7 +7479,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c9b34c82-f91f-43c3-ab7f-a62993ce0bb7")
+		(uuid "406e3a5a-0cf1-4abf-a758-adc8e91ee4b9")
 	)
 	(label "NRF2_CSN"
 		(at 218.44 148.59 180)
@@ -7026,7 +7489,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ecef080b-ff08-453e-b43d-7f920899fb84")
+		(uuid "7bd698a0-72e0-482f-8542-c5256006a186")
 	)
 	(label "SPI_SCK"
 		(at 218.44 151.13 180)
@@ -7036,7 +7499,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6d83de5c-2591-4ed0-ba14-0e901e10fa1d")
+		(uuid "258315fe-7e05-4402-acad-cb5739784a71")
 	)
 	(label "SPI_MOSI"
 		(at 218.44 153.67 180)
@@ -7046,7 +7509,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "99bd673b-3f46-4123-ba44-051785cb9366")
+		(uuid "f2b38057-78f7-47ba-8fe7-aeec090c65bf")
 	)
 	(label "SPI_MISO"
 		(at 218.44 156.21 180)
@@ -7056,7 +7519,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9452b95a-f4ba-45d0-bb7e-a0dd03b59d62")
+		(uuid "bcd36ba6-08ae-41f9-ba46-9cc42046a261")
 	)
 	(label "NRF2_IRQ"
 		(at 218.44 158.75 180)
@@ -7066,7 +7529,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "fe3940c3-622d-4736-867f-263b2938da11")
+		(uuid "b4cb0e26-0e1d-4ab9-918f-8b5947261d32")
 	)
 	(symbol
 		(lib_id "Carrier:PN532_I2C")
@@ -7123,16 +7586,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "68b18ae6-275a-458a-ab30-cf7e83bd73cd")
+			(uuid "4d716a02-7888-4606-9c0f-f749d52d00a7")
 		)
 		(pin "2"
-			(uuid "516698aa-26c6-4f35-898f-8a5dbce3bb59")
+			(uuid "fcc65a97-ab18-4c3e-a3c0-ccf37ee2d5e0")
 		)
 		(pin "3"
-			(uuid "e4745419-7bd3-4b23-93f1-fdda5ad1f132")
+			(uuid "2a3ab2ab-5c2d-4f5a-8322-cdbbfe4eebed")
 		)
 		(pin "4"
-			(uuid "69e878f6-745f-4567-aae4-8ba6eef0d940")
+			(uuid "710f46ff-376b-4755-843c-aa75915b4c2f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7151,7 +7614,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "7ff11a42-48dc-461a-872e-3f386fc5586b")
+		(uuid "bf029d65-4398-4666-a397-8f19c6286522")
 		(property "Reference" "#PWR012"
 			(at 344.17 59.69 0)
 			(effects
@@ -7194,7 +7657,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "df8c84fe-1567-4022-974c-bc4a0ea206f1")
+			(uuid "3e545d11-6cc9-4d9b-8f38-b1d4d81fb388")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7213,7 +7676,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "fe17bf39-47e5-4142-880f-76783ed46b9b")
+		(uuid "31163591-78b2-4a91-8eb6-80316a8f6149")
 		(property "Reference" "#PWR013"
 			(at 354.33 62.23 0)
 			(effects
@@ -7256,7 +7719,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "84c49220-dcff-4b7f-9791-e0ae28c8647f")
+			(uuid "7311e6b8-a6b3-41ea-8f50-9295db1d823d")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7275,7 +7738,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3092eb22-578b-4577-9089-7b6d3dd9724d")
+		(uuid "10285763-1389-42bd-9e98-4fbf93057071")
 	)
 	(label "I2C_SCL"
 		(at 350.52 67.31 180)
@@ -7285,7 +7748,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "650289cc-6156-445b-b148-7be1f236dcf3")
+		(uuid "62f02220-ffa6-4de1-babe-7fea50d4b606")
 	)
 	(symbol
 		(lib_id "Carrier:OLED_SH1106_I2C")
@@ -7342,16 +7805,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "2d12538d-1775-46e5-8384-89ec73193f31")
+			(uuid "54e3539c-2fd8-424b-87e3-aecb3a858535")
 		)
 		(pin "2"
-			(uuid "2bb54c84-9310-43ae-a14c-9c99efc12afc")
+			(uuid "00f21dd1-cdbd-4aee-9962-14d3512628a5")
 		)
 		(pin "3"
-			(uuid "6d4d0b2f-37fe-4a8e-ac66-3d8b7715491a")
+			(uuid "46a7d561-26a4-4965-bfb8-0a7d46bb01b6")
 		)
 		(pin "4"
-			(uuid "e60d9532-be9b-4cea-955e-71be86ecb7cc")
+			(uuid "624ba14d-1c5a-452e-b245-93b4beac69e3")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7370,7 +7833,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "37e31b23-b0b8-4e3c-a259-5a3a464e9855")
+		(uuid "6e7ed081-cd69-4977-9ed2-ecc69d95752e")
 		(property "Reference" "#PWR014"
 			(at 344.17 95.25 0)
 			(effects
@@ -7413,7 +7876,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fd5728cb-6266-4042-a90e-5c6fcb3d6ebf")
+			(uuid "5c29e989-3a51-4595-9610-aaf7e0f4f221")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7432,7 +7895,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ab0f0ce8-3939-4f2d-ae33-9037407c6177")
+		(uuid "c8e2a196-0e20-47b6-9262-702f8eca3f4f")
 		(property "Reference" "#PWR015"
 			(at 354.33 97.79 0)
 			(effects
@@ -7475,7 +7938,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7710c99-7232-4529-bdb2-13e266b008de")
+			(uuid "18bfad93-f85d-494f-8d8c-29fbf228ad18")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7494,7 +7957,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a41fbb80-ee40-4c7f-b366-8fb18c97909c")
+		(uuid "19686165-ea98-405f-b783-5fdb2cc642da")
 	)
 	(label "I2C_SDA"
 		(at 350.52 102.87 180)
@@ -7504,7 +7967,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "b5804f1d-5b97-4a5b-8870-f7ab6d1cc223")
+		(uuid "e1781d54-3716-4191-8ed4-d4fec0bb84c6")
 	)
 	(symbol
 		(lib_id "Carrier:microSD_Catalex")
@@ -7561,22 +8024,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "7cef1f4b-d921-4f74-bca3-91e8450d0bf3")
+			(uuid "702bb3bb-3b24-4fe5-b258-fa7d6a937f81")
 		)
 		(pin "2"
-			(uuid "5871c556-3443-4bbc-bfcc-f42e3ecc0ae7")
+			(uuid "5d4e8dfa-a2a6-41ea-9709-e917c0df6dc5")
 		)
 		(pin "3"
-			(uuid "482de5ec-4861-45fc-a50e-6317fe44f447")
+			(uuid "018a5f08-077a-4fda-91f5-092219b73513")
 		)
 		(pin "4"
-			(uuid "4c8e5e07-20a8-4186-a462-b90f1f7834cb")
+			(uuid "1a0b72c5-4735-4648-b042-02b3879809ee")
 		)
 		(pin "5"
-			(uuid "b61ce0d9-5626-407c-80a4-00e15de73ad8")
+			(uuid "97ed8729-a3f0-4794-baa3-1dcac7993718")
 		)
 		(pin "6"
-			(uuid "dca0f18f-5697-4777-8852-a4245cd86c5d")
+			(uuid "4fe6494d-4d5a-4452-8ec5-9f456db9be24")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7595,7 +8058,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4e908bcd-567d-46bc-a620-582c3a87bad3")
+		(uuid "d2df8bf2-4bdb-4238-93a8-3c0762f73eb3")
 		(property "Reference" "#PWR016"
 			(at 212.09 191.77 0)
 			(effects
@@ -7638,7 +8101,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a827d641-984c-40f3-b013-3a5ab3cd7b4a")
+			(uuid "613abd52-2760-4330-8f71-0a13f653a4b2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7657,7 +8120,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "57d69a53-75a0-404c-afb4-38d011d7b160")
+		(uuid "d869b35e-5e3c-470b-af42-b627c257ba69")
 		(property "Reference" "#PWR017"
 			(at 222.25 194.31 0)
 			(effects
@@ -7700,7 +8163,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "be4fed31-3c81-45fb-b669-3cfc775e7e03")
+			(uuid "6cec8328-7eb4-4860-aa2e-9efe271b6277")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7719,7 +8182,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e86f8a6c-a2ce-4fff-8feb-b746a7779e8a")
+		(uuid "a22a004a-06b7-4e5a-a578-349de4b9252a")
 	)
 	(label "SPI_MOSI"
 		(at 218.44 199.39 180)
@@ -7729,7 +8192,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "0a585c1b-7093-414b-a310-ec3cbef8dbcb")
+		(uuid "fbfc7cf1-e656-4299-a5c3-37eebd4afe32")
 	)
 	(label "SPI_SCK"
 		(at 218.44 201.93 180)
@@ -7739,7 +8202,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "b21dfa28-bc77-45bf-a40b-df682b331fb5")
+		(uuid "7716b538-8bc3-4e99-b3f1-5a4751f6db7f")
 	)
 	(label "SD_CS"
 		(at 218.44 204.47 180)
@@ -7749,7 +8212,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a51f8b7d-48f4-4901-85cb-4fde3211e22b")
+		(uuid "a8ad1bcd-926b-4202-8b8f-c15474d00ad5")
 	)
 	(symbol
 		(lib_id "Carrier:RDM6300")
@@ -7806,25 +8269,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "0600b8b9-133b-465d-9762-54fb7ce606f8")
+			(uuid "dba3c5c3-98cb-4f23-903a-52c67cd1cdd6")
 		)
 		(pin "2"
-			(uuid "7d48fdc6-0fd2-4536-a531-5ff23f204739")
+			(uuid "b4f4ae06-5469-42c1-b247-33fce62d74a7")
 		)
 		(pin "3"
-			(uuid "6c77cbc7-e7e1-4466-8b8f-a820724752b1")
+			(uuid "6d3c1d6b-b17f-401e-989d-f465bb3b118d")
 		)
 		(pin "4"
-			(uuid "93ee6dea-71b1-48be-8c31-4773dbd6985b")
+			(uuid "9e8bb948-df84-472d-8384-c54b8c679c06")
 		)
 		(pin "5"
-			(uuid "9315c275-94f8-4545-aa91-4c8277e00081")
+			(uuid "4708c5dc-7f7c-4668-8203-ffa03a85edca")
 		)
 		(pin "6"
-			(uuid "3e70f19c-2968-41fb-a31b-e795a8ab25b9")
+			(uuid "0e1e76ba-f51c-4e19-8e23-da0462f66343")
 		)
 		(pin "7"
-			(uuid "7bcad96f-e242-4b92-98aa-59861c8b4231")
+			(uuid "10c42318-68b0-4f6e-9c0b-0ac515075d82")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7843,15 +8306,15 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ff43e33b-148d-4f8d-8bf5-dcb3659c7fe9")
+		(uuid "e121f50a-b6c1-44b9-a4f0-defaacbb656a")
 	)
 	(no_connect
 		(at 350.52 177.8)
-		(uuid "69fa9cd7-2bac-4465-b0b1-679b962588ed")
+		(uuid "5152870c-b958-4f3e-abc5-0972a8e6a005")
 	)
 	(no_connect
 		(at 350.52 180.34)
-		(uuid "3b5b6520-2723-4c9e-b334-ac56ecb5ec96")
+		(uuid "b034fb15-0821-459d-91ef-392f8f4c72f2")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7861,7 +8324,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "9ffd2cd1-ddfb-4d16-b249-5d79e864ea53")
+		(uuid "8a4c1ec4-c41e-470e-aff5-41fb0edaa023")
 		(property "Reference" "#PWR018"
 			(at 344.17 182.88 0)
 			(effects
@@ -7904,7 +8367,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ebb98bf6-9b19-4e1c-ad5b-d4bc0593fb05")
+			(uuid "25be179d-a5c4-48eb-857d-3385fa1f96c6")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7923,7 +8386,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "dafc70ba-3add-4105-8b54-b8db9890437b")
+		(uuid "7fcf31fe-5f79-4fc8-9945-1e9482c2dd80")
 		(property "Reference" "#PWR019"
 			(at 354.33 185.42 0)
 			(effects
@@ -7966,7 +8429,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5d171e9d-4e9a-4a28-b739-012250de022e")
+			(uuid "d6847799-e3d3-4fcd-b00e-ea1377cb20c9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -7985,7 +8448,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7bab9fb2-34be-4afb-892e-59207990264d")
+		(uuid "dd86d8a3-9fe3-4364-9854-b8ebc25cf22b")
 	)
 	(label "RFID_ANT2"
 		(at 350.52 190.5 180)
@@ -7995,7 +8458,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "197dc13a-5b30-4ad2-828b-728b8de4beb4")
+		(uuid "8313c335-a56c-4dd5-80ab-4df50aa3d66c")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
@@ -8047,10 +8510,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "58318d97-9a9f-4bde-8f10-0f0b5e531c81")
+			(uuid "e264f5c8-ce16-48be-9d14-48c45d580b3a")
 		)
 		(pin "2"
-			(uuid "39277f82-e4d2-4ba2-a357-29e4f743c885")
+			(uuid "21e08f8d-421f-4a02-8c8d-4268d0cef0b4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8069,7 +8532,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "c0b33702-7601-4620-9de0-7ca8d811c691")
+		(uuid "e3a1a90a-e697-4b3e-bd0c-552b60426c11")
 	)
 	(label "RFID_ANT2"
 		(at 444.5 185.42 180)
@@ -8079,7 +8542,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "250daeda-fc72-41c3-98ff-e7b043a25a9d")
+		(uuid "622a61ec-a3b7-4de2-a9d7-3e84dddafa67")
 	)
 	(symbol
 		(lib_id "Carrier:Si5351_7pin")
@@ -8136,25 +8599,25 @@
 			)
 		)
 		(pin "1"
-			(uuid "8f358673-715d-4133-8da4-992b29183610")
+			(uuid "7655df6a-4722-41a8-a3a0-db3704a014bb")
 		)
 		(pin "2"
-			(uuid "110fba7f-d598-4e65-bf92-31023af6811e")
+			(uuid "4b24cabd-cfc5-4d45-a84f-fc832d01a49d")
 		)
 		(pin "3"
-			(uuid "36e314a2-021d-4c1b-bb37-2e1674cdc178")
+			(uuid "ed9fb634-6037-49f5-8b15-cca784dc4ffa")
 		)
 		(pin "4"
-			(uuid "1e8476c9-6f91-4b5d-80bc-c7bcda745e94")
+			(uuid "f72fa7cb-56f5-4d09-a9d4-060d47a5301f")
 		)
 		(pin "5"
-			(uuid "10949034-9d42-427f-8700-47fa76262d54")
+			(uuid "4b05d81d-9fa1-4e56-9f98-a4749b8f73ed")
 		)
 		(pin "6"
-			(uuid "6888753e-a220-44af-8787-de9134c4bd19")
+			(uuid "212c47ba-7727-44d3-b0b8-601ccaf9668e")
 		)
 		(pin "7"
-			(uuid "9665bf6c-357d-4878-9931-bdf6515991a7")
+			(uuid "7daa8378-ac8d-4611-99fa-07364e5896dc")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8167,15 +8630,15 @@
 	)
 	(no_connect
 		(at 350.52 127)
-		(uuid "462622b0-d3e7-4fb1-8552-63f942943916")
+		(uuid "8dd48a72-0195-4610-bda6-43cbb839d7ae")
 	)
 	(no_connect
 		(at 350.52 129.54)
-		(uuid "8e859378-d0a8-4494-8772-ea5e7163d35b")
+		(uuid "40f4fa12-1cc5-42a4-bd00-c286ba361c23")
 	)
 	(no_connect
 		(at 350.52 132.08)
-		(uuid "c0d9ad51-ff68-4b8a-bc57-8679117d1a63")
+		(uuid "f5dbbbd2-41a4-49ce-92f2-6fdbfad1a8cc")
 	)
 	(label "I2C_SCL"
 		(at 350.52 134.62 180)
@@ -8185,7 +8648,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2230736b-206f-4cfd-98ee-be0b8cb8897c")
+		(uuid "000707b7-6e4c-4e24-bab0-9e4651c42c24")
 	)
 	(label "I2C_SDA"
 		(at 350.52 137.16 180)
@@ -8195,7 +8658,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "852087bb-c3a1-4edc-9dd8-9ab035c423a6")
+		(uuid "0672100b-e9ad-4b78-82ef-336083ab01e8")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8205,7 +8668,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "244030ae-9240-4267-9bab-824647d943b9")
+		(uuid "cbe558fc-11fe-4220-8e7c-97efefb62140")
 		(property "Reference" "#PWR020"
 			(at 344.17 139.7 0)
 			(effects
@@ -8248,7 +8711,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "52bb5643-ab96-40c6-b669-b73120a648f7")
+			(uuid "cc8d8701-d0b6-4949-bb7a-12c464806744")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8267,7 +8730,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "43b98a2f-a861-47ed-8254-e817d30f60f2")
+		(uuid "6e6b7378-7ee4-4e08-9458-f8934e3de1a5")
 		(property "Reference" "#PWR021"
 			(at 354.33 142.24 0)
 			(effects
@@ -8310,7 +8773,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6aa396d4-1b3d-437a-ab21-e4101c3e7b44")
+			(uuid "785c1afb-4469-43bc-98d6-226fa1e0ba9c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8373,10 +8836,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd5fe4f8-af0c-43b0-a248-42abb4a526e1")
+			(uuid "1bf7234c-f830-4d2c-8fd8-433abef73411")
 		)
 		(pin "2"
-			(uuid "17d20896-6d9e-46cb-bab9-cdd92d842a99")
+			(uuid "5725b60c-3d54-40da-85e6-0d1a233de185")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8395,7 +8858,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "28a29fa4-67f5-47f3-900d-149c04d15fe3")
+		(uuid "ed7bace6-a9f3-4d07-86ad-8d20ca261455")
 		(property "Reference" "#PWR022"
 			(at 271.78 63.5 0)
 			(effects
@@ -8438,7 +8901,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b4467e7c-cb92-40bc-8eee-34294408213a")
+			(uuid "1399a3c2-f77f-4b5a-898b-127c4ce3543d")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8457,7 +8920,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e1e094bf-3a16-4d88-8636-f701f6a7faf1")
+		(uuid "ba481e61-b5af-4ecc-8434-36b3cc8c232c")
 		(property "Reference" "#PWR023"
 			(at 271.78 73.66 0)
 			(effects
@@ -8500,7 +8963,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1855421-229e-4fa5-8de8-67850c514633")
+			(uuid "95d5450d-7c08-47c3-bcf0-9870ad66a494")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8563,10 +9026,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "0e2834c1-ce44-4994-9f3a-e2447ec8da82")
+			(uuid "189114d9-5110-410c-9825-b7b9345efea0")
 		)
 		(pin "2"
-			(uuid "bb8d03a7-1204-4580-aaee-e7baf6ec2700")
+			(uuid "e6072aaf-348b-48dc-86c6-c6f2b0962235")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8585,7 +9048,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e4df3a0c-a30a-4e05-8706-d09a79759f30")
+		(uuid "54547a23-6d8f-4dca-bb42-fcbf096c079d")
 		(property "Reference" "#PWR024"
 			(at 284.48 63.5 0)
 			(effects
@@ -8628,7 +9091,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8af1dbf1-f838-46d2-9d9c-13b217834794")
+			(uuid "facf0eb7-1640-4ce9-99b4-0e80cc79c8c7")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8647,7 +9110,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "95364212-8924-49e2-8126-abeac8301eeb")
+		(uuid "2472d3b0-03d2-46b3-8d5e-566fc6d0bbe1")
 		(property "Reference" "#PWR025"
 			(at 284.48 73.66 0)
 			(effects
@@ -8690,7 +9153,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "447e8fe5-2e34-4951-a642-8f455cdffb8f")
+			(uuid "34d0a985-862f-4b79-bcc8-8d1084db2a69")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8753,10 +9216,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7de12afb-08cf-4257-81b7-85250754d7a2")
+			(uuid "1a84fbb6-616f-4967-b110-88f21efeccba")
 		)
 		(pin "2"
-			(uuid "f0731fde-048b-4cfb-9067-cf587a7a1b5c")
+			(uuid "8f2ef80c-c813-4d0e-8b51-a8a734d15db4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8775,7 +9238,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "9acde089-5eb2-4183-8b13-26cd58e65024")
+		(uuid "7966bc92-d691-4e03-a9dc-8ea9a58b4a71")
 		(property "Reference" "#PWR026"
 			(at 271.78 106.68 0)
 			(effects
@@ -8818,7 +9281,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8a63839a-cd0d-4bf1-a63e-16435d7d94bb")
+			(uuid "a9c94962-ec98-4d0c-b925-fb4d979e6a93")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8837,7 +9300,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "9288d778-8975-49b6-8c6f-3ef56fed1e84")
+		(uuid "c4493db9-ec65-4a92-bd73-4dfb78342231")
 		(property "Reference" "#PWR027"
 			(at 271.78 116.84 0)
 			(effects
@@ -8880,7 +9343,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a495768-0305-4789-88b2-3982da636da8")
+			(uuid "b4b379c1-ff91-426d-af42-c24b9e144d7a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8943,10 +9406,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "ddd76853-bc17-4ad2-8fbd-cb34f0143819")
+			(uuid "76c08ff4-d7d8-492d-a945-3c37a1422795")
 		)
 		(pin "2"
-			(uuid "0df85052-71aa-4029-8b72-a19f00afcc2b")
+			(uuid "ee26d658-ae23-4916-b93b-898cb6cb0cc1")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -8965,7 +9428,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "85c68be3-b74e-4a94-8afa-8c98d668e337")
+		(uuid "03faf749-20ca-4a3d-bafe-84fc817dcee4")
 		(property "Reference" "#PWR028"
 			(at 284.48 106.68 0)
 			(effects
@@ -9008,7 +9471,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "145d3bd5-82a4-480f-96d9-2efaa81c9dd5")
+			(uuid "c15ee92f-6f39-47b7-a389-e76ce7887715")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9027,7 +9490,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "3703de3a-aac1-4a54-8386-7e91471b1d0d")
+		(uuid "6f6661b5-c9ae-4baf-86c3-08ef108ce272")
 		(property "Reference" "#PWR029"
 			(at 284.48 116.84 0)
 			(effects
@@ -9070,7 +9533,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "bb36e70a-6bfb-4568-bc53-bd33292e4010")
+			(uuid "1afb16db-20aa-4d40-9a6d-84c3ee56fa5a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9133,10 +9596,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d82b5743-2e18-4ee1-b01c-d7a7c25d3b75")
+			(uuid "b0df4c16-e871-4a8d-8581-da129eb67e28")
 		)
 		(pin "2"
-			(uuid "659d58f1-a0ab-4ca0-ace3-2bd0004cadc1")
+			(uuid "22aac23c-a861-4e9d-9c5e-b26b07f52c0c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9155,7 +9618,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "5db8ee28-36c1-4535-b693-1eb3b99f1cc3")
+		(uuid "9cef9040-6a12-4ef7-a8c1-d0a1f9c69a21")
 		(property "Reference" "#PWR030"
 			(at 271.78 149.86 0)
 			(effects
@@ -9198,7 +9661,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3fe6f855-7eb7-406c-abc9-ce883a8f77cd")
+			(uuid "ca1a2f6e-7a9d-494b-af98-d48f6e04a45a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9217,7 +9680,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "cbcf61d3-1a90-42cb-b647-b5414e9b61b4")
+		(uuid "44740ae2-184f-46a5-b997-8491ab31d07f")
 		(property "Reference" "#PWR031"
 			(at 271.78 160.02 0)
 			(effects
@@ -9260,7 +9723,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d735d06f-9f35-467e-b374-d89c2104515c")
+			(uuid "0214e157-a783-429e-9364-dcf39b53adee")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9323,10 +9786,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "9fea732f-08ec-42bb-9b58-6600c07f01ab")
+			(uuid "483b3a6f-6c6f-4deb-948f-3c60c35e39b4")
 		)
 		(pin "2"
-			(uuid "76796c37-6980-4a9f-adc5-614300cd1fc2")
+			(uuid "4da07380-0915-43d1-be26-8358cb0042cb")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9345,7 +9808,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "3b9b0754-21ce-4a48-b59c-c613a90dd9f5")
+		(uuid "c3f17984-19d4-4934-bb7b-7a363f0c984c")
 		(property "Reference" "#PWR032"
 			(at 284.48 149.86 0)
 			(effects
@@ -9388,7 +9851,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c7d335b1-4ead-4068-9dd3-80b67648c05a")
+			(uuid "8fa2a109-b9d7-4473-843c-5fed85715ccb")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9407,7 +9870,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "43299f4f-c851-46f0-af94-69999f30eed2")
+		(uuid "9d43444d-423d-4cdc-80e4-9d80eaf07ce3")
 		(property "Reference" "#PWR033"
 			(at 284.48 160.02 0)
 			(effects
@@ -9450,7 +9913,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "11090559-e92c-4394-b505-530a966b12e3")
+			(uuid "01aa498f-b9c0-4be3-8c2c-5bbdb69343e5")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9513,10 +9976,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "280f4317-3c8f-483c-b763-ff23883aaef5")
+			(uuid "b8206b9d-e189-4431-a76f-9d03cf3cccf7")
 		)
 		(pin "2"
-			(uuid "3dbbf33e-fb1a-42e9-86e6-167ba0a0b1de")
+			(uuid "a6cbeb6d-3cf7-4b12-a15d-d9dc4fb8880f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9535,7 +9998,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "fed5a1b1-1ad1-45c6-83b2-e3b8882a6784")
+		(uuid "faaef68c-996a-4794-9e7f-fa5c13a1e5d6")
 		(property "Reference" "#PWR034"
 			(at 391.16 63.5 0)
 			(effects
@@ -9578,7 +10041,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3ab36f11-f305-46bd-883e-26be4846f486")
+			(uuid "6a855288-d04a-4195-8658-0719ff51a431")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9597,7 +10060,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "56f7485c-f1dc-491f-80b0-37b63244251d")
+		(uuid "2a0cf19d-ad0d-4641-b18c-f346ad30942e")
 		(property "Reference" "#PWR035"
 			(at 391.16 73.66 0)
 			(effects
@@ -9640,7 +10103,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c9fe3a1c-d20b-4424-af96-9281c12e4cc5")
+			(uuid "65cbab23-0c33-4112-a18f-bbd1b038f318")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9703,10 +10166,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "1dbb34fd-212b-4a60-adb2-e8a8ac6244f6")
+			(uuid "83f904d8-71da-4b3b-b085-f3f91fee1daa")
 		)
 		(pin "2"
-			(uuid "49f741ed-0823-4593-9903-bacb1cecb174")
+			(uuid "7daca2e3-3fe6-4f64-ab11-d2fe70afd207")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9725,7 +10188,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4b4c9c62-6632-457e-97e9-65b4d3dc2974")
+		(uuid "12837f92-3bf0-42ac-ad65-d68275591ead")
 		(property "Reference" "#PWR036"
 			(at 391.16 99.06 0)
 			(effects
@@ -9768,7 +10231,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e0e7d47-f398-4b9e-9c4e-439c4a0d8dc0")
+			(uuid "3c052e8c-baf4-402d-97c1-d19ebae775ec")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9787,7 +10250,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "51f70bbf-534c-46dd-91cf-b3a67a32df08")
+		(uuid "4b4af4fe-dd62-48c4-a364-697c17f83e7f")
 		(property "Reference" "#PWR037"
 			(at 391.16 109.22 0)
 			(effects
@@ -9830,7 +10293,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8de3eea8-af1f-4c45-887b-889a26428d2a")
+			(uuid "c03dff4d-a58d-40ae-a4cf-77ae97f9dc91")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9893,10 +10356,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2178cef4-98d9-490e-a84a-c5170406289c")
+			(uuid "5ccc4ce6-2aea-48a5-82e9-4c59ec31f13a")
 		)
 		(pin "2"
-			(uuid "e0d7a2c9-9e27-4108-b8a7-c08e8c0faeec")
+			(uuid "d5c623d5-7232-4c5b-b89f-60afa5aaae34")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9915,7 +10378,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "097bb4bd-cc2b-48d9-ad0e-0265bddbb401")
+		(uuid "487e1812-d2d8-4d9b-b262-7b4997b58391")
 		(property "Reference" "#PWR038"
 			(at 271.78 198.12 0)
 			(effects
@@ -9958,7 +10421,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ea40f8bd-faa8-41d2-bfc7-05fee2456ea6")
+			(uuid "923d111a-26ef-4bdc-8cc1-52f0db656fc2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -9977,7 +10440,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "678ef76c-d480-4998-93ab-9f88a2645d71")
+		(uuid "9f3e2a00-7037-493c-a72f-e28e22c332db")
 		(property "Reference" "#PWR039"
 			(at 271.78 208.28 0)
 			(effects
@@ -10020,7 +10483,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "72ae7cd0-21e5-4376-a5e1-7a2c207ef0db")
+			(uuid "74ab7af6-95f0-46a4-b1c9-2a706a27320c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10083,10 +10546,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a8db183b-e23c-41b2-a054-6b92332e0856")
+			(uuid "162fcf82-8f5d-4f0a-839c-30312fcdb444")
 		)
 		(pin "2"
-			(uuid "9003c980-7573-4c8b-8394-43fc4311b341")
+			(uuid "b5457737-b588-4d66-8e7f-7f188b71de0d")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10105,7 +10568,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "41151c36-c2be-4bde-bd32-17015f40bf6a")
+		(uuid "daddd658-0338-46bb-b295-d2e0570fdfb5")
 		(property "Reference" "#PWR040"
 			(at 391.16 182.88 0)
 			(effects
@@ -10148,7 +10611,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "552622eb-b89e-4cb3-bafe-3285d2c6e38f")
+			(uuid "883188a2-0442-4695-af53-f22945ad35f1")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10167,7 +10630,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b607a5bf-679a-458a-9615-ea0ecaa89694")
+		(uuid "021ab317-6d1e-416e-a712-4bb1a748ec74")
 		(property "Reference" "#PWR041"
 			(at 391.16 193.04 0)
 			(effects
@@ -10210,7 +10673,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "9631d38f-0a18-4ba3-8730-fa8b432f666b")
+			(uuid "312c48e5-5b67-47c7-8c5b-3a20eaf14ac4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10273,10 +10736,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "3c9cecea-996b-4625-955d-38ab047dd2b8")
+			(uuid "47001531-c875-4c52-ac16-ff075f84b158")
 		)
 		(pin "2"
-			(uuid "6754b11a-3404-4428-8732-0e6b1c3befd1")
+			(uuid "3a6e5121-adab-42b7-bf71-a6e56ab30d16")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10295,7 +10758,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f3181f03-c760-4ce7-ae65-fef99113997d")
+		(uuid "620418e6-9b24-404f-8c3f-c075320e5731")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -10305,7 +10768,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b83fcb8e-7cb2-4337-8477-27488296b79b")
+		(uuid "484bffc1-6e28-4579-9a6e-9dd740963172")
 		(property "Reference" "#PWR042"
 			(at 340.36 264.16 0)
 			(effects
@@ -10348,7 +10811,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3a5f207c-327e-4904-b0df-2c227b1f7e58")
+			(uuid "7dbe8edc-6a94-4597-8986-d612ab54aeb1")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10411,10 +10874,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2ebe1019-d3b6-4e62-b46c-7d118cfcacc8")
+			(uuid "10fd624f-33f1-49e0-8a3c-605975b3bc08")
 		)
 		(pin "2"
-			(uuid "b49c4fd0-ce0b-4746-8064-45c6f695b622")
+			(uuid "4bcbd23b-ca4f-4833-9240-a5cdfc7d2110")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10433,7 +10896,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e654dc72-69f0-4def-8d50-e6ae29016fae")
+		(uuid "5e1dbba8-2dd6-4fd7-8b91-b733b6a4ab21")
 		(property "Reference" "#PWR043"
 			(at 391.16 134.62 0)
 			(effects
@@ -10476,7 +10939,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ba6da664-b508-40dc-851c-0a7cb5d410ae")
+			(uuid "e7432f2a-bca8-47d0-b87e-1b5dcab953e7")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10495,7 +10958,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "aa7e3b77-89f0-489a-a2c1-1a98eed9da8d")
+		(uuid "30fd33ad-8e01-4152-b978-64d89a841eaf")
 		(property "Reference" "#PWR044"
 			(at 391.16 144.78 0)
 			(effects
@@ -10538,7 +11001,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d197499-cb6c-441e-9007-9600be94d132")
+			(uuid "bbc42b4d-80f0-4c98-844f-6420159a2466")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10599,10 +11062,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "50d2550d-13a8-40ca-b416-16781f2b5407")
+			(uuid "fa7445dd-0b03-429a-a2bb-16c66a80350e")
 		)
 		(pin "2"
-			(uuid "477ee0e5-3c58-4b96-9836-88ff236d18a9")
+			(uuid "d1700b1f-21ab-41e8-8af6-df1b74940cae")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10621,7 +11084,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "316d7ab8-598f-43a1-99ff-6ec05be416cf")
+		(uuid "0e949f02-194c-429f-ba33-ceb8b35f0c63")
 		(property "Reference" "#PWR045"
 			(at 424.18 63.5 0)
 			(effects
@@ -10664,7 +11127,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8eddd94b-f41e-4da1-b4e3-224d851cf995")
+			(uuid "9c3ff96b-dd5d-46c8-95d2-593e167c9b27")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10683,7 +11146,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "99c2fc0e-c667-47d7-98f8-01f00ace84ca")
+		(uuid "8437ca39-01ef-45d1-8d5a-d8e2d2fa8e09")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -10735,10 +11198,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "cedcbdeb-c72c-4b2d-ba99-a7ad9ff4c221")
+			(uuid "8b0afe49-f213-491f-9e4e-f728c087af1e")
 		)
 		(pin "2"
-			(uuid "c855206e-82cd-4bcf-b6c9-26aaaa9f240e")
+			(uuid "689e9bb6-7b88-4726-9898-bc8c00f56aa5")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10757,7 +11220,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c0a5e5a7-6d2c-477e-b2cf-3d0af668fa67")
+		(uuid "c20d71e3-acc0-4dc3-9e3a-94fc9b8e2348")
 		(property "Reference" "#PWR046"
 			(at 436.88 63.5 0)
 			(effects
@@ -10800,7 +11263,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a6e2200d-bb2b-47ec-99eb-f39fb3b25774")
+			(uuid "47da0c5b-550d-4632-a185-bb4f25c31a37")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10819,7 +11282,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "b46ff6bb-e3d9-463d-ad88-73bf0745f9f3")
+		(uuid "da9cffd4-7f39-496d-90a5-3c80bae763f5")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -10871,10 +11334,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "500dd728-0999-4a73-9353-706dee2d57ad")
+			(uuid "360db3a5-01fe-48bd-9e6b-a408573c4016")
 		)
 		(pin "2"
-			(uuid "b3ade28a-251e-43b8-929f-65abbe8a8c80")
+			(uuid "013cd9fe-35e0-4c60-be25-ba8b689a1ac8")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10893,7 +11356,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "0fc90c8a-8f5c-4910-86ca-e68d0e10461b")
+		(uuid "0773e3ed-8d1d-4a86-909b-8ec9922bf2ac")
 		(property "Reference" "#PWR047"
 			(at 462.28 63.5 0)
 			(effects
@@ -10936,7 +11399,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b13b8a6e-3629-4954-af57-85ed133d6bf5")
+			(uuid "4a312a5d-be7d-4798-a1ea-95d71d5792fd")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -10955,7 +11418,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "21b00f5a-c77d-4ee1-8984-2254a55498a2")
+		(uuid "4042d445-5661-401f-8a8b-ab471f04e034")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11007,10 +11470,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7fd58ca9-5b31-4b4f-b7d0-b4ab6f6ce03f")
+			(uuid "305dc2e8-0430-48bf-9e60-79409592ace8")
 		)
 		(pin "2"
-			(uuid "271dfad2-eb0e-46fc-8750-c38647e71a50")
+			(uuid "dfe21b20-ac3b-4ec3-9ce9-f6a8de05a05d")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11029,7 +11492,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b71382d3-78af-4e52-944c-0a36dc24e497")
+		(uuid "a4a6690a-2f04-4306-bd9c-b328b660e06a")
 		(property "Reference" "#PWR048"
 			(at 474.98 63.5 0)
 			(effects
@@ -11072,7 +11535,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "90357edc-0236-4979-aa10-4bf02d1e2744")
+			(uuid "462f7283-a3cf-4a51-bb3f-081d9c21f4a2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11091,7 +11554,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e74a4b40-984c-4df2-b99b-b72da34fbc1d")
+		(uuid "32b7ce80-f609-4571-9553-8b415617e6fc")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11143,10 +11606,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "fdd75f22-915e-40b8-8eee-a08da8acddcb")
+			(uuid "8a6673b8-825c-4b21-a778-f32d24099dba")
 		)
 		(pin "2"
-			(uuid "b46c727f-90e1-455d-a7f8-ffcee1b5786d")
+			(uuid "0f25e93e-bbad-45fc-a7cc-9d2d17394418")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11165,7 +11628,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "1838bae7-6505-4751-9806-1d6258811e04")
+		(uuid "bda32478-0df5-4c0b-b35d-3137f107a2fb")
 		(property "Reference" "#PWR049"
 			(at 487.68 63.5 0)
 			(effects
@@ -11208,7 +11671,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "36ab4afc-fcba-4b03-bf97-340f4329394d")
+			(uuid "a4408682-b4a4-44aa-86e2-e43a4fd749a2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11227,7 +11690,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "204f6b67-6118-4656-8697-db3f82d25708")
+		(uuid "c7c5d927-9746-497b-91a9-1572c3bfb4d9")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11279,10 +11742,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3ce411f-ce7b-4b70-9fdf-75bb72529db2")
+			(uuid "6601d436-1085-4229-bcc0-c3b3cf1969ef")
 		)
 		(pin "2"
-			(uuid "9966901f-f3c5-4239-b7be-0b7f5ac08815")
+			(uuid "5ecdfdfc-fb40-44d5-a1aa-2948ea668658")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11301,7 +11764,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "7df25022-f118-4c7d-bfc4-439929d8e9fe")
+		(uuid "0d76d80c-b214-4435-9427-6c117a971cfe")
 		(property "Reference" "#PWR050"
 			(at 500.38 63.5 0)
 			(effects
@@ -11344,7 +11807,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "14d3fc41-30ae-4047-8744-5dad19cd5830")
+			(uuid "229c67b4-3d80-4392-af5b-f8c285ee56bf")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11363,7 +11826,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7659d1de-b80a-4b6c-8420-cf8c714d6164")
+		(uuid "589cc293-6e26-42f0-847e-b6ca88ee9a22")
 	)
 	(symbol
 		(lib_id "Jumper:SolderJumper_2_Bridged")
@@ -11415,10 +11878,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "47bfec3b-55f4-4107-8740-137b2da7547f")
+			(uuid "dc180b99-6ae4-4b87-bd0c-04b48f25fc0f")
 		)
 		(pin "2"
-			(uuid "a8a887e8-f389-4684-a242-55f05643298a")
+			(uuid "4a765135-c849-440c-a03f-688b15ab113c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11437,7 +11900,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a11c5b82-2ad5-4150-9ce9-4b46e22fae9b")
+		(uuid "98d5e4df-c6cc-4e7c-880c-172d946557fd")
 	)
 	(label "SPI_MISO"
 		(at 284.48 213.36 0)
@@ -11447,7 +11910,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5ec9057e-7c04-4d39-828e-96c855a18cc2")
+		(uuid "0ed296d6-8dc4-48b3-a41a-20cb0853eed6")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11499,10 +11962,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "16f973fb-97e3-4e10-81ee-19bb1c72e928")
+			(uuid "8b8abb0c-5963-4107-90ac-ad5f6f76c8be")
 		)
 		(pin "2"
-			(uuid "aab7916b-dbda-4b7c-8d3b-4a7fc849cb20")
+			(uuid "a85e4c15-b28c-437b-bc19-e88480465d30")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11521,7 +11984,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "31635387-714f-4fdd-a5c5-7b52c0fd9b89")
+		(uuid "1947fff5-7474-4fe5-88bf-1d921b620ac6")
 	)
 	(label "RFID_TX"
 		(at 406.4 186.69 270)
@@ -11531,7 +11994,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9152f856-169a-40e3-823f-2bc4874343de")
+		(uuid "f35cbe63-2006-4b0a-a3a5-5ec3b2b48b8f")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11583,10 +12046,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "9d230c47-bf7a-4614-84cb-c120d4eb4155")
+			(uuid "3c2a1f0b-e77b-4d44-bbf3-fd46c85351da")
 		)
 		(pin "2"
-			(uuid "ba042b23-0336-4b99-bc7f-06c39e472679")
+			(uuid "b0efa478-e2b5-453b-a0d6-94ca50c250c2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11605,7 +12068,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "595d0e85-9427-4345-8f4a-8f21f9645567")
+		(uuid "19896a5f-b9d0-461f-bf89-5fb75ae9f803")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -11615,7 +12078,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d1ae426c-8beb-4a97-bd29-bfb665062df3")
+		(uuid "d6813dc2-2dfe-433e-82aa-0feea9b583bc")
 		(property "Reference" "#PWR051"
 			(at 419.1 193.04 0)
 			(effects
@@ -11658,7 +12121,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d8f42bd9-245c-43fb-aee2-ba375d5a2aca")
+			(uuid "9780aa84-dc10-4c9d-81e0-b6b75ae7fd98")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11727,10 +12190,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "906797bb-a6f0-4e30-943a-f6288cf27d11")
+			(uuid "69eb5351-e54d-4687-ba6a-82f674500a83")
 		)
 		(pin "2"
-			(uuid "65519b3a-d84c-4e1a-a8b0-9b5c379dafa3")
+			(uuid "e4bf148f-49b8-4f07-9d47-4e830560cbf6")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11749,7 +12212,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a76a46ef-3a0a-4491-acaa-717172634b3f")
+		(uuid "78c29f38-225d-48f4-b33f-e044ad05b8d6")
 	)
 	(label "IR_A1"
 		(at 171.45 248.92 0)
@@ -11759,7 +12222,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3984c908-b671-40e5-a5b6-d034e5780d77")
+		(uuid "225d1a3a-ba5d-4ac4-9403-da96d326e8c4")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -11819,10 +12282,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a685fcb6-657f-410c-8fbc-4d42972c479e")
+			(uuid "5c2668ba-117c-442d-90dc-c2ad3a0e2aac")
 		)
 		(pin "2"
-			(uuid "8fb2569f-10f2-4e4c-a9f6-72a07d3c80df")
+			(uuid "edfe2701-3eaa-45b4-b70d-f52c7f4701c6")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11841,7 +12304,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9f3c14c5-6b8b-4605-a76e-256792732372")
+		(uuid "103c30d5-68aa-4874-ba67-bc595c0da20d")
 	)
 	(label "IR_A2"
 		(at 204.47 248.92 0)
@@ -11851,7 +12314,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "af462645-113e-4d6e-981f-c217316aa6b8")
+		(uuid "4b9e9d79-8634-4855-9c1b-062b474da179")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -11911,10 +12374,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6067b999-29af-4d32-bf94-88e01ff73ad8")
+			(uuid "685df343-3689-48f5-b7d2-770519bb1226")
 		)
 		(pin "2"
-			(uuid "288f5cad-a373-4901-8241-0354f0226cd9")
+			(uuid "9ab8ccae-b9af-4ac3-b184-207281d6d279")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -11933,7 +12396,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "bbceaf7c-887d-4833-bc7e-053ee761f34e")
+		(uuid "b3797600-1852-4046-baed-4466e96ad5bb")
 	)
 	(label "IR_A3"
 		(at 237.49 248.92 0)
@@ -11943,7 +12406,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2a8615f2-8e52-4ebb-b5d3-0afbea6853f5")
+		(uuid "ea93f2e9-e1a8-4d56-a9d8-55620ae4beee")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -11995,10 +12458,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2bcbbcdd-5c7b-4d8e-a8d3-7e27f274585f")
+			(uuid "68b4f844-a3a8-49bf-bdc4-e737c33fb418")
 		)
 		(pin "2"
-			(uuid "08b1339c-befa-4f3c-a045-06879ebbc2cd")
+			(uuid "9efa9983-a15b-45e4-b600-8abda885230f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12017,7 +12480,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "300fdcef-f0b0-4519-b1c1-6dd31fd5ccd7")
+		(uuid "f6394d0a-33ce-4107-a826-1ed2b86dbbde")
 		(property "Reference" "#PWR052"
 			(at 177.8 231.14 0)
 			(effects
@@ -12060,7 +12523,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a985c43e-9415-4ccb-abb3-3ffa479087cf")
+			(uuid "075875e2-a4d4-4ab8-a182-ed8b116932ef")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12079,7 +12542,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ed7b45d9-ffd3-4a53-8663-24d2611635ed")
+		(uuid "f5ac817e-602a-4859-8ec1-2981228fd9cc")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12131,10 +12594,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6a5c8607-9aca-472b-b282-254eda6d3118")
+			(uuid "06b98753-f548-4793-a143-8f06fde4a800")
 		)
 		(pin "2"
-			(uuid "615a0903-a8f1-400e-85d1-6c5ad7d5a370")
+			(uuid "d5825227-df54-443b-95d5-6c8bf27cbea0")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12153,7 +12616,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e500eaf3-8903-4ee7-a525-f83e9a7def29")
+		(uuid "05fc6ffd-6e43-4593-ba56-4f727b3bc396")
 		(property "Reference" "#PWR053"
 			(at 210.82 231.14 0)
 			(effects
@@ -12196,7 +12659,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "294f2bc1-98c9-46f2-8760-fe848abfacda")
+			(uuid "97e46047-f10c-4650-afa6-43b23eee2164")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12215,7 +12678,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9b5f73ac-d683-401c-bad2-76f858f9d4da")
+		(uuid "f6e2f41c-2903-4145-bc06-436c1bbdcb8a")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12267,10 +12730,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "e3da0bba-e9d9-47cd-93cd-5ef8173ac923")
+			(uuid "aa3c1b7f-480d-4d0a-8de6-15bbf1e999b1")
 		)
 		(pin "2"
-			(uuid "3fbb85eb-6557-4e90-b66b-7810357d1ad1")
+			(uuid "35bb5195-5b4b-4f18-88a3-7893f8c590d5")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12289,7 +12752,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "b46c60e3-029a-4d06-bb14-43739877fbd6")
+		(uuid "67769fab-e8ca-4c9a-a828-ef9d4b348ed2")
 		(property "Reference" "#PWR054"
 			(at 243.84 231.14 0)
 			(effects
@@ -12332,7 +12795,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d6ae737a-f632-4f14-9830-f8abf240c1ef")
+			(uuid "6b074138-627d-4c60-8672-56621d154e48")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12351,7 +12814,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a3ddb539-f974-4929-b072-eb3229d7fe24")
+		(uuid "5aa274a3-444a-478a-8e47-4864f6078ab8")
 	)
 	(symbol
 		(lib_id "Carrier:PN2222A")
@@ -12424,13 +12887,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "3ba10fd6-90bf-4649-b818-c1863d03a494")
+			(uuid "aacc249d-f0d6-43a2-b8b9-153f0b30814b")
 		)
 		(pin "2"
-			(uuid "bc539a97-fb29-4bc4-8e80-2dffbdf96f9f")
+			(uuid "e3bc4c37-0567-4bd2-91ff-955594e46cc8")
 		)
 		(pin "3"
-			(uuid "ff026c6a-b4e1-4843-9da0-84f729fe31a8")
+			(uuid "2589ee1b-9c45-44ba-a0d1-afd3d377514e")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12449,7 +12912,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4e01114f-17af-4ace-b790-1d6b9fd7527d")
+		(uuid "779efd32-0acb-416c-a9fa-42c9c793821c")
 		(property "Reference" "#PWR055"
 			(at 185.42 285.75 0)
 			(effects
@@ -12492,7 +12955,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c82a1324-4053-4efd-8d8c-ff8db18ff50b")
+			(uuid "3aa811f9-632f-4f1c-917b-29a387a3a47f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12511,7 +12974,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "3bdd9363-b49c-46a4-8268-2b2a5d9a18cd")
+		(uuid "ecd9512c-4881-4c73-817c-8cc8f2941e7f")
 	)
 	(label "IR_LED_K"
 		(at 185.42 269.24 90)
@@ -12521,7 +12984,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4a4c7b8e-bcd9-4a7c-bddb-43d8e66e8713")
+		(uuid "4a470eef-da9e-4ceb-b193-67fc656ca92f")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12573,10 +13036,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3cd056a-88cf-4041-9d19-6633e7ad806c")
+			(uuid "08455904-4e18-4304-9696-d39464942f73")
 		)
 		(pin "2"
-			(uuid "a35b8d61-bd7f-45fb-b86e-c6d85050554c")
+			(uuid "0239d8bf-f7e3-4200-b627-c3bf5ebf85a4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12595,7 +13058,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cf82aa23-8dc4-4fa2-8a1f-8db6cac2c532")
+		(uuid "dd6f068d-43a2-46f2-90d5-8c567bf43c3b")
 	)
 	(label "IR_BASE"
 		(at 157.48 280.67 270)
@@ -12605,7 +13068,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "8fc25052-7f0e-4160-8ece-4cabf8eb4157")
+		(uuid "bb2faf98-fa33-47ac-8ac1-96e706f08d76")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12657,10 +13120,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "cad95dde-7013-4c91-8a62-6aa6ad518b23")
+			(uuid "50d52d97-ce28-4e58-912b-9e42ebe251ce")
 		)
 		(pin "2"
-			(uuid "83ec0173-9157-48d1-adaf-3ad0df5838c0")
+			(uuid "3679d0d8-1143-46cf-a344-fcf95df84338")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12679,7 +13142,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "49d38536-e7b0-4641-8606-ab03c1dd36b0")
+		(uuid "9177efef-0103-4c9e-af79-6d265498d5d0")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -12689,7 +13152,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d7f5c54e-e4fc-4d95-96cf-6ae4728986a5")
+		(uuid "c3af2d1f-22c3-48f5-99aa-ebfd7f90bfc7")
 		(property "Reference" "#PWR056"
 			(at 167.64 297.18 0)
 			(effects
@@ -12732,7 +13195,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f0442a0-8e6b-47cb-95a3-695d0504df82")
+			(uuid "b224ee8d-7a9f-4de4-88ca-577c34eeb88e")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12795,10 +13258,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9eaabb0-00f2-4cf7-8557-4229f1314ec7")
+			(uuid "4b99e1e9-1243-476d-85d9-4ada2ff78d26")
 		)
 		(pin "2"
-			(uuid "e2c7ddb6-8284-46df-b9c7-7d31c65752b7")
+			(uuid "7b85bbb4-97dc-4bfc-9fed-906d0f87d7a3")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12817,7 +13280,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "0ed1ec72-465e-46f3-a722-7755d3c44764")
+		(uuid "e49f1c8e-9edf-4e32-97c2-8ddb7a4583df")
 		(property "Reference" "#PWR057"
 			(at 264.16 248.92 0)
 			(effects
@@ -12860,7 +13323,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "33634fe4-38f1-4cc1-9599-0b0ecf59f71e")
+			(uuid "05df01a0-8ed1-4ab5-bdc5-c3c454a6b75d")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12879,7 +13342,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "48a693e3-953c-4be1-9083-ea9d657fcbf1")
+		(uuid "9571705d-59fe-4776-9be6-266db87de089")
 		(property "Reference" "#PWR058"
 			(at 264.16 259.08 0)
 			(effects
@@ -12922,7 +13385,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "ec867288-4dd7-4186-9ece-f270f39daa94")
+			(uuid "782b6e78-c9fd-4179-83ff-b2c2c843aed2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -12988,13 +13451,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "de7d4f03-8b40-40de-8d6b-1efffaf5bce1")
+			(uuid "5013fdc5-e067-4c04-8558-61d85721c2a1")
 		)
 		(pin "2"
-			(uuid "7b6ac9b3-1b73-41c1-a7e4-0342b7713d91")
+			(uuid "565e65dc-0679-475a-974f-a25e988b8efd")
 		)
 		(pin "3"
-			(uuid "ace2e85b-4ca4-45eb-a739-2f30976b74f9")
+			(uuid "7af4376f-eec5-42ab-8c22-a2959fcddbda")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13013,7 +13476,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "41404dae-5176-4fdf-b28b-d01a2285be05")
+		(uuid "77d365db-16b2-4943-8844-f53e128f3ded")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -13023,7 +13486,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "14bd9fbb-1cc4-4597-8b45-010462846990")
+		(uuid "03dd3fca-3cad-4019-9e6f-7bb18ae85a6a")
 		(property "Reference" "#PWR059"
 			(at 295.91 254 0)
 			(effects
@@ -13066,7 +13529,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5c961c26-78a6-4cad-a7f2-30f83a977af7")
+			(uuid "3baf01ac-44b0-43f7-933b-d45df390afed")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13085,7 +13548,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a8c6a6b7-2c4a-4bc6-bd95-0f5e01d20ee4")
+		(uuid "ec218102-38dd-4818-ac33-8441a5a4079a")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -13137,10 +13600,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b51b11b7-2171-47db-8e83-f684cf4afa54")
+			(uuid "aa399688-34b1-40b4-8a40-bf9e38eb74a1")
 		)
 		(pin "2"
-			(uuid "57365494-ef59-40db-b472-dd67d4acae41")
+			(uuid "8862b62f-dbb1-497b-9268-3c1f43e42d34")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13159,7 +13622,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "cf270c38-e73c-4c73-98d4-2a838034b133")
+		(uuid "58e8f6bf-c877-4d11-8e5d-0055e0049ed4")
 		(property "Reference" "#PWR060"
 			(at 330.2 248.92 0)
 			(effects
@@ -13202,7 +13665,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "67004fc0-03ef-4b59-a544-634a6b70e920")
+			(uuid "6f143626-dd1b-408d-b393-749cb7386bb9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13221,7 +13684,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f2499d6a-270c-4c2d-ac7b-1b7a4cbb512e")
+		(uuid "4966a4a4-0e1a-4320-aa6b-d41639498dec")
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
@@ -13275,10 +13738,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "d0d4daad-f0ff-481f-83cf-3f58716a167e")
+			(uuid "524428d8-1847-447c-9db5-c97a966fabda")
 		)
 		(pin "2"
-			(uuid "3d4a1438-0114-43d7-aa4d-1dba8fc043dd")
+			(uuid "7dc84f1b-f743-4ae0-b75f-992357bfe2f4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13297,7 +13760,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "9a510816-b4d6-4c30-a9cb-abfa8d0e6799")
+		(uuid "bf6d5d7c-077d-4579-bdcf-f33f11a7e4c2")
 		(property "Reference" "#PWR061"
 			(at 379.73 246.38 0)
 			(effects
@@ -13340,7 +13803,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "676c3419-474c-4f3f-9759-a94924d24802")
+			(uuid "0cc558ee-60cd-4ab0-ab05-b0da2a908322")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13359,7 +13822,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "b4447253-567b-4aa4-8901-48673515baf1")
+		(uuid "3378fb5b-d8fa-42c1-8b35-94815fb2fd3b")
 	)
 	(symbol
 		(lib_id "Device:D")
@@ -13427,10 +13890,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "65f4ae96-d4de-4068-a27c-e080e9c8224b")
+			(uuid "8e79c763-9e4f-456c-b60b-bf9e02fa4aa7")
 		)
 		(pin "2"
-			(uuid "679da490-54d8-469b-8ff3-4a55fe878913")
+			(uuid "ec40dfbc-7fff-45f1-9dd2-b80db13f838a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13449,7 +13912,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "8a3ad451-b478-414b-83b8-614cde2e2144")
+		(uuid "a60f2d6d-0305-4620-847d-f81eabd56d3e")
 		(property "Reference" "#PWR062"
 			(at 396.24 248.92 0)
 			(effects
@@ -13492,7 +13955,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "da8dff1f-de97-49ed-a9ce-d0cd75ccf1a0")
+			(uuid "dbc62d9d-62bd-4fb8-b132-e364bd115cb9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13511,7 +13974,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1cf154e1-4a53-4748-8dfe-729d65387958")
+		(uuid "4ab8b647-9af1-4e5b-92ed-f6bad0edf1de")
 	)
 	(symbol
 		(lib_id "Carrier:PN2222A")
@@ -13584,13 +14047,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "0c45d9d2-4a9a-40fd-8469-5e67f223d339")
+			(uuid "f66181b8-f2ac-4568-a7e7-1b4d32e4ff90")
 		)
 		(pin "2"
-			(uuid "d3f175c9-87a5-41fe-a001-aa76a2e439f0")
+			(uuid "f5ba5889-5087-4d16-be09-301027e28ef2")
 		)
 		(pin "3"
-			(uuid "1ff8b451-5da2-47dd-9f2d-a14fd8e95e09")
+			(uuid "bd9df451-f33b-4ea3-af2c-1406b52b5f1c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13609,7 +14072,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "93825088-0015-4b9f-b88e-429823c11840")
+		(uuid "64c9ede8-bf81-41b5-b5a5-8126e708d36e")
 		(property "Reference" "#PWR063"
 			(at 381 283.21 0)
 			(effects
@@ -13652,7 +14115,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd58ae7a-02e1-461d-9c4a-1f5a22fbc297")
+			(uuid "2b871068-77fa-4d82-b1f1-e9251fc1eb51")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13671,7 +14134,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ef5714be-3f51-43c2-80bb-ea725d044afc")
+		(uuid "cce7d2ae-89cf-4a21-b378-38cd1a2f462f")
 	)
 	(label "BUZ_NEG"
 		(at 381 266.7 90)
@@ -13681,7 +14144,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dfbf87f4-9ca5-4a8d-a351-8b3543e42caa")
+		(uuid "957ff635-bbc7-4e89-8e54-b32b3f5f857d")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -13733,10 +14196,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5db2a744-c6f3-401c-8651-141db483ee49")
+			(uuid "fa3ce22e-3c66-45e1-8b78-be90712ecd47")
 		)
 		(pin "2"
-			(uuid "a177c810-496f-4210-bbf5-31eb20aec6b9")
+			(uuid "e61b7f89-36a3-499e-aa6c-c6a97d4cfcf4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13755,7 +14218,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "45e360f1-29ed-490c-8d01-1f5e5ef90a83")
+		(uuid "e380ff23-280a-46e1-bc1b-0505d346ca47")
 	)
 	(label "BUZ_BASE"
 		(at 355.6 278.13 270)
@@ -13765,7 +14228,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4893f7a9-d083-4064-8185-63b533ffe8c9")
+		(uuid "0dddfb7f-6921-402c-b0fc-f342abfa456a")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -13817,10 +14280,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "87ac893b-9841-436c-b8de-ce1ade21517c")
+			(uuid "2d16f0f6-a43e-4214-8257-e4cdfb8c2fa2")
 		)
 		(pin "2"
-			(uuid "bfb8a0e4-514f-446d-9788-b3fcc842c526")
+			(uuid "4ba69dfe-4fa7-4303-9594-929dd08705b8")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13839,7 +14302,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "11dc9dad-72b6-421f-a271-350e95f9d488")
+		(uuid "58cc15c8-7486-4577-a18e-207f6f06b198")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -13849,7 +14312,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "a503f48f-3661-4098-9138-4a86384f97e2")
+		(uuid "615c74b2-f05b-4e03-bbda-fa511cc80a06")
 		(property "Reference" "#PWR064"
 			(at 365.76 294.64 0)
 			(effects
@@ -13892,7 +14355,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "89002db3-8b17-490a-8222-f460550ffa62")
+			(uuid "dd882b95-5a15-4a7f-80ac-7ae374d07227")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13953,13 +14416,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "2cff57e0-c6f1-414f-8250-47b7968ab0bb")
+			(uuid "97cca3ec-48e5-4acd-bf07-f68a380f16bb")
 		)
 		(pin "2"
-			(uuid "54fd82ea-704b-413a-b1dd-d2d6ab0e3dc1")
+			(uuid "35c341ce-0c88-44dd-b75b-3de867631327")
 		)
 		(pin "3"
-			(uuid "92d71cca-e587-4df8-baeb-dd43521fa447")
+			(uuid "d030c7f5-6e69-434d-9e18-429859a9a4b3")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -13978,7 +14441,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f2d020a9-a236-4bcc-a758-4fa53ffd9975")
+		(uuid "bf5bf592-5ac8-4a5a-bb45-68ba5629de90")
 		(property "Reference" "#PWR065"
 			(at 455.93 226.06 0)
 			(effects
@@ -14021,7 +14484,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a520785-9505-44e3-b8bb-bf2522b7787a")
+			(uuid "fe3f26c6-8912-4ae7-9137-99946433d800")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14040,11 +14503,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2ef93b14-c292-429b-9497-a3fce34880b3")
+		(uuid "c1670574-4346-4b02-959f-5effd80478e0")
 	)
 	(no_connect
 		(at 449.58 231.14)
-		(uuid "91df1652-64dd-4b6b-b978-fbe0eb0e9d14")
+		(uuid "6b56cb25-4662-4306-ab29-a75eb70f6544")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -14096,10 +14559,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2341a04c-c5af-42fb-b03f-98cec212ad84")
+			(uuid "6c65a2dd-701e-47b8-b5c0-e843a5fa3274")
 		)
 		(pin "2"
-			(uuid "f1906de8-c94e-44c4-9719-5b19fef056e9")
+			(uuid "19f4b1a3-cfdf-4933-8d60-de4cb021a762")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14118,7 +14581,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b1ba3b87-219d-4fca-a35f-26e58860a5b6")
+		(uuid "63951948-5577-40ae-892a-664e8a69b78d")
 	)
 	(label "PWR_GATE"
 		(at 464.82 232.41 270)
@@ -14128,7 +14591,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "dfd3a188-b391-497f-b075-f6e38b4db0bc")
+		(uuid "8c0c160d-7a76-4efa-98c8-19d8ded86d53")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -14180,10 +14643,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5989af39-0e26-4c19-8df4-e30dd202395a")
+			(uuid "ecb63ca4-d576-4dd2-b23b-103d3baf0570")
 		)
 		(pin "2"
-			(uuid "831d823a-a36d-4933-826b-6f2654a611d8")
+			(uuid "a508cf34-523a-4ea8-a311-fd33c46fdbbe")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14202,7 +14665,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "2958e1d6-c644-4fa6-846d-43d4c65d88c1")
+		(uuid "fc754343-af81-4100-9afb-e71be4d5bd05")
 		(property "Reference" "#PWR066"
 			(at 477.52 215.9 0)
 			(effects
@@ -14245,7 +14708,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3c49f83b-6c22-449e-81d9-f185edcbc1a3")
+			(uuid "335de824-75bb-481b-ade2-85e001076276")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14264,7 +14727,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e380c0ae-eef2-44e5-9b2a-402ba9845f6f")
+		(uuid "4df9f750-ef8b-43c8-b18a-82590532bdaf")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -14318,10 +14781,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6e10b047-da92-4f58-bd44-f8a6bcadacc3")
+			(uuid "60a42806-23fb-42f4-bba7-a612eb3f3a1f")
 		)
 		(pin "2"
-			(uuid "3f30a4ab-4ad7-4301-b02f-24fe37941072")
+			(uuid "4057a61b-976e-4dc8-86bf-6017f708dd6a")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14340,7 +14803,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8edf5779-f3aa-4ecc-98ab-d708eb988300")
+		(uuid "2136f8ec-9055-43ed-8582-b0bd85302caa")
 	)
 	(symbol
 		(lib_id "Carrier:+5V_MOD")
@@ -14350,7 +14813,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f2b3fd43-50bb-4c31-894b-b11286f43a64")
+		(uuid "99286ecc-33ae-4b60-903a-8940e5c9ac78")
 		(property "Reference" "#PWR067"
 			(at 490.22 248.92 0)
 			(effects
@@ -14393,7 +14856,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd1c42c9-a4dd-41fa-86e0-2ba1fa1c75eb")
+			(uuid "8d6d9d3c-658e-4eb0-908b-8ba904143352")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14459,13 +14922,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a14f904-38eb-4a1d-b62e-64338e67c2db")
+			(uuid "52cbdc94-8403-49ba-a330-e36eafc1c375")
 		)
 		(pin "2"
-			(uuid "93170c3a-7594-43d2-bebc-e4172c25ecd0")
+			(uuid "c71cd9a4-14d6-4c7e-b6f5-108bb7ca460a")
 		)
 		(pin "3"
-			(uuid "833d6854-4856-43a6-bc9a-d53de24824a9")
+			(uuid "0db28d07-abae-4ea3-8e7c-86069a9d84b6")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14484,7 +14947,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d5243266-e612-4ef2-97f0-d5d4aabded77")
+		(uuid "8ebdef6c-5e59-40ce-9152-30ea6cde2eb1")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -14494,7 +14957,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c37dc539-dd85-4d70-9f5d-82cac415100f")
+		(uuid "844c9e3f-9cd5-46f5-a848-934c632ca61c")
 		(property "Reference" "#PWR068"
 			(at 495.3 234.95 0)
 			(effects
@@ -14537,7 +15000,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "311becd4-e81c-41dd-8f42-7c7ebf05e2dc")
+			(uuid "d9446380-b3c3-401a-a3e0-444042cb9bc3")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14556,7 +15019,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c640e235-40b0-45fa-8b5d-2516a295d315")
+		(uuid "24377220-630f-4c69-b221-832ac1ced35d")
 		(property "Reference" "#PWR069"
 			(at 495.3 232.41 0)
 			(effects
@@ -14599,7 +15062,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3d5ea27-ca0f-428b-bda1-468731efab68")
+			(uuid "94d0f9c2-a830-4241-8262-9cee9e9ff108")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14661,13 +15124,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "cac36e13-bfe1-4b16-b569-22d9fbcfab91")
+			(uuid "3120f087-37f5-4a41-b0e0-7ee9ce5619ea")
 		)
 		(pin "2"
-			(uuid "c65d71b5-a94b-40ea-9a6d-4be564aca7a1")
+			(uuid "72e845cf-ac03-461e-896c-978b1aca53a1")
 		)
 		(pin "3"
-			(uuid "9b0065ee-0f2a-4b34-89e7-29df3173e9a2")
+			(uuid "32870336-fe96-46ab-86f1-6eaa663c7ac6")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14686,7 +15149,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "eb2a6c4e-61b7-4fad-b06c-ae82ff4ce0ce")
+		(uuid "f96e3d85-62bb-4449-8700-9393e9811594")
 		(property "Reference" "#PWR070"
 			(at 538.48 247.65 0)
 			(effects
@@ -14729,7 +15192,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "1f11ee51-32bb-44e9-bab2-a9dbb58a790f")
+			(uuid "62453969-b55c-4bd6-ba0d-db15fd07aca8")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14748,7 +15211,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "e3579668-e204-408a-bd04-72414aea1c09")
+		(uuid "a5e0c798-0047-4d89-a59f-557599ec035d")
 		(property "Reference" "#PWR071"
 			(at 542.29 233.68 0)
 			(effects
@@ -14791,7 +15254,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8246a9aa-0f5b-47d8-b3f1-f3e3041c1d50")
+			(uuid "8860d7e6-c6ee-42f9-b1c2-2a8a3410b217")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14810,7 +15273,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "65288915-3c7b-4d3b-a506-4f1211659b44")
+		(uuid "86240bc7-6a4a-4140-b527-da8392b7b66f")
 		(property "Reference" "#PWR072"
 			(at 534.67 233.68 0)
 			(effects
@@ -14853,7 +15316,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a0f3d41-8a73-4ec5-961a-3f302c054306")
+			(uuid "82ca3b54-8537-4f28-a069-ce59761256a1")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14916,10 +15379,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "bcbf5259-9b8e-4949-9985-d955177ff89c")
+			(uuid "1840b4b6-fb52-45a3-849b-f917f7ecb086")
 		)
 		(pin "2"
-			(uuid "90dc78e3-7803-4a70-9827-a59d82a5f5e0")
+			(uuid "cca71073-081b-44c6-ab78-7537e99d8cb2")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -14938,7 +15401,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ce0c3c83-b521-43ab-b9a0-cf9a66b4da43")
+		(uuid "7022d0d3-cbac-49a4-8bf5-bcd9638e216b")
 		(property "Reference" "#PWR073"
 			(at 515.62 238.76 0)
 			(effects
@@ -14981,7 +15444,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "eecbeb3a-8ddf-4495-a478-ad7b6e1ed88a")
+			(uuid "a91ba5e4-2e3c-4b11-997f-24269066f704")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15000,7 +15463,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "f997ed57-0a89-4ae6-ac5c-70bb31f0ef33")
+		(uuid "5f4af052-0e80-478a-97b3-1cf126614dab")
 		(property "Reference" "#PWR074"
 			(at 515.62 248.92 0)
 			(effects
@@ -15043,7 +15506,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "cc301f26-281b-49b6-b12a-3ec8351f3e03")
+			(uuid "a9c80e92-45cb-4ce5-aa7e-488ec44840c1")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15106,10 +15569,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "fb498f9d-b2aa-43af-82b4-0fa3a41f2ab1")
+			(uuid "2755f551-67db-45d2-b1d3-e822dbb5ae59")
 		)
 		(pin "2"
-			(uuid "f4bfa3b5-c627-4180-b014-f14b8cff29df")
+			(uuid "12ffa4d7-1b8d-4f49-bcf3-fdad0bf5d809")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15128,7 +15591,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "dd8bdaef-4f21-415f-a634-f6b685972883")
+		(uuid "f6b9f71b-9a74-4607-b623-16586f1c2619")
 		(property "Reference" "#PWR075"
 			(at 558.8 238.76 0)
 			(effects
@@ -15171,7 +15634,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "691c858c-712e-4c11-8fa1-3cad0cc5ee06")
+			(uuid "fce2aebf-b577-4844-ab12-1d2ccaecee02")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15190,7 +15653,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "86ccb26e-ef64-4aa2-91c5-345fb0d5f2ee")
+		(uuid "8e34be28-0ab5-483b-8a78-02253cad5fa4")
 		(property "Reference" "#PWR076"
 			(at 558.8 248.92 0)
 			(effects
@@ -15233,7 +15696,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "545c307b-543f-4b99-894c-6fdd99f3e72a")
+			(uuid "03927935-8649-4983-a083-e401c012101e")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15296,10 +15759,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "34ad213d-e441-4a5d-b1a4-81713831ca9c")
+			(uuid "e8935ecb-f05c-4174-967b-5334d75e59f8")
 		)
 		(pin "2"
-			(uuid "a6c91201-7349-40a0-872e-85e54573f9fb")
+			(uuid "1ef7baca-71c0-4ee2-8771-777212ec0a9c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15318,7 +15781,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c3f28c61-3fdd-4b94-927c-59d781d77f1b")
+		(uuid "988a6ea5-136b-4b51-9b3e-8c29b06e7e09")
 		(property "Reference" "#PWR077"
 			(at 571.5 238.76 0)
 			(effects
@@ -15361,7 +15824,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a87c1f17-fd70-4b39-aaf4-a5aafca01c24")
+			(uuid "b18fe54e-fc9a-4c0a-84d3-e81fc55e6a6f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15380,7 +15843,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "3b277797-1bb5-43d0-a543-248a308ffdcb")
+		(uuid "dd501696-8f62-4655-ae62-2e0962368a8f")
 		(property "Reference" "#PWR078"
 			(at 571.5 248.92 0)
 			(effects
@@ -15423,12 +15886,1305 @@
 			)
 		)
 		(pin "1"
-			(uuid "469a941c-cd5d-498d-923b-23f5c196de35")
+			(uuid "5c603503-a0e3-47ec-99bd-9e7e9a903a0b")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
 					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 330.2 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "101a26f1-e569-4d04-b6ae-02ef8c2765b7")
+		(property "Reference" "J10"
+			(at 330.2 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18650 BAT"
+			(at 330.2 355.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+			(at 330.2 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 330.2 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 330.2 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d3f185d8-85ee-4c10-ba75-30ad1eb29cc5")
+		)
+		(pin "2"
+			(uuid "dbfa5412-c56b-4a12-a2d2-60018fe3b3b4")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT"
+		(at 325.12 350.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c738f332-0575-4663-876d-595f1d76b88f")
+	)
+	(label "BAT_N"
+		(at 325.12 353.06 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "46465b3c-152f-4ef6-abdc-3c651e83be74")
+	)
+	(symbol
+		(lib_id "Carrier:TP4056_Module")
+		(at 360.68 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "26ed6382-5aa5-4806-a082-6e679d06c381")
+		(property "Reference" "U4"
+			(at 353.06 342.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TP4056 module (protected)"
+			(at 353.06 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Carrier:TP4056_Module_Pads"
+			(at 360.68 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 360.68 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)"
+			(at 360.68 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e93348a0-bcfb-45b7-84b6-ecc3eb78d590")
+		)
+		(pin "2"
+			(uuid "af55b879-c23e-48ee-a057-c05019c0aa83")
+		)
+		(pin "3"
+			(uuid "2dcf848c-3bd2-46bb-8bbb-7df99e2e9c5d")
+		)
+		(pin "4"
+			(uuid "97982c60-3195-432c-94fe-cb2f9bbed6a9")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT"
+		(at 350.52 346.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4b0e3f4c-7e74-4993-b9cd-f20ef1a14d30")
+	)
+	(label "VBAT"
+		(at 350.52 349.25 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "60126209-368a-444d-b881-654dbec76b07")
+	)
+	(label "BAT_N"
+		(at 350.52 351.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "20da97d8-b4b7-404b-bb84-e9f31d01ea56")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 350.52 354.33 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "1cb86ffb-8a9f-4a11-a78a-8daddf29513c")
+		(property "Reference" "#PWR079"
+			(at 344.17 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 346.71 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 350.52 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 350.52 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 350.52 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "97ec99f5-fe3b-4fda-9b73-8a07b2347d0f")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR079")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_SPDT")
+		(at 398.78 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d844a040-d73a-4ec2-b4fa-f02e56794a30")
+		(property "Reference" "SW8"
+			(at 398.78 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MAIN PWR"
+			(at 398.78 355.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q"
+			(at 398.78 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 398.78 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Switch, single pole double throw"
+			(at 398.78 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a7e2382c-e9f9-4afa-b625-999dcfd3d30f")
+		)
+		(pin "2"
+			(uuid "06b2d51b-f7c2-42ce-bb36-240d07890317")
+		)
+		(pin "3"
+			(uuid "795ff5d2-6d42-4530-aa65-6c104e056629")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "SW8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 403.86 347.98 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "60b405fe-babe-42c3-aabf-2beea79d44d5")
+		(property "Reference" "#PWR080"
+			(at 410.21 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 407.67 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 403.86 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 403.86 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 403.86 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d35c828-c3c0-4271-8f1d-2331602d4daf")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR080")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BAT_GATE"
+		(at 393.7 350.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d83243f7-67a7-4e67-b4cb-17eb092dba91")
+	)
+	(no_connect
+		(at 403.86 353.06)
+		(uuid "28325fae-b196-4bc2-8138-14f1eed1c459")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 411.48 337.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "43d54f17-d3e3-4955-95f7-5316aa4a474a")
+		(property "Reference" "R19"
+			(at 413.512 337.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 411.48 337.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 409.702 337.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 411.48 337.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 411.48 337.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "64bdbf5a-6cf6-4f98-a6de-c68204decb80")
+		)
+		(pin "2"
+			(uuid "6aaff3a2-c9f7-463e-9773-4cb36f5564b8")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT"
+		(at 411.48 334.01 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "15d21f14-3b36-42f1-869a-c389a806f694")
+	)
+	(label "BAT_GATE"
+		(at 411.48 341.63 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d7e54073-7a99-4004-a8a6-12eb71aec3a2")
+	)
+	(symbol
+		(lib_id "Carrier:AO3401A")
+		(at 421.64 355.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d356a450-b48c-4bfc-8c14-4b4b9239c88b")
+		(property "Reference" "Q4"
+			(at 426.72 353.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AO3401A"
+			(at 426.72 355.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 426.72 357.505 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf"
+			(at 426.72 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
+			(at 421.64 355.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d19481a9-c7a4-4f2c-9a28-9a8988002f67")
+		)
+		(pin "2"
+			(uuid "57520773-4418-4645-bad6-30ec26c612f2")
+		)
+		(pin "3"
+			(uuid "80d6c396-51e3-4f9a-a0c3-81ee03029d4d")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BAT_GATE"
+		(at 416.56 355.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "57c29127-f4ed-48f2-ac9c-8b12549cf24c")
+	)
+	(label "VBAT"
+		(at 424.18 360.68 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "303268e9-f889-451a-a113-ea7dbe688de3")
+	)
+	(label "VBAT_SW"
+		(at 424.18 350.52 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "cd1f0f1d-72af-4ce2-811e-6e83db421561")
+	)
+	(symbol
+		(lib_id "Carrier:MT3608_Module")
+		(at 464.82 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1bd1ab34-ec25-475f-9547-36f72a0d65d1")
+		(property "Reference" "U5"
+			(at 457.2 342.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MT3608 boost module (set 5.3V)"
+			(at 457.2 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Carrier:MT3608_Module_Pads"
+			(at 464.82 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 464.82 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "MT3608 boost converter module"
+			(at 464.82 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ba6bc46a-249e-49c4-96c1-dc7283398d78")
+		)
+		(pin "2"
+			(uuid "1f7e043e-9787-4692-a208-694cebb9f5e9")
+		)
+		(pin "3"
+			(uuid "81444046-1b15-4b66-aeec-040e10596853")
+		)
+		(pin "4"
+			(uuid "851a0ff2-18d6-412f-870f-99839805e610")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT_SW"
+		(at 454.66 346.71 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "736abecd-ccf0-46c1-a0cc-83760f6b9296")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 454.66 349.25 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "2c9408bd-ee36-4b0e-9e9c-6df20f2fcfcf")
+		(property "Reference" "#PWR081"
+			(at 448.31 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 450.85 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 454.66 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 454.66 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 454.66 349.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf8e1c9e-3281-4c0d-a213-7f0658d4c9f7")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR081")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BOOST_5V"
+		(at 454.66 351.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "67f13d27-2e4f-4ef0-845f-8f63dbce9cdc")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 454.66 354.33 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "cacee840-6260-49f7-8a1c-6c4db56f0086")
+		(property "Reference" "#PWR082"
+			(at 448.31 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 450.85 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 454.66 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 454.66 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 454.66 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "205afd99-d304-4735-a4eb-2e1b188fbfc5")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Schottky")
+		(at 490.22 345.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "038a057b-c4e4-4f58-b77d-b557a94571fa")
+		(property "Reference" "D5"
+			(at 490.22 342.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SS34"
+			(at 490.22 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA_Handsoldering"
+			(at 490.22 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 490.22 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 490.22 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d0b1934c-c9cd-4905-a4af-e1889138aa84")
+		)
+		(pin "2"
+			(uuid "98365f1f-b01c-461f-ab73-113d74f56b32")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 486.41 345.44 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "73f6d793-79f1-4149-9e34-11e2bb03eb09")
+		(property "Reference" "#PWR083"
+			(at 490.22 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 482.854 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 486.41 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 486.41 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 486.41 345.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "37954c08-bca6-4d95-be0b-f52e6f29c82f")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR083")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BOOST_5V"
+		(at 494.03 345.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c09c743-c93a-4248-a3e4-85c8c030d401")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 510.54 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "675f519c-439b-4357-991a-4c7c5439ff49")
+		(property "Reference" "R20"
+			(at 512.572 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 510.54 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 508.762 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 510.54 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 510.54 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f4b92f4-0ab2-45bb-9d59-3065db0b4dad")
+		)
+		(pin "2"
+			(uuid "c36520b7-60bd-402b-b16e-f69083b3e594")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VBAT_SW"
+		(at 510.54 346.71 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1d437387-165c-4dcb-8dcb-f0190b4e2976")
+	)
+	(label "BAT_SENSE"
+		(at 510.54 354.33 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e972f48d-b29d-4e59-8f12-7dacdf99d0ac")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 523.24 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "980a1b8b-6ecd-42f4-8fc2-2aa75552b7a1")
+		(property "Reference" "R21"
+			(at 525.272 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 523.24 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 521.462 350.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 523.24 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 523.24 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b81995b5-10a3-4a3a-8cde-4c3b31ed2dd4")
+		)
+		(pin "2"
+			(uuid "814abef7-343c-4cac-bd9d-e857197356b4")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BAT_SENSE"
+		(at 523.24 346.71 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4ca79325-177a-4184-9051-e4ccb17a44df")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 523.24 354.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "cea5a426-3e2e-4840-9c54-b5a7f7e30650")
+		(property "Reference" "#PWR084"
+			(at 523.24 360.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 523.24 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 523.24 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 523.24 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 523.24 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a0f35732-5bec-4297-a7e2-7f7074281752")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR084")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 535.94 350.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f979837d-16c4-4de2-ad51-d595d7d51e32")
+		(property "Reference" "C18"
+			(at 536.575 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 536.575 353.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 536.9052 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 535.94 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 535.94 350.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ddb3b42b-431d-49cf-b966-ef9afcfae83f")
+		)
+		(pin "2"
+			(uuid "953bb2fc-429e-4853-90f9-05e4d972180f")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "C18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "BAT_SENSE"
+		(at 535.94 346.71 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "92a9bbff-e4ba-4713-ae06-0ebc56c1c519")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 535.94 354.33 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "04c7fd87-31c9-464b-8cc0-7edbfbdca0c8")
+		(property "Reference" "#PWR085"
+			(at 535.94 360.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 535.94 358.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 535.94 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 535.94 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 535.94 354.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cd1056a5-9a47-4bc9-9d9c-83413fa9c0d5")
+		)
+		(instances
+			(project "ESP32S3_Carrier"
+				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
+					(reference "#PWR085")
 					(unit 1)
 				)
 			)
@@ -15485,10 +17241,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "f1fdae12-6368-4454-b0b9-a2f9f11c2c35")
+			(uuid "cdcbd3c7-5632-4cd4-b95d-b577e7093156")
 		)
 		(pin "2"
-			(uuid "c5aaa552-638e-4433-a347-a1ec3685c3af")
+			(uuid "786d8008-6231-49fb-a9cf-86f36bc0eaa8")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15507,7 +17263,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9e9c9319-5848-4556-8a23-169ac47d322f")
+		(uuid "45478df5-ebee-4d6c-9a99-7a5bd4642d06")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -15517,8 +17273,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4079db66-bd10-4fca-b88b-f0f4505409a4")
-		(property "Reference" "#PWR079"
+		(uuid "7c11074b-006b-4701-bd64-65ff4bf9dac1")
+		(property "Reference" "#PWR086"
 			(at 77.47 254 0)
 			(effects
 				(font
@@ -15560,12 +17316,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b62c6cf9-f861-46e7-8e5e-e877ec1a59a2")
+			(uuid "5bf82ac1-aed3-4b38-83ac-fc0ec1ef2154")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR079")
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
@@ -15622,10 +17378,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "92a00521-1441-4973-96a7-1808a82c5379")
+			(uuid "1755a666-437c-464b-8d39-0d9857ce656f")
 		)
 		(pin "2"
-			(uuid "68ac9c59-f775-48f0-9ae3-726a95caac62")
+			(uuid "35bf1fe3-60fd-4dbc-91e8-7184413050dd")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15644,7 +17400,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ed3de672-b467-4c4e-be08-65d384f1c16a")
+		(uuid "29fff8e2-1bff-4a7e-ae60-c57c55d9b35d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -15654,8 +17410,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d4c317bf-98d4-4464-bb66-6678868ae72a")
-		(property "Reference" "#PWR080"
+		(uuid "b97a65a0-4fc4-4690-aeda-358b0550ecdd")
+		(property "Reference" "#PWR087"
 			(at 77.47 271.78 0)
 			(effects
 				(font
@@ -15697,12 +17453,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e25b4620-94fc-4317-a1c4-070e9232a87e")
+			(uuid "646c661b-a641-4669-89ec-dd0472e57658")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR080")
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
@@ -15759,10 +17515,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a92759c1-62e8-4f7a-bb25-31def7d8c865")
+			(uuid "4293cf76-0a2f-416e-a646-627f2a639545")
 		)
 		(pin "2"
-			(uuid "516e47aa-1789-4029-ab2d-025e248391ad")
+			(uuid "d83da964-3e25-4474-a8ee-b057a22a5542")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15781,7 +17537,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "dd7a4b5f-41c9-45e3-9d34-ec879c610e04")
+		(uuid "36de19a0-c3a9-4a4c-a17b-c5a8141de038")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -15791,8 +17547,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "4a9091cc-1114-47e0-86d0-d0d118807685")
-		(property "Reference" "#PWR081"
+		(uuid "12884fb7-ca1a-483a-b3a9-58040ef3c81c")
+		(property "Reference" "#PWR088"
 			(at 77.47 289.56 0)
 			(effects
 				(font
@@ -15834,12 +17590,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "35610640-24a8-4636-af53-1fd5d4a035e5")
+			(uuid "72a0408b-4224-4ff9-bbfd-3af850ba589f")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR081")
+					(reference "#PWR088")
 					(unit 1)
 				)
 			)
@@ -15896,10 +17652,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7df48de8-f732-4b08-999b-53199fb74c44")
+			(uuid "4bf0c073-137f-40f1-a688-68c1eec96435")
 		)
 		(pin "2"
-			(uuid "0d04a7b7-1213-4c6b-84cc-8532e8f254b9")
+			(uuid "24297b93-51d9-48b7-ad00-185528101e68")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -15918,7 +17674,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "272c3201-54eb-400e-81f4-69c57f0d2f0e")
+		(uuid "06ff8c41-3184-4f99-9cc3-f0f0a11d82ee")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -15928,8 +17684,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "7cc05120-c9de-4201-9da2-110a484b57f9")
-		(property "Reference" "#PWR082"
+		(uuid "e704838d-2e11-457f-b031-4eb885dc2ab0")
+		(property "Reference" "#PWR089"
 			(at 115.57 254 0)
 			(effects
 				(font
@@ -15971,12 +17727,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e70930a-9d65-4b4c-902a-45378a309a2e")
+			(uuid "658da50d-155b-49b3-b030-1700fd998b86")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR082")
+					(reference "#PWR089")
 					(unit 1)
 				)
 			)
@@ -16033,10 +17789,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "29bfe389-7fe6-4cd7-91f2-3918d70da8f0")
+			(uuid "11f45a3a-fbde-4a34-9c6d-82bcdb4b5f92")
 		)
 		(pin "2"
-			(uuid "b90f9174-b926-4cbb-ab54-5f9f3c29e40a")
+			(uuid "078cc94d-1c2c-4963-bc88-392c0b029741")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -16055,7 +17811,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "394c5927-6400-4101-9c93-ef7e31b2bf94")
+		(uuid "0edd471a-7849-4094-8944-4fd0653112d9")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -16065,8 +17821,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "1ced7b9e-abd5-4011-aee4-2db0c30cc50d")
-		(property "Reference" "#PWR083"
+		(uuid "e9ab6e72-6acf-4f58-958e-bd94483f7bcb")
+		(property "Reference" "#PWR090"
 			(at 115.57 271.78 0)
 			(effects
 				(font
@@ -16108,12 +17864,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "69b046fe-ae51-468b-80c8-cfd1dda0c824")
+			(uuid "b84b0ece-ca7e-4456-b293-46ded0a242a9")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR083")
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -16170,10 +17926,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "3ae9ba89-c6f1-498a-a72b-887ab1a31285")
+			(uuid "1bbb8061-05af-46c5-8a28-8110c234f309")
 		)
 		(pin "2"
-			(uuid "c51c688c-09f4-457f-8640-d07342de4e49")
+			(uuid "c9422d2f-2147-4c7e-803a-d6ad98480e1c")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -16192,7 +17948,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d2a43c86-be7a-421f-8bcb-378f7df7b7f7")
+		(uuid "8b4ff3ec-1c8a-43e2-a24d-bb619f8e1a0a")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -16202,8 +17958,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "566fb725-dd18-4e9e-9121-ab077813de23")
-		(property "Reference" "#PWR084"
+		(uuid "a7fad652-644f-412f-b0be-c0118eb8bfa4")
+		(property "Reference" "#PWR091"
 			(at 115.57 289.56 0)
 			(effects
 				(font
@@ -16245,12 +18001,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "1996bf76-8862-4111-8805-3fa13b47f5c0")
+			(uuid "1e40786b-2efd-4b9d-994c-0c8a19252214")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR084")
+					(reference "#PWR091")
 					(unit 1)
 				)
 			)
@@ -16264,8 +18020,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "74d731bf-4c5e-4a1d-b5ee-3c18e01a6e35")
-		(property "Reference" "#PWR085"
+		(uuid "10e17736-1140-4977-b636-71a06e00b097")
+		(property "Reference" "#PWR092"
 			(at 480.06 294.64 0)
 			(effects
 				(font
@@ -16307,12 +18063,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ae9466e0-5bbc-4d8a-97a0-e8f2c56e8849")
+			(uuid "233d5548-87be-4705-b8fb-a166bb788203")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR085")
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -16326,7 +18082,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d8252685-0998-4b6d-a1d9-ffe42b49cc8d")
+		(uuid "4d509d91-5e83-4130-bc3d-69545e4d9800")
 		(property "Reference" "#FLG01"
 			(at 480.06 288.925 0)
 			(effects
@@ -16369,7 +18125,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3cc25baa-4ed5-4469-9d0b-0c04d2d0388c")
+			(uuid "6768b2e8-cf2a-4211-a586-f8345e6dc497")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -16388,8 +18144,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "2104945e-5474-4f83-90ac-f38d376f0666")
-		(property "Reference" "#PWR086"
+		(uuid "8e0a1421-907a-4ad6-ad32-7c1d15357e70")
+		(property "Reference" "#PWR093"
 			(at 495.3 294.64 0)
 			(effects
 				(font
@@ -16431,12 +18187,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b2738cbf-04d6-46d7-8d38-a1da9322a759")
+			(uuid "fbb0ef31-d25d-4690-9603-044818f485b4")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR086")
+					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -16450,7 +18206,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "c158aa1c-d7cf-441b-ad06-aaafde06554c")
+		(uuid "dd7ecd55-9ba1-4da6-953d-fecda39ac74c")
 		(property "Reference" "#FLG02"
 			(at 495.3 288.925 0)
 			(effects
@@ -16493,7 +18249,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "2676e972-1a81-481f-a2cb-f9d9c9a092e2")
+			(uuid "1122eb00-8687-4aca-8997-03e869df39e5")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -16512,8 +18268,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "251b0377-2cae-4419-a3f7-a3e81ff55916")
-		(property "Reference" "#PWR087"
+		(uuid "550334c9-4324-4fd7-8a51-b01acd067df0")
+		(property "Reference" "#PWR094"
 			(at 510.54 297.18 0)
 			(effects
 				(font
@@ -16555,12 +18311,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "fd1819af-41fe-43e1-a69c-3e3e0402674e")
+			(uuid "83768b70-a9a2-4c1f-b418-33c7dfed9a35")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
 				(path "/c2417df6-28f7-4e3a-b0ce-78ce8f5f7d62"
-					(reference "#PWR087")
+					(reference "#PWR094")
 					(unit 1)
 				)
 			)
@@ -16574,7 +18330,7 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "a3a5eb0a-57f6-4d19-b0a3-2f16beb04cce")
+		(uuid "26884760-3418-48f2-b6e1-d9e68feb805d")
 		(property "Reference" "#FLG03"
 			(at 510.54 292.735 0)
 			(effects
@@ -16617,7 +18373,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "dd529f15-92fc-4ae7-9b69-726d1143d2fd")
+			(uuid "82d7e3b7-7fb1-446e-beed-7c6b666a1b8b")
 		)
 		(instances
 			(project "ESP32S3_Carrier"
@@ -16628,7 +18384,7 @@
 			)
 		)
 	)
-	(text "ESP32-S3 CARRIER BOARD  -  rev 1.1  -  2026-10-22"
+	(text "ESP32-S3 CARRIER BOARD  -  rev 1.2  -  2026-10-22"
 		(exclude_from_sim no)
 		(at 20.32 15.24 0)
 		(effects
@@ -16637,7 +18393,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "cb554df3-46d6-4288-a390-59f29d02f62f")
+		(uuid "d7e27fcd-694f-4199-ad39-d581143441d3")
 	)
 	(text "NOTES\n1) Every module plugs into 2.54 mm female header sockets. Pin names are printed next to each socket on the silkscreen.\n2) Power: DevKit 5V pin -> +5V. SW7 (slide) drives Q3 (P-MOSFET) with a soft-start (R16 100k + C16 100nF, ~20 ms ramp): +5V -> +5V_MOD.\n   +5V_MOD -> microSD, RDM6300, IR LEDs, buzzer and U2 (AMS1117-3.3) -> +3V3_MOD (all 3.3 V modules).\n   SW7 OFF: the ESP32 keeps running, every module is unpowered. The ESP32's own 3V3 pin is not used (no overload / brown-out).\n3) Shared SPI: MOSI=IO11 SCK=IO12 MISO=IO13. CS: CC1101=IO10, SD=IO14, NRF1 CSN=IO5, NRF2 CSN=IO7 (10k pull-ups R12-R15).\n   CE: NRF1=IO4, NRF2=IO6. CC1101 GDO0=IO9, GDO2=IO42. NRF IRQ: NRF1=IO21, NRF2=IO48 (optional, can be ignored by firmware).\n4) Shared I2C: SDA=IO8 SCL=IO18, 4.7k pull-ups to +3V3_MOD (R1, R2). Devices: OLED SH1106 (0x3C), PN532 (0x24), Si5351 (0x60).\n   PN532 V3 DIP switch: SW1=ON SW2=OFF for I2C.\n5) RDM6300 TX is 5 V logic -> R8/R9 divider (~3.4 V) -> IO17. The 125 kHz coil plugs into J8.\n6) IR receiver VS1838B on IO1 (R11/C11 supply filter, lens faces the top edge). IR transmitter on IO2: Q1 + 220R base,\n   three IR LEDs, each with its own 47R resistor (~67 mA each), C15 local reservoir. Drive IO2 only with the 38 kHz carrier,\n   never hold it high. Buzzer on IO47 (Q2 + 1N4148).\n7) Buttons pull to GND (enable internal pull-ups): UP=IO15 DOWN=IO16 LEFT=IO38 RIGHT=IO39 OK=IO40 BACK=IO41.\n   Note: on DevKitC-1 v1.1 IO38 also drives the on-board RGB LED.\n8) JP1: normally-closed solder bridge. Old Catalex modules never release MISO; if SPI devices clash, cut JP1 and tie the\n   module's 74LVC125 MISO OE pin to CS (or add a tri-state buffer here).\n9) Unused GPIO: 0, 3, 19, 20, 35-37, 45, 46, TX/RX, RST."
 		(exclude_from_sim no)
@@ -16648,7 +18404,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "3fe4a9e7-b9d3-4501-ac16-eded9030e9e9")
+		(uuid "1a8221d6-bf81-48ad-827f-14df92c2e9b6")
 	)
 	(text "POWER: PWR_FLAGs for ERC"
 		(exclude_from_sim no)
@@ -16659,7 +18415,7 @@
 			)
 			(justify left top)
 		)
-		(uuid "daaa5a73-8095-42a6-82ca-c04aab19a9e3")
+		(uuid "30182bd4-520f-4a67-bbf1-1f1516c76548")
 	)
 	(sheet_instances
 		(path "/"

@@ -6,12 +6,13 @@ A 2-layer handheld carrier PCB for the ESP32-S3-DevKitC-1 (N16R8). Every module 
 
 | | |
 |---|---|
-| Board | 116 × 170 mm, 2 layers, 1.6 mm FR4, R4 rounded corners, 4× M3 holes (5 mm from the edges) |
+| Board | 116 × 200 mm, 2 layers, 1.6 mm FR4, R4 rounded corners, 4× M3 holes (5 mm from the edges) |
 | Modules | CC1101 433 MHz (top centre), 2× NRF24L01+PA+LNA, PN532 V3 (I2C), RDM6300 125 kHz, Si5351 clock generator (3× SMA), Catalex microSD, 1.3" SH1106 I2C OLED |
-| On board | 3× IR LED (940 nm) + VS1838B receiver, passive buzzer, 6 buttons (D-pad + OK + BACK), module power switch with soft-start, AMS1117-3.3 |
+| Power | 18650 Li-ion via JST-PH, TP4056 charger (protected), main power switch, MT3608 boost → 5 V, AMS1117 → 3.3 V, battery level on IO3 |
+| On board | 3× IR LED (940 nm) + VS1838B receiver, passive buzzer, 6 buttons (D-pad + OK + BACK), module power switch with soft-start |
 | ERC | **0 errors, 0 warnings** (`output/ERC_report.rpt`) |
 | DRC | **0 violations, 0 unconnected pads, schematic ↔ PCB in sync** (`--schematic-parity --severity-all`, `output/DRC_report.rpt`) |
-| Routing | Freerouting 2.5.0, 100 % routed; GND pour on both layers + 277 stitching vias |
+| Routing | Freerouting 2.5.0, 100 % routed; GND pour on both layers + 305 stitching vias |
 | Tracks | signal 0.25 mm, power 0.6 mm, GND 0.5 mm, minimum 0.20 mm; clearance 0.20–0.25 mm; vias 0.6/0.3 and 0.8/0.4 mm |
 
 ## Files
@@ -45,23 +46,39 @@ A 2-layer handheld carrier PCB for the ESP32-S3-DevKitC-1 (N16R8). Every module 
 | Passive buzzer (Q2 driver) | IO47 |
 | Buttons UP / DOWN / LEFT / RIGHT / OK / BACK (pull to GND) | IO15 / IO16 / IO38 / IO39 / IO40 / IO41 |
 | RDM6300 TX (5 V → 3.4 V divider) | IO17 |
-| Unused | 0, 3, 19, 20, 35–37, 45, 46, TX/RX, RST |
+| Battery voltage (100k/100k divider, read × 2) | IO3 (ADC) |
+| Unused | 0, 19, 20, 35–37, 45, 46, TX/RX, RST |
 
 Enable the internal pull-ups for the buttons. On DevKitC-1 v1.1, IO38 also drives the on-board RGB LED, so the button works but the RGB LED cannot be used at the same time. GDO2 and the two NRF24 IRQ lines are optional; firmware may ignore them.
 
 ## Power
 
 ```
-USB → DevKit 5V pin → +5V ──[Q3 AO3401A, soft-start]── +5V_MOD ──┬─ microSD (5 V), RDM6300 (5 V), 3× IR LED, buzzer
+18650 ─ J10 ─ TP4056 (charges from its own USB, DW01 protection) ─ OUT ─ SW8 main switch (Q4 P-MOSFET)
+      ─ MT3608 boost (set to 5.3 V) ─ D5 SS34 ─► +5V
+USB → DevKit 5V pin ─────────────────────────────────────────► +5V   (diode-OR'ed with the battery path)
+
++5V ──[Q3 AO3401A, soft-start]── +5V_MOD ──┬─ microSD (5 V), RDM6300 (5 V), 3× IR LED, buzzer
                      SW7 slide switch drives Q3's gate          └─ U2 AMS1117-3.3 → +3V3_MOD → CC1101, 2× NRF24, PN532, OLED, Si5351, VS1838B
 ```
 
+- **SW8 (MAIN PWR):** connects the battery to the boost converter. Off = no battery drain (the battery-level divider sits after the switch).
+- **Charging:** plug USB into the TP4056 module at the left edge. The protected module's OUT- is the board ground; B- only goes to the cell.
+- **Battery + USB together:** the DevKit USB and the boosted battery both feed +5V through diodes, so you can program with the battery connected.
+- **Set the MT3608 to 5.3 V** with its trimmer before plugging anything in; after the SS34 drop the rail sits near 4.9 V.
 - **SW7 OFF:** the ESP32 keeps running, every module is unpowered.
 - **Soft-start:** R16 (100k) + C16 (100 nF gate-drain) ramp +5V_MOD in about 20 ms. Without it, switching ~900 µF of module capacitance on at once would pull the DevKit's 5 V rail down and reset the ESP32.
 - The modules' 3.3 V comes from a separate AMS1117, not from the DevKit's 3V3 pin (two PA+LNA radios + PN532 + Wi-Fi would overload the DevKit regulator).
 - Decoupling: 100 nF at every module's VCC; an extra 100 µF at the CC1101 and both NRF24s; 470 µF bulk on +3V3_MOD; a 100 µF reservoir next to the IR LEDs.
 - Peak current can approach 1 A, so use a decent USB port or charger. Under load +5V_MOD may sit near 4.5 V; if +3V3_MOD sags, replace U2 with a low-dropout SOT-223 regulator that has the same pin-out (1 GND, 2 VOUT, 3 VIN).
 - While SW7 is off, firmware should not drive module pins (CS etc.) high, otherwise the modules get back-powered through their I/O pins.
+
+## Rev 1.2
+
+- 18650 battery power: JST-PH battery connector, TP4056 protected charger, main power switch (P-MOSFET), MT3608 5 V boost, SS34 diode-OR with USB.
+- Battery voltage measurement on IO3.
+- Board grows to 116 × 200 mm; the lower half (DevKit, buttons, Si5351) moved down 30 mm.
+- TP4056 and MT3608 are mounted flat and tied to the board with pin legs or short wires (their pad layout varies between clones; check yours against the 1:1 sheet).
 
 ## Design review (rev 1.1)
 
@@ -97,6 +114,8 @@ Tightest gaps between module bodies (plan view): PN532 ↔ DevKit ~1.8 mm, PN532
 
 ## Assembly notes
 
+- TP4056 and MT3608: lay the module on its outline and connect each pad hole to the board pad under it with a pin leg or a short wire. Use a protected TP4056 (with DW01 + 8205 MOSFET).
+- 18650: use a holder with leads and a 2-pin JST-PH plug; check the polarity (pin 1 = +).
 - Female sockets: 2× 1×22, 3× 2×4, 1× 1×7 (Si5351), 2× 1×4 (PN532, OLED), 1× 1×6, 1× 1×5, 1× 1×2 (+ a 1×2 male header for J8). Standard 8.5 mm tall sockets fit.
 - Si5351: only SCL, SDA, GND and VIN are used (pins 0/1/2 duplicate the SMA outputs and stay unconnected). VIN is fed from +3V3_MOD on purpose: the module's I2C level shifter pulls the bus up to VIN, so 5 V there would put 5 V on the ESP32's I2C pins.
 - Solder straight (not right-angle) male pins to the PN532, pointing down; DIP switch **I2C: 1 = ON, 2 = OFF**. The two holes at its corners are for nylon standoffs.

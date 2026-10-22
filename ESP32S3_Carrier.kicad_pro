@@ -368,6 +368,22 @@
       {
         "netclass": "Power",
         "pattern": "/BUZ_NEG"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/VBAT"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/VBAT_SW"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/BOOST_5V"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/BAT_N"
       }
     ]
   },

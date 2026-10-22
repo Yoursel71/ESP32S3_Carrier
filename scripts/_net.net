@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\thewo\\Desktop\\ESP32S3_Tasiyici\\ESP32S3_Carrier.kicad_sch")
-		(date "2026-10-22T10:05:24")
+		(date "2026-10-22T12:33:23")
 		(tool "Eeschema 10.0.6")
 		(sheet
 			(number "1")
@@ -11,7 +11,7 @@
 			(title_block
 				(title "ESP32-S3 Carrier Board")
 				(company "github.com/Yoursel71")
-				(rev "1.1")
+				(rev "1.2")
 				(date "2026-10-22")
 				(source "ESP32S3_Carrier.kicad_sch")
 				(comment
@@ -1027,6 +1027,60 @@
 			)
 		)
 		(comp
+			(ref "C18")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+			(description "Unpolarized capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f979837d-16c4-4de2-ad51-d595d7d51e32")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "D1")
 			(value "IR LED 940nm")
 			(footprint "LED_THT:LED_D5.0mm_Horizontal_O1.27mm_Z3.0mm")
@@ -1258,6 +1312,60 @@
 				(tstamps "/")
 			)
 			(tstamps "c4a46bc4-6b0a-4400-a589-2c6875ff06f1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D5")
+			(value "SS34")
+			(footprint "Diode_SMD:D_SMA_Handsoldering")
+			(description "Schottky diode")
+			(fields
+				(field
+					(name "Footprint") "Diode_SMD:D_SMA_Handsoldering")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Schottky diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "038a057b-c4e4-4f58-b77d-b557a94571fa")
 			(units
 				(unit
 					(name "A")
@@ -1803,6 +1911,60 @@
 			)
 		)
 		(comp
+			(ref "J10")
+			(value "18650 BAT")
+			(footprint "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical")
+			(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(fields
+				(field
+					(name "Footprint") "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "101a26f1-e569-4d04-b6ae-02ef8c2765b7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "JP1")
 			(value "SD_MISO")
 			(footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
@@ -2037,6 +2199,63 @@
 				(tstamps "/")
 			)
 			(tstamps "71ad1800-9905-48f8-85e3-0882afd95d6d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q4")
+			(value "AO3401A")
+			(footprint "Package_TO_SOT_SMD:SOT-23")
+			(datasheet "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf")
+			(description "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
+				(field
+					(name "Datasheet") "http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf")
+				(field
+					(name "Description") "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23")
+			)
+			(libsource
+				(lib "Carrier")
+				(part "AO3401A")
+				(description "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "P-Channel MOSFET")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SOT?23*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d356a450-b48c-4bfc-8c14-4b4b9239c88b")
 			(units
 				(unit
 					(name "A")
@@ -3027,6 +3246,168 @@
 			)
 		)
 		(comp
+			(ref "R19")
+			(value "100k")
+			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "43d54f17-d3e3-4955-95f7-5316aa4a474a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R20")
+			(value "100k")
+			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "675f519c-439b-4357-991a-4c7c5439ff49")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R21")
+			(value "100k")
+			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "980a1b8b-6ecd-42f4-8fc2-2aa75552b7a1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "SW1")
 			(value "UP")
 			(footprint "Button_Switch_THT:SW_PUSH_6mm")
@@ -3380,6 +3761,59 @@
 			)
 		)
 		(comp
+			(ref "SW8")
+			(value "MAIN PWR")
+			(footprint "Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q")
+			(description "Switch, single pole double throw")
+			(fields
+				(field
+					(name "Footprint") "Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Switch, single pole double throw")
+			)
+			(libsource
+				(lib "Switch")
+				(part "SW_SPDT")
+				(description "Switch, single pole double throw")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "switch single-pole double-throw spdt ON-ON")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d844a040-d73a-4ec2-b4fa-f02e56794a30")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "U1")
 			(value "ESP32-S3-DevKitC-1 N16R8")
 			(footprint "Carrier:ESP32-S3-DevKitC-1_Socket")
@@ -3652,6 +4086,110 @@
 						)
 						(pin
 							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "TP4056 module (protected)")
+			(footprint "Carrier:TP4056_Module_Pads")
+			(description "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)")
+			(fields
+				(field
+					(name "Footprint") "Carrier:TP4056_Module_Pads")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)")
+			)
+			(libsource
+				(lib "Carrier")
+				(part "TP4056_Module")
+				(description "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "26ed6382-5aa5-4806-a082-6e679d06c381")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "MT3608 boost module (set 5.3V)")
+			(footprint "Carrier:MT3608_Module_Pads")
+			(description "MT3608 boost converter module")
+			(fields
+				(field
+					(name "Footprint") "Carrier:MT3608_Module_Pads")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "MT3608 boost converter module")
+			)
+			(libsource
+				(lib "Carrier")
+				(part "MT3608_Module")
+				(description "MT3608 boost converter module")
+			)
+			(property
+				(name "Sheetname")
+				(value "ESP32S3_Carrier")
+			)
+			(property
+				(name "Sheetfile")
+				(value "ESP32S3_Carrier.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1bd1ab34-ec25-475f-9547-36f72a0d65d1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
 						)
 					)
 				)
@@ -4039,6 +4577,46 @@
 		)
 		(libpart
 			(lib "Carrier")
+			(part "MT3608_Module")
+			(description "MT3608 boost converter module")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "MT3608")
+				(field
+					(name "Footprint") "Carrier:MT3608_Module_Pads")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "MT3608 boost converter module")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "VIN-")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "VOUT+")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "VOUT-")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Carrier")
 			(part "NRF24L01_PA_LNA")
 			(description "nRF24L01+PA+LNA module with SMA, 2x4 header")
 			(fields
@@ -4331,6 +4909,46 @@
 		)
 		(libpart
 			(lib "Carrier")
+			(part "TP4056_Module")
+			(description "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "TP4056")
+				(field
+					(name "Footprint") "Carrier:TP4056_Module_Pads")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "TP4056 Li-ion charger module with DW01 protection (USB charge input on the module)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "OUT+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "B+")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "B-")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "OUT-")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Carrier")
 			(part "VS1838B")
 			(description "38kHz IR receiver (OUT, GND, VCC)")
 			(fields
@@ -4577,6 +5195,43 @@
 					(name "Sim.Device") "D")
 				(field
 					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "D_Schottky")
+			(description "Schottky diode")
+			(footprints
+				(fp "TO-???*")
+				(fp "*_Diode_*")
+				(fp "*SingleDiode*")
+				(fp "D_*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "D_Schottky")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Schottky diode")
 			)
 			(pins
 				(pin
@@ -4930,6 +5585,12 @@
 			(name "+5V")
 			(class "Power")
 			(node
+				(ref "D5")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
 				(ref "Q3")
 				(pin "2")
 				(pinfunction "S_2")
@@ -5030,6 +5691,88 @@
 		)
 		(net
 			(code "4")
+			(name "/BAT_GATE")
+			(class "Default")
+			(node
+				(ref "Q4")
+				(pin "1")
+				(pinfunction "G_1")
+				(pintype "input")
+			)
+			(node
+				(ref "R19")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW8")
+				(pin "2")
+				(pinfunction "B_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "/BAT_N")
+			(class "Power")
+			(node
+				(ref "J10")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "3")
+				(pinfunction "B-_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "6")
+			(name "/BAT_SENSE")
+			(class "Default")
+			(node
+				(ref "C18")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R20")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R21")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "IO3_13")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "/BOOST_5V")
+			(class "Power")
+			(node
+				(ref "D5")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "3")
+				(pinfunction "VOUT+_3")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
 			(name "/BTN_BACK")
 			(class "Default")
 			(node
@@ -5046,7 +5789,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "9")
 			(name "/BTN_DOWN")
 			(class "Default")
 			(node
@@ -5063,7 +5806,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "10")
 			(name "/BTN_LEFT")
 			(class "Default")
 			(node
@@ -5080,7 +5823,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "11")
 			(name "/BTN_OK")
 			(class "Default")
 			(node
@@ -5097,7 +5840,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "12")
 			(name "/BTN_RIGHT")
 			(class "Default")
 			(node
@@ -5114,7 +5857,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "13")
 			(name "/BTN_UP")
 			(class "Default")
 			(node
@@ -5131,7 +5874,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "14")
 			(name "/BUZ")
 			(class "Default")
 			(node
@@ -5147,7 +5890,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "15")
 			(name "/BUZ_BASE")
 			(class "Default")
 			(node
@@ -5168,7 +5911,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "16")
 			(name "/BUZ_NEG")
 			(class "Power")
 			(node
@@ -5191,7 +5934,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "17")
 			(name "/CC_CS")
 			(class "Default")
 			(node
@@ -5213,7 +5956,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "18")
 			(name "/CC_GDO0")
 			(class "Default")
 			(node
@@ -5230,7 +5973,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "19")
 			(name "/CC_GDO2")
 			(class "Default")
 			(node
@@ -5247,7 +5990,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "20")
 			(name "/I2C_SCL")
 			(class "Default")
 			(node
@@ -5281,7 +6024,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "21")
 			(name "/I2C_SDA")
 			(class "Default")
 			(node
@@ -5315,7 +6058,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "22")
 			(name "/IR_A1")
 			(class "Power")
 			(node
@@ -5331,7 +6074,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "23")
 			(name "/IR_A2")
 			(class "Power")
 			(node
@@ -5347,7 +6090,7 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "24")
 			(name "/IR_A3")
 			(class "Power")
 			(node
@@ -5363,7 +6106,7 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "25")
 			(name "/IR_BASE")
 			(class "Default")
 			(node
@@ -5384,7 +6127,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "26")
 			(name "/IR_LED_K")
 			(class "Power")
 			(node
@@ -5413,7 +6156,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "27")
 			(name "/IR_RX")
 			(class "Default")
 			(node
@@ -5430,7 +6173,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "28")
 			(name "/IR_RX_VCC")
 			(class "Default")
 			(node
@@ -5451,7 +6194,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "29")
 			(name "/IR_TX")
 			(class "Default")
 			(node
@@ -5467,7 +6210,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "30")
 			(name "/NRF1_CE")
 			(class "Default")
 			(node
@@ -5484,7 +6227,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "31")
 			(name "/NRF1_CSN")
 			(class "Default")
 			(node
@@ -5506,7 +6249,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "32")
 			(name "/NRF1_IRQ")
 			(class "Default")
 			(node
@@ -5523,7 +6266,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "33")
 			(name "/NRF2_CE")
 			(class "Default")
 			(node
@@ -5540,7 +6283,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "34")
 			(name "/NRF2_CSN")
 			(class "Default")
 			(node
@@ -5562,7 +6305,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "35")
 			(name "/NRF2_IRQ")
 			(class "Default")
 			(node
@@ -5579,7 +6322,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "36")
 			(name "/PWR_GATE")
 			(class "Default")
 			(node
@@ -5605,7 +6348,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "37")
 			(name "/PWR_SW")
 			(class "Default")
 			(node
@@ -5621,7 +6364,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "38")
 			(name "/RFID_ANT1")
 			(class "Default")
 			(node
@@ -5638,7 +6381,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "39")
 			(name "/RFID_ANT2")
 			(class "Default")
 			(node
@@ -5655,7 +6398,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "40")
 			(name "/RFID_TX")
 			(class "Default")
 			(node
@@ -5676,7 +6419,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "41")
 			(name "/RFID_TX5V")
 			(class "Default")
 			(node
@@ -5692,7 +6435,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "42")
 			(name "/SD_CS")
 			(class "Default")
 			(node
@@ -5714,7 +6457,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "43")
 			(name "/SD_MISO_RAW")
 			(class "Default")
 			(node
@@ -5731,7 +6474,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "44")
 			(name "/SPI_MISO")
 			(class "Default")
 			(node
@@ -5766,7 +6509,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "45")
 			(name "/SPI_MOSI")
 			(class "Default")
 			(node
@@ -5801,7 +6544,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "46")
 			(name "/SPI_SCK")
 			(class "Default")
 			(node
@@ -5836,7 +6579,63 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "47")
+			(name "/VBAT")
+			(class "Power")
+			(node
+				(ref "J10")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "Q4")
+				(pin "2")
+				(pinfunction "S_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R19")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "OUT+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "B+_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "48")
+			(name "/VBAT_SW")
+			(class "Power")
+			(node
+				(ref "Q4")
+				(pin "3")
+				(pinfunction "D_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R20")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "VIN+_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "49")
 			(name "GND")
 			(class "GND")
 			(node
@@ -5876,6 +6675,11 @@
 			)
 			(node
 				(ref "C17")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C18")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -5980,6 +6784,11 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R21")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "R4")
 				(pin "2")
 				(pintype "passive")
@@ -6037,6 +6846,12 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "SW8")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U1")
 				(pin "22")
 				(pinfunction "GND_22")
@@ -6072,9 +6887,27 @@
 				(pinfunction "GND_2")
 				(pintype "passive")
 			)
+			(node
+				(ref "U4")
+				(pin "4")
+				(pinfunction "OUT-_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "VIN-_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U5")
+				(pin "4")
+				(pinfunction "VOUT-_4")
+				(pintype "passive")
+			)
 		)
 		(net
-			(code "44")
+			(code "50")
 			(name "unconnected-(J7-NC-Pad3)")
 			(class "Default")
 			(node
@@ -6085,7 +6918,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "51")
 			(name "unconnected-(J7-RX-Pad2)")
 			(class "Default")
 			(node
@@ -6096,7 +6929,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "52")
 			(name "unconnected-(J9-CLK0-Pad1)")
 			(class "Default")
 			(node
@@ -6107,7 +6940,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "53")
 			(name "unconnected-(J9-CLK1-Pad2)")
 			(class "Default")
 			(node
@@ -6118,7 +6951,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "54")
 			(name "unconnected-(J9-CLK2-Pad3)")
 			(class "Default")
 			(node
@@ -6129,7 +6962,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "55")
 			(name "unconnected-(SW7-C-Pad3)")
 			(class "Default")
 			(node
@@ -6140,7 +6973,18 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "56")
+			(name "unconnected-(SW8-C-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW8")
+				(pin "3")
+				(pinfunction "C_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "57")
 			(name "unconnected-(U1-3V3-Pad1)")
 			(class "Default")
 			(node
@@ -6151,7 +6995,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "58")
 			(name "unconnected-(U1-3V3-Pad2)")
 			(class "Default")
 			(node
@@ -6162,7 +7006,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "59")
 			(name "unconnected-(U1-IO0-Pad36)")
 			(class "Default")
 			(node
@@ -6173,18 +7017,7 @@
 			)
 		)
 		(net
-			(code "53")
-			(name "unconnected-(U1-IO3-Pad13)")
-			(class "Default")
-			(node
-				(ref "U1")
-				(pin "13")
-				(pinfunction "IO3_13")
-				(pintype "passive+no_connect")
-			)
-		)
-		(net
-			(code "54")
+			(code "60")
 			(name "unconnected-(U1-IO19-Pad42)")
 			(class "Default")
 			(node
@@ -6195,7 +7028,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "61")
 			(name "unconnected-(U1-IO20-Pad41)")
 			(class "Default")
 			(node
@@ -6206,7 +7039,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "62")
 			(name "unconnected-(U1-IO35-Pad35)")
 			(class "Default")
 			(node
@@ -6217,7 +7050,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "63")
 			(name "unconnected-(U1-IO36-Pad34)")
 			(class "Default")
 			(node
@@ -6228,7 +7061,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "64")
 			(name "unconnected-(U1-IO37-Pad33)")
 			(class "Default")
 			(node
@@ -6239,7 +7072,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "65")
 			(name "unconnected-(U1-IO45-Pad37)")
 			(class "Default")
 			(node
@@ -6250,7 +7083,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "66")
 			(name "unconnected-(U1-IO46-Pad14)")
 			(class "Default")
 			(node
@@ -6261,7 +7094,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "67")
 			(name "unconnected-(U1-RST-Pad3)")
 			(class "Default")
 			(node
@@ -6272,7 +7105,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "68")
 			(name "unconnected-(U1-RX-Pad25)")
 			(class "Default")
 			(node
@@ -6283,7 +7116,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "69")
 			(name "unconnected-(U1-TX-Pad24)")
 			(class "Default")
 			(node

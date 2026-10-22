@@ -10,7 +10,7 @@ from pcb import PCB, P, mm, page_a4_portrait
 
 SES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_route.ses")
 # GND pads that get a solid zone connection (surrounded by tracks/keep-outs, a thermal would be starved)
-SOLID_GND = {("U1", "23"), ("J1", "1"), ("J2", "1"), ("J3", "1"), ("J6", "1")}
+SOLID_GND = {("U1", "23"), ("J1", "1"), ("J2", "1"), ("J3", "1"), ("J6", "1"), ("SW4", "2")}
 
 
 def gnd_zone(board, layer, net):

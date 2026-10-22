@@ -1,0 +1,248 @@
+(footprint "MT3608_Module_Pads"
+	(version 20241229)
+	(generator "carrier_generator")
+	(layer "F.Cu")
+	(descr "MT3608 boost module (~36x17mm), wire/pin pads at the corners")
+	(tags "carrier module socket")
+	(property "Reference" "REF**"
+		(at 18 -1.6 0)
+		(layer "F.SilkS")
+		(uuid "32242970-7fd5-400f-a7d9-6011d7ae0224")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "MT3608_Module_Pads"
+		(at 18 18.5 0)
+		(layer "F.Fab")
+		(uuid "927571d6-1420-4d95-96f8-2e7c06d5e8c2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "72b9d54e-308d-47db-9169-3ba928d322d4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "MT3608 boost module (~36x17mm), wire/pin pads at the corners"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2d25e5e8-bf80-40de-8b2d-e8824713a00d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad "1" thru_hole rect
+		(at 1.8 2.2)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "33a3aac6-a256-4f67-9a89-fac9b50a23e2")
+	)
+	(fp_text user "VIN+"
+		(at 4.8 2.2 0)
+		(layer "F.SilkS")
+		(uuid "7505a05e-b926-42f3-926e-fbc9e5e46e41")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "2" thru_hole circle
+		(at 1.8 14.8)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "b1277fc5-777a-4302-ad94-eea0f56f0d6e")
+	)
+	(fp_text user "VIN-"
+		(at 4.8 14.8 0)
+		(layer "F.SilkS")
+		(uuid "1bacd345-8287-457f-b5c5-2411ee1f1555")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "3" thru_hole circle
+		(at 34.2 2.2)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "117ef62b-d694-47a4-9392-6fe83ecec07c")
+	)
+	(fp_text user "VOUT+"
+		(at 31.2 2.2 0)
+		(layer "F.SilkS")
+		(uuid "64db6a1e-209f-4566-ae79-407f0675b8cb")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "4" thru_hole circle
+		(at 34.2 14.8)
+		(size 2.2 2.2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "24d88985-1044-4017-b8a3-62aa0affbc1f")
+	)
+	(fp_text user "VOUT-"
+		(at 31.2 14.8 0)
+		(layer "F.SilkS")
+		(uuid "6880d8be-272f-4726-95e2-98ba80228e9b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_rect
+		(start 0 0)
+		(end 36 17)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1885e2f1-0cd8-4e35-95bd-86ab454f61ca")
+	)
+	(fp_line
+		(start 0 0)
+		(end 36 0)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "7435869f-8895-4cbd-9016-3cc5db405539")
+	)
+	(fp_line
+		(start 0 17)
+		(end 36 17)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "319b585f-5bc5-4bef-ba73-520ed01b582a")
+	)
+	(fp_line
+		(start 0 0)
+		(end 0 17)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "d72e4260-f3cd-4d46-a87d-c126c8bb6614")
+	)
+	(fp_line
+		(start 36 0)
+		(end 36 17)
+		(stroke
+			(width 0.15)
+			(type dash)
+		)
+		(layer "F.SilkS")
+		(uuid "b9d7b5ca-f0ac-475e-9782-b9eef3e04e40")
+	)
+	(fp_rect
+		(start -0.5 -0.5)
+		(end 36.5 17.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "6a80f9cd-109a-4a52-85a7-54fcee949af1")
+	)
+	(fp_text user "MT3608 BOOST"
+		(at 18 8.5 0)
+		(layer "F.Fab")
+		(uuid "897ebcca-e851-4805-aec4-f5dc62ff7f99")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "MT3608 BOOST"
+		(at 18 7.3 0)
+		(layer "F.SilkS")
+		(uuid "f5eaa671-67c5-40eb-a8f2-9e8378d6dcde")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "set OUT = 5.3V"
+		(at 18 9.4 0)
+		(layer "F.SilkS")
+		(uuid "4abe0014-96dd-4e7e-bbb4-6f32764d676b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "verify pads"
+		(at 18 10.8 0)
+		(layer "F.SilkS")
+		(uuid "b5f409ea-b179-41db-9a2c-42b2f2e3ca09")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 18 20.1 0)
+		(layer "F.Fab")
+		(uuid "36f7ae0e-4318-4345-8521-5f1290b1aa55")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

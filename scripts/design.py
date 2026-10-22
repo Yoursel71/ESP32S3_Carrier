@@ -6,15 +6,15 @@ Units are mm. PCB origin = top-left corner of the board, y grows downwards.
 
 PROJECT = "ESP32S3_Carrier"
 DATE = "2026-10-22"
-REV = "1.1"
+REV = "1.2"
 
 # Board outline
 W = 116.0
-H = 170.0
+H = 200.0
 CORNER_R = 4.0
 # Board position on the A4 portrait page (for the 1:1 PDF)
 OX = 47.0
-OY = 38.0
+OY = 30.0
 
 # Net classes
 NET_CLASSES = {
@@ -24,6 +24,7 @@ NET_CLASSES = {
 }
 NETCLASS_ASSIGN = {
     "+5V": "Power", "+5V_MOD": "Power", "+3V3_MOD": "Power", "GND": "GND",
+    "/VBAT": "Power", "/VBAT_SW": "Power", "/BOOST_5V": "Power", "/BAT_N": "Power",
     "/IR_A1": "Power", "/IR_A2": "Power", "/IR_A3": "Power", "/IR_LED_K": "Power", "/BUZ_NEG": "Power",
 }
 
@@ -51,7 +52,7 @@ GPIO_NET = {
     "IO17": "RFID_TX", "IO18": "I2C_SCL", "IO8": "I2C_SDA",
     "IO9": "CC_GDO0", "IO10": "CC_CS", "IO11": "SPI_MOSI", "IO12": "SPI_SCK", "IO13": "SPI_MISO",
     "IO14": "SD_CS", "IO1": "IR_RX", "IO2": "IR_TX", "IO47": "BUZ",
-    "IO42": "CC_GDO2", "IO21": "NRF1_IRQ", "IO48": "NRF2_IRQ",
+    "IO3": "BAT_SENSE", "IO42": "CC_GDO2", "IO21": "NRF1_IRQ", "IO48": "NRF2_IRQ",
     "5V": "+5V", "GND": "GND",
 }
 
@@ -91,7 +92,7 @@ def IRLEDC(ref, k, a, sch, pcb):
 COMPONENTS = [
     # --- Plug-in modules (female header sockets) ---
     dict(ref="U1", val="ESP32-S3-DevKitC-1 N16R8", sym="Carrier:ESP32-S3-DevKitC-1",
-         fp="Carrier:ESP32-S3-DevKitC-1_Socket", pins=devkit_pins(), sch=(101.6, 132.08), pcb=(46.57, 108.66, 0)),
+         fp="Carrier:ESP32-S3-DevKitC-1_Socket", pins=devkit_pins(), sch=(101.6, 132.08), pcb=(46.57, 138.66, 0)),
     dict(ref="J1", val="CC1101 433MHz SMA", sym="Carrier:CC1101_SMA_2x4", fp="Carrier:CC1101_SMA_2x4_Socket",
          pins={"1": "GND", "2": "+3V3_MOD", "3": "CC_GDO0", "4": "CC_CS", "5": "SPI_SCK", "6": "SPI_MOSI",
                "7": "SPI_MISO", "8": "CC_GDO2"}, sch=(228.6, 63.5), pcb=(54.19, 36.8, 0)),
@@ -116,7 +117,7 @@ COMPONENTS = [
          pins={"1": "RFID_ANT1", "2": "RFID_ANT2"}, sch=(449.58, 182.88), pcb=(4.0, 112.5, 90)),
     dict(ref="J9", val="Si5351 clock gen (3x SMA)", sym="Carrier:Si5351_7pin", fp="Carrier:Si5351_3SMA_Socket",
          pins={"1": None, "2": None, "3": None, "4": "I2C_SCL", "5": "I2C_SDA", "6": "GND", "7": "+3V3_MOD"},
-         sch=(360.68, 134.62), pcb=(97.62, 149.6, 180)),
+         sch=(360.68, 134.62), pcb=(97.62, 179.6, 180)),
 
     # --- Decoupling ---
     C("C1", "100nF", C0805, "+3V3_MOD", "GND", (271.78, 63.5), (51.5, 44.0, 0)),
@@ -130,7 +131,7 @@ COMPONENTS = [
     C("C9", "100nF", C0805, "+5V_MOD", "GND", (271.78, 198.12), (72.9, 106.5, 90)),
     C("C10", "100nF", C0805, "+5V_MOD", "GND", (391.16, 182.88), (24.0, 111.5, 0)),
     C("C11", "100nF", C0805, "IR_RX_VCC", "GND", (340.36, 254.0), (83.5, 9.6, 0)),
-    C("C17", "100nF", C0805, "+3V3_MOD", "GND", (391.16, 134.62), (82.4, 142.8, 0)),
+    C("C17", "100nF", C0805, "+3V3_MOD", "GND", (391.16, 134.62), (82.4, 172.8, 0)),
 
     # --- I2C pull-ups ---
     R("R1", "4.7k", R0805, "+3V3_MOD", "I2C_SDA", (424.18, 63.5), (63.5, 64.5, 0)),
@@ -171,45 +172,64 @@ COMPONENTS = [
 
     # --- Buzzer driver ---
     dict(ref="BZ1", val="Passive buzzer", sym="Device:Buzzer", fp="Buzzer_Beeper:Buzzer_12x9.5RM7.6",
-         pins={"1": "+5V_MOD", "2": "BUZ_NEG"}, sch=(378.46, 248.92), pcb=(27.5, 158.0, 0)),
+         pins={"1": "+5V_MOD", "2": "BUZ_NEG"}, sch=(378.46, 248.92), pcb=(27.5, 188.0, 0)),
     dict(ref="D4", val="1N4148", sym="Device:D", fp="Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal",
-         pins={"1": "+5V_MOD", "2": "BUZ_NEG"}, sch=(396.24, 248.92), pcb=(24.5, 167.0, 0)),
+         pins={"1": "+5V_MOD", "2": "BUZ_NEG"}, sch=(396.24, 248.92), pcb=(24.5, 197.0, 0)),
     dict(ref="Q2", val="PN2222A", sym="Carrier:PN2222A", fp=TO92,
-         pins={"1": "GND", "2": "BUZ_BASE", "3": "BUZ_NEG"}, sch=(378.46, 271.78), pcb=(41.9, 152.5, 90)),
-    R("R6", "1k", R0805, "BUZ", "BUZ_BASE", (355.6, 274.32), (42.3, 158.6, 90)),
-    R("R7", "10k", R0805, "BUZ_BASE", "GND", (365.76, 284.48), (42.3, 163.4, 90)),
+         pins={"1": "GND", "2": "BUZ_BASE", "3": "BUZ_NEG"}, sch=(378.46, 271.78), pcb=(41.9, 182.5, 90)),
+    R("R6", "1k", R0805, "BUZ", "BUZ_BASE", (355.6, 274.32), (42.3, 188.6, 90)),
+    R("R7", "10k", R0805, "BUZ_BASE", "GND", (365.76, 284.48), (42.3, 193.4, 90)),
 
     # --- Module power switch (soft-start P-MOSFET) + 3.3 V regulator ---
     dict(ref="SW7", val="MODULE PWR", sym="Switch:SW_SPDT", fp="Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q",
-         pins={"1": "GND", "2": "PWR_SW", "3": None}, sch=(444.5, 228.6), pcb=(2.5, 149.0, 270)),
-    R("R16", "100k", R0805, "PWR_SW", "PWR_GATE", (464.82, 228.6), (11.5, 153.5, 0)),
-    R("R10", "1M", R0805, "+5V", "PWR_GATE", (477.52, 215.9), (15.2, 149.0, 90)),
-    C("C16", "100nF", C0805, "PWR_GATE", "+5V_MOD", (490.22, 248.92), (16.5, 153.5, 0)),
+         pins={"1": "GND", "2": "PWR_SW", "3": None}, sch=(444.5, 228.6), pcb=(2.5, 179.0, 270)),
+    R("R16", "100k", R0805, "PWR_SW", "PWR_GATE", (464.82, 228.6), (11.5, 183.5, 0)),
+    R("R10", "1M", R0805, "+5V", "PWR_GATE", (477.52, 215.9), (15.2, 179.0, 90)),
+    C("C16", "100nF", C0805, "PWR_GATE", "+5V_MOD", (490.22, 248.92), (16.5, 183.5, 0)),
     dict(ref="Q3", val="AO3401A", sym="Carrier:AO3401A", fp="Package_TO_SOT_SMD:SOT-23",
-         pins={"1": "PWR_GATE", "2": "+5V", "3": "+5V_MOD"}, sch=(492.76, 233.68), pcb=(11.5, 149.0, 0)),
+         pins={"1": "PWR_GATE", "2": "+5V", "3": "+5V_MOD"}, sch=(492.76, 233.68), pcb=(11.5, 179.0, 0)),
     dict(ref="U2", val="AMS1117-3.3", sym="Carrier:AMS1117-3.3", fp="Package_TO_SOT_SMD:SOT-223-3_TabPin2",
          pins={"1": "GND", "2": "+3V3_MOD", "3": "+5V_MOD"}, sch=(538.48, 233.68), pcb=(55.0, 60.0, 0)),
     C("C12", "10uF", C1206, "+5V_MOD", "GND", (515.62, 238.76), (48.9, 62.5, 90)),
     CP("C13", "470uF", CP8, "+3V3_MOD", "GND", (558.8, 238.76), (52.0, 72.4, 0)),
     C("C14", "100nF", C0805, "+3V3_MOD", "GND", (571.5, 238.76), (60.7, 61.5, 90)),
 
+    # --- Battery: 18650 -> TP4056 (charge + protection) -> main switch -> MT3608 boost -> SS34 -> +5V ---
+    dict(ref="J10", val="18650 BAT", sym="Connector_Generic:Conn_01x02",
+         fp="Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical",
+         pins={"1": "VBAT", "2": "BAT_N"}, sch=(330.2, 350.52), pcb=(32.5, 122.0, 0)),
+    dict(ref="U4", val="TP4056 module (protected)", sym="Carrier:TP4056_Module", fp="Carrier:TP4056_Module_Pads",
+         pins={"1": "VBAT", "2": "VBAT", "3": "BAT_N", "4": "GND"}, sch=(360.68, 350.52), pcb=(0.5, 118.0, 0)),
+    dict(ref="SW8", val="MAIN PWR", sym="Switch:SW_SPDT", fp="Button_Switch_THT:SW_Slide_SPDT_Angled_CK_OS102011MA1Q",
+         pins={"1": "GND", "2": "BAT_GATE", "3": None}, sch=(398.78, 350.52), pcb=(2.5, 140.0, 270)),
+    R("R19", "100k", R0805, "VBAT", "BAT_GATE", (411.48, 337.82), (16.2, 141.0, 90)),
+    dict(ref="Q4", val="AO3401A", sym="Carrier:AO3401A", fp="Package_TO_SOT_SMD:SOT-23",
+         pins={"1": "BAT_GATE", "2": "VBAT", "3": "VBAT_SW"}, sch=(421.64, 355.6), pcb=(12.5, 141.0, 0)),
+    dict(ref="U5", val="MT3608 boost module (set 5.3V)", sym="Carrier:MT3608_Module", fp="Carrier:MT3608_Module_Pads",
+         pins={"1": "VBAT_SW", "2": "GND", "3": "BOOST_5V", "4": "GND"}, sch=(464.82, 350.52), pcb=(76.0, 129.0, 0)),
+    dict(ref="D5", val="SS34", sym="Device:D_Schottky", fp="Diode_SMD:D_SMA_Handsoldering",
+         pins={"1": "+5V", "2": "BOOST_5V"}, sch=(490.22, 345.44), pcb=(100.0, 150.5, 0)),
+    R("R20", "100k", R0805, "VBAT_SW", "BAT_SENSE", (510.54, 350.52), (21.0, 141.0, 90)),
+    R("R21", "100k", R0805, "BAT_SENSE", "GND", (523.24, 350.52), (24.6, 141.0, 90)),
+    C("C18", "100nF", C0805, "BAT_SENSE", "GND", (535.94, 350.52), (28.2, 141.0, 90)),
+
     # --- Buttons (pull to GND, use internal pull-ups) ---
-    BTNC("SW1", "UP", "BTN_UP", (66.04, 254.0), (21.5, 121.0)),
-    BTNC("SW2", "DOWN", "BTN_DOWN", (66.04, 271.78), (21.5, 143.0)),
-    BTNC("SW3", "LEFT", "BTN_LEFT", (66.04, 289.56), (10.0, 132.0)),
-    BTNC("SW4", "RIGHT", "BTN_RIGHT", (104.14, 254.0), (33.0, 132.0)),
-    BTNC("SW5", "OK", "BTN_OK", (104.14, 271.78), (106.0, 129.5)),
-    BTNC("SW6", "BACK", "BTN_BACK", (104.14, 289.56), (92.0, 137.5)),
+    BTNC("SW1", "UP", "BTN_UP", (66.04, 254.0), (21.5, 151.0)),
+    BTNC("SW2", "DOWN", "BTN_DOWN", (66.04, 271.78), (21.5, 173.0)),
+    BTNC("SW3", "LEFT", "BTN_LEFT", (66.04, 289.56), (10.0, 162.0)),
+    BTNC("SW4", "RIGHT", "BTN_RIGHT", (104.14, 254.0), (33.0, 162.0)),
+    BTNC("SW5", "OK", "BTN_OK", (104.14, 271.78), (106.0, 159.5)),
+    BTNC("SW6", "BACK", "BTN_BACK", (104.14, 289.56), (92.0, 167.5)),
 ]
 
 # Mounting holes (board only, not in the schematic)
-MOUNTING = [("H1", 5.0, 5.0), ("H2", 111.0, 5.0), ("H3", 5.0, 165.0), ("H4", 111.0, 165.0)]
+MOUNTING = [("H1", 5.0, 5.0), ("H2", 111.0, 5.0), ("H3", 5.0, 195.0), ("H4", 111.0, 195.0)]
 
 # Nets that need a PWR_FLAG for ERC
 PWR_FLAG_NETS = ["+5V", "+5V_MOD", "GND"]
 
 # Copper keep-out areas (both layers): (name, x1, y1, x2, y2)
-KEEPOUTS = [("ESP32 antenna", 48.0, 95.0, 68.0, 107.3), ("PN532 antenna", 82.0, 55.0, 115.2, 95.4)]
+KEEPOUTS = [("ESP32 antenna", 48.0, 125.0, 68.0, 137.3), ("PN532 antenna", 82.0, 55.0, 115.2, 95.4)]
 
 # Silkscreen reference positions (board coords, angle). Unlisted parts keep the default.
 REF_POS = {
@@ -222,7 +242,9 @@ REF_POS = {
     "C9": (73.0, 103.1, 90), "JP1": (73.0, 116.3, 90), "C14": (62.6, 61.5, 90),
     "R1": (66.5, 64.5, 0), "R2": (66.5, 67.5, 0), "C7": (69.8, 76.2, 0),
     "R12": (49.0, 87.2, 0), "R13": (52.5, 87.2, 0), "R14": (56.0, 87.2, 0), "R15": (59.5, 87.2, 0),
-    "SW7": (6.9, 158.0, 90), "Q3": (11.5, 146.4, 0), "R10": (15.2, 145.6, 0), "R16": (11.5, 155.9, 0),
-    "C16": (16.5, 155.9, 0), "Q2": (39.0, 144.8, 0), "R6": (44.4, 158.6, 90), "R7": (44.4, 163.4, 90),
-    "C17": (82.4, 140.9, 0),
+    "SW7": (6.9, 188.0, 90), "Q3": (11.5, 176.4, 0), "R10": (15.2, 175.6, 0), "R16": (11.5, 185.9, 0),
+    "C16": (16.5, 185.9, 0), "Q2": (39.0, 174.8, 0), "R6": (44.4, 188.6, 90), "R7": (44.4, 193.4, 90),
+    "C17": (82.4, 170.9, 0),
+    "Q4": (12.5, 138.4, 0), "R19": (18.7, 141.0, 90), "J10": (33.5, 125.6, 0), "D5": (100.0, 153.2, 0),
+    "R20": (21.0, 144.3, 0), "R21": (24.6, 144.3, 0), "C18": (28.2, 144.3, 0),
 }
